@@ -4,8 +4,8 @@ import 'package:dart_programing/app/common_widgets/small_text.dart';
 import 'package:dart_programing/constants/common_text_style/app_style.dart';
 import 'package:flutter/material.dart';
 
-class DashboardHomePage extends StatelessWidget {
-  const DashboardHomePage({super.key});
+class HomePageWidget extends StatelessWidget {
+  const HomePageWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

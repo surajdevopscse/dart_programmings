@@ -1,5 +1,5 @@
+import 'package:dart_programing/constants/common_text_style/app_style.dart';
 import 'package:flutter/material.dart';
-import 'package:dart_programing/constants/colors.dart';
 
 class PageHeader extends StatelessWidget {
   final String headerName;
@@ -16,11 +16,7 @@ class PageHeader extends StatelessWidget {
             flex: 1,
             child: Text(
               headerName,
-              style: const TextStyle(
-                fontSize: 16,
-                color: C.primaryText,
-                fontWeight: FontWeight.w700,
-              ),
+              style: AppStyle.globalBigTextStyle,
             ),
           ),
         ],

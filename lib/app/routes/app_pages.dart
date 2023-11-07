@@ -2,8 +2,8 @@
 
 import 'package:get/get.dart';
 
-import '../modules/dashboard/bindings/dashboard_binding.dart';
-import '../modules/dashboard/pages/dashboard_page.dart';
+import '../modules/home/bindings/dashboard_binding.dart';
+import '../modules/home/pages/home_page.dart';
 import '../modules/employees/employee_profile/bindings/employee_profile_binding.dart';
 import '../modules/employees/employee_profile/pages/employee_profile_page.dart';
 import '../modules/employees/employees/bindings/employees_binding.dart';
@@ -55,7 +55,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.HOME,
-      page: () => const DashboardPage(),
+      page: () => const HomePage(),
       binding: DashboardBinding(),
     ),
     GetPage(

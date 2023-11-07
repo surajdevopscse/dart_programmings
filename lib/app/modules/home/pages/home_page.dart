@@ -1,14 +1,14 @@
 import 'package:dart_programing/app/common_widgets/common_height.dart';
-import 'package:dart_programing/app/modules/dashboard/views/video_intro.dart';
+import 'package:dart_programing/app/modules/home/views/video_intro.dart';
 import 'package:dart_programing/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controllers/dashboard_controller.dart';
-import '../views/dashboard_home_page.dart';
-import '../views/dashboard_header.dart';
+import '../views/home_page_widget.dart';
+import '../../../common_widgets/page_header.dart';
 
-class DashboardPage extends GetView<DashboardController> {
-  const DashboardPage({Key? key}) : super(key: key);
+class HomePage extends GetView<DashboardController> {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +17,7 @@ class DashboardPage extends GetView<DashboardController> {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
+            automaticallyImplyLeading: true,
             elevation: 0,
             expandedHeight: 60, // Adjust the height as needed
             floating: false,
@@ -30,7 +31,7 @@ class DashboardPage extends GetView<DashboardController> {
                 CommonHeight(
                   height: 40,
                 ),
-                DashboardHomePage(),
+                HomePageWidget(),
                 CommonHeight(
                   height: 40,
                 ),
