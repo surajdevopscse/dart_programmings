@@ -32,7 +32,7 @@ class AppPages {
   AppPages._();
 
   // static const INITIAL = Routes.LOGIN;
-  static const INITIAL = Routes.DASHBOARD;
+  static const INITIAL = Routes.HOME;
 
   // static const INITIAL = Routes.EMPLOYEES;
   // static const INITIAL = Routes.EMPLOYEE_PROFILE;
@@ -54,7 +54,7 @@ class AppPages {
       binding: LoginBinding(),
     ),
     GetPage(
-      name: _Paths.DASHBOARD,
+      name: _Paths.HOME,
       page: () => const DashboardPage(),
       binding: DashboardBinding(),
     ),

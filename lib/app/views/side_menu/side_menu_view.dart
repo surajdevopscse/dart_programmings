@@ -15,7 +15,10 @@ class SideMenuView extends GetView<SideMenuController> {
       return Container(
         height: double.maxFinite,
         decoration: const BoxDecoration(
-            border: Border(right: BorderSide(color: C.bluishGray50))),
+            border: Border(
+                right: BorderSide(
+          color: AppColors.baseWhite,
+        ))),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

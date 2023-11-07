@@ -1,6 +1,6 @@
-typedef I = Images;
+typedef I = Resource;
 
-abstract class Images {
+abstract class Resource {
   static const leanrnDartLogo = "assets/images/learn_dart_logo.png";
   static const icCamera = "assets/images/icCamera.svg";
 
@@ -71,4 +71,7 @@ abstract class Images {
   static const icProfile2userActive = 'assets/images/icProfile2userActive.svg';
   static const icUserSearchActive = 'assets/images/icUserSearchActive.svg';
   static const icPersonalcardActive = 'assets/images/icPersonalcardActive.svg';
+
+  //Videos
+  static const homeVideo = 'assets/videos/home_video.mp4';
 }

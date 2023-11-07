@@ -4,7 +4,7 @@ typedef SK = StringKeys;
 
 abstract class StringKeys {
   static String get hello => 'hello'.tr;
-  static String get dashboard => 'Dashboard'.tr;
+  static String get home => 'Home'.tr;
   static String get partners => 'Partners'.tr;
   static String get employees => 'Employees'.tr;
   static String get lead => 'Lead'.tr;

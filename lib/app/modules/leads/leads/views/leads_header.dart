@@ -26,7 +26,7 @@ enum LeadsEnum {
       case LeadsEnum.allLeads:
         return SK.allLeads;
       case LeadsEnum.dashboard:
-        return SK.dashboard;
+        return SK.home;
       case LeadsEnum.hbAccounting:
         return SK.hbAccounting;
       case LeadsEnum.hbNeo:

@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:adaptive_theme/adaptive_theme.dart';
+import 'package:dart_programing/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -53,6 +54,7 @@ class MyApp extends StatelessWidget {
                 final tempSideMenuWidth = width * (280 / 1728);
                 final sideMenuWidth = max(tempSideMenuWidth, 150).toDouble();
                 return Material(
+                  color: AppColors.baseWhite,
                   child: Stack(
                     children: [
                       Positioned.fill(
@@ -67,7 +69,9 @@ class MyApp extends StatelessWidget {
                           fallbackLocale: const Locale('en', 'US'),
                           theme: theme,
                           darkTheme: darkTheme,
-                          navigatorObservers: [CustomNavigatorObserver()],
+                          navigatorObservers: [
+                            CustomNavigatorObserver(),
+                          ],
                         ),
                       ),
                       Positioned.directional(

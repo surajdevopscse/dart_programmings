@@ -3,7 +3,7 @@ import '../../../constants/strings/string_keys.dart';
 import '../../routes/app_pages.dart';
 
 enum SideNavBarParentEnum {
-  dashboard(children: [], parentPath: Routes.DASHBOARD),
+  dashboard(children: [], parentPath: Routes.HOME),
   partners(children: [
     SideNavBarChildEnum.myPartners,
     SideNavBarChildEnum.addPartner,
@@ -34,7 +34,7 @@ enum SideNavBarParentEnum {
   String get title {
     switch (this) {
       case SideNavBarParentEnum.dashboard:
-        return SK.dashboard;
+        return SK.home;
       case SideNavBarParentEnum.partners:
         return SK.partners;
       case SideNavBarParentEnum.employees:
@@ -89,7 +89,7 @@ enum SideNavBarChildEnum {
       case SideNavBarChildEnum.addEmployee:
         return SK.addEmployee;
       case SideNavBarChildEnum.dashboard:
-        return SK.dashboard;
+        return SK.home;
       case SideNavBarChildEnum.addLead:
         return SK.addLead;
 
