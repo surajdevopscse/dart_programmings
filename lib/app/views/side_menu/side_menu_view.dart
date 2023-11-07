@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:svg_flutter/svg.dart';
 import '../../../constants/colors.dart';
 import '../../../constants/images.dart';
 import 'custom_expansion_panel.dart';
@@ -23,7 +22,7 @@ class SideMenuView extends GetView<SideMenuController> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(0.0),
                 child: Image.asset(I.leanrnDartLogo),
               ),
               const Divider(

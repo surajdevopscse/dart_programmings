@@ -59,7 +59,7 @@ class MyApp extends StatelessWidget {
                         left: sideMenuWidth,
                         child: GetMaterialApp(
                           debugShowCheckedModeBanner: false,
-                          title: "Partner Portal",
+                          title: "Learn Dart Programming",
                           initialRoute: AppPages.INITIAL,
                           getPages: AppPages.routes,
                           translations: Strings(),
