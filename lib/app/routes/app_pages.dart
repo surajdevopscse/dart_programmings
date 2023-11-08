@@ -56,7 +56,7 @@ class AppPages {
     GetPage(
       name: _Paths.HOME,
       page: () => const HomePage(),
-      binding: DashboardBinding(),
+      binding: HomeBinding(),
     ),
     GetPage(
       name: _Paths.PARTNERS,
