@@ -33,6 +33,8 @@ dependencies:
   svg_flutter: ^0.0.1
   video_player: ^2.8.1
   footer:
+  syncfusion_flutter_core: ^23.1.44
+  auto_size_text: ^3.0.0
 
 dev_dependencies: 
   flutter_lints: 2.0.3

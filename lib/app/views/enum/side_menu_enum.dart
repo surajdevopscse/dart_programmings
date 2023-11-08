@@ -42,26 +42,6 @@ enum SideNavBarParentEnum {
     ],
     parentPath: Routes.CONDITIONS,
   ),
-  lead(
-    children: [
-      SideNavBarChildEnum.home,
-      SideNavBarChildEnum.addLead,
-    ],
-    parentPath: Routes.LEADS,
-  ),
-  license(
-    children: [
-      SideNavBarChildEnum.licenseKeys,
-      SideNavBarChildEnum.addLicenseKey,
-      SideNavBarChildEnum.transferLicenseKey,
-      SideNavBarChildEnum.requestLicenseKey,
-    ],
-    parentPath: Routes.LICENCE,
-  ),
-  logout(
-    children: [],
-    parentPath: Routes.LOGIN,
-  ),
   ;
 
   final List<SideNavBarChildEnum> children;
@@ -78,12 +58,6 @@ enum SideNavBarParentEnum {
         return SK.introductionAndSyntax;
       case SideNavBarParentEnum.controlFlowAndLoop:
         return SK.controlFlow;
-      case SideNavBarParentEnum.lead:
-        return SK.lead;
-      case SideNavBarParentEnum.license:
-        return SK.license;
-      case SideNavBarParentEnum.logout:
-        return SK.logout;
     }
   }
 
@@ -95,23 +69,11 @@ enum SideNavBarParentEnum {
         return (I.icBriefcaseActive, I.icBriefcase);
       case SideNavBarParentEnum.controlFlowAndLoop:
         return (I.icProfile2userActive, I.icProfile2user);
-      case SideNavBarParentEnum.lead:
-        return (I.icUserSearchActive, I.icUserSearch);
-      case SideNavBarParentEnum.license:
-        return (I.icPersonalcardActive, I.icPersonalcard);
-      case SideNavBarParentEnum.logout:
-        return (I.icLogout, I.icLogout);
     }
   }
 }
 
 enum SideNavBarChildEnum {
-  addLead(childPath: Routes.ADD_LEADS),
-
-  licenseKeys(childPath: Routes.LICENCE),
-  addLicenseKey(childPath: Routes.ADD_LICENCE),
-  transferLicenseKey,
-  requestLicenseKey,
   //HOME
   home(childPath: Routes.HOME),
   //Introduction to Dart
@@ -223,8 +185,7 @@ enum SideNavBarChildEnum {
         return SK.string;
       case SideNavBarChildEnum.keywords:
         return SK.keywords;
-      case SideNavBarChildEnum.addLead:
-        return SK.addLead;
+
       //Control Flow
       case SideNavBarChildEnum.controllFLow:
         return SK.controlFlow;
@@ -250,15 +211,6 @@ enum SideNavBarChildEnum {
         return SK.breakAnndContinue;
       case SideNavBarChildEnum.exception:
         return SK.exception;
-
-      case SideNavBarChildEnum.licenseKeys:
-        return SK.licenseKeys;
-      case SideNavBarChildEnum.addLicenseKey:
-        return SK.addLicenseKey;
-      case SideNavBarChildEnum.transferLicenseKey:
-        return SK.transferLicenseKey;
-      case SideNavBarChildEnum.requestLicenseKey:
-        return SK.requestLicenseKey;
     }
   }
 }

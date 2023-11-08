@@ -23,9 +23,6 @@ class DropDownTextFieldView extends GetView {
   }
 }
 
-/// TODO : Replace it
-///
-///
 enum DropDownItem {
   item1(title: 'Item 1'),
   item2(title: 'Item 2'),

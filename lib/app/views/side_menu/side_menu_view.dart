@@ -13,7 +13,7 @@ class SideMenuView extends GetView<SideMenuController> {
   Widget build(BuildContext context) {
     return GetBuilder<SideMenuController>(builder: (_) {
       return Container(
-        height: double.maxFinite,
+        height: MediaQuery.of(context).size.height,
         decoration: const BoxDecoration(
             border: Border(
                 right: BorderSide(
@@ -34,7 +34,7 @@ class SideMenuView extends GetView<SideMenuController> {
                 color: C.bluishGray50,
               ),
               CustomExpansionPanelList.radio(
-                // animationDuration: const Duration(milliseconds: 600),
+                animationDuration: const Duration(milliseconds: 600),
                 dividerColor: Colors.white,
                 headerMargin: const EdgeInsets.all(8),
                 expandedHeaderMargin: const EdgeInsets.all(8),
