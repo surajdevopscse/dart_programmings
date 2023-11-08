@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import '../../modules/control_flow/employees/dialogs/add_employee_dialog.dart';
+import '../../modules/control_flow/control_flow_and_loops/dialogs/add_employee_dialog.dart';
 import '../../modules/licence/licence/dialogs/request_licence_key_dialog.dart';
 import '../../modules/licence/licence/dialogs/transfer_licence_key_dialog.dart';
 import '../enum/side_menu_enum.dart';

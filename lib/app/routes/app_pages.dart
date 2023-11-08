@@ -4,7 +4,7 @@ import 'package:dart_programing/app/common_widgets/empty_screen.dart';
 import 'package:get/get.dart';
 import '../modules/home/bindings/dashboard_binding.dart';
 import '../modules/home/pages/home_page.dart';
-import '../modules/control_flow/employees/bindings/control_flow_binding.dart';
+import '../modules/control_flow/control_flow_and_loops/bindings/control_flow_binding.dart';
 import '../modules/leads/add_leads/bindings/add_leads_binding.dart';
 import '../modules/leads/add_leads/pages/add_leads_page.dart';
 
