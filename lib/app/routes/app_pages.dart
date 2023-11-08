@@ -19,12 +19,10 @@ import '../modules/licence/licence/bindings/licence_binding.dart';
 import '../modules/licence/licence/pages/licence_page.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/pages/login_page.dart';
-import '../modules/partners/add_sub_partner/bindings/add_sub_partner_binding.dart';
-import '../modules/partners/add_sub_partner/pages/add_sub_partner_page.dart';
-import '../modules/partners/partner_profile/bindings/partner_profile_binding.dart';
-import '../modules/partners/partner_profile/pages/partner_profile_page.dart';
-import '../modules/partners/partners/bindings/partners_binding.dart';
-import '../modules/partners/partners/pages/partners_page.dart';
+import '../modules/introduction_and_syntax/add_sub_partner/bindings/add_sub_partner_binding.dart';
+import '../modules/introduction_and_syntax/add_sub_partner/pages/add_sub_partner_page.dart';
+import '../modules/introduction_and_syntax/introduction/bindings/introduction_binding.dart';
+import '../modules/introduction_and_syntax/introduction/pages/introduction_to_dart.dart';
 
 part 'app_routes.dart';
 
@@ -59,19 +57,54 @@ class AppPages {
       binding: HomeBinding(),
     ),
     GetPage(
-      name: _Paths.PARTNERS,
-      page: () => const PartnersPage(),
-      binding: PartnersBinding(),
+      name: _Paths.INTRODUCION,
+      page: () => const IntroductionToDart(),
+      binding: IntroductionBinding(),
       children: [
         GetPage(
-          name: _Paths.ADD_SUB_PARTNER,
+          name: _Paths.INSTALL_DART,
           page: () => const AddSubPartnerPage(),
           binding: AddSubPartnerBinding(),
         ),
         GetPage(
-          name: _Paths.PARTNER_PROFILE,
-          page: () => const PartnerProfilePage(),
-          binding: PartnerProfileBinding(),
+          name: _Paths.DART_BASIC,
+          page: () => const AddSubPartnerPage(),
+          binding: AddSubPartnerBinding(),
+        ),
+        GetPage(
+          name: _Paths.VARIABLE_IN_DART,
+          page: () => const AddSubPartnerPage(),
+          binding: AddSubPartnerBinding(),
+        ),
+        GetPage(
+          name: _Paths.DATA_TYPES_IN_DART,
+          page: () => const AddSubPartnerPage(),
+          binding: AddSubPartnerBinding(),
+        ),
+        GetPage(
+          name: _Paths.COMMENTS_IN_DART,
+          page: () => const AddSubPartnerPage(),
+          binding: AddSubPartnerBinding(),
+        ),
+        GetPage(
+          name: _Paths.OPRATOR_IN_DART,
+          page: () => const AddSubPartnerPage(),
+          binding: AddSubPartnerBinding(),
+        ),
+        GetPage(
+          name: _Paths.USER_INPUT_IN_DART,
+          page: () => const AddSubPartnerPage(),
+          binding: AddSubPartnerBinding(),
+        ),
+        GetPage(
+          name: _Paths.STRING_IN_DART,
+          page: () => const AddSubPartnerPage(),
+          binding: AddSubPartnerBinding(),
+        ),
+        GetPage(
+          name: _Paths.KEYWORDS_IN_DART,
+          page: () => const AddSubPartnerPage(),
+          binding: AddSubPartnerBinding(),
         ),
       ],
     ),

@@ -4,13 +4,29 @@ typedef SK = StringKeys;
 
 abstract class StringKeys {
   static String get hello => 'hello'.tr;
+  //Home
   static String get home => 'Home'.tr;
-  static String get partners => 'Partners'.tr;
+
+  //Introduction
+  static String get introductionAndSyntax => 'Introduction and Syntax Basic'.tr;
+  static String get introductionToDart => 'Introduction to Dart'.tr;
+  static String get installDart => 'Install Dart'.tr;
+  static String get dartBasic => 'Basic Dart'.tr;
+  static String get variables => 'Variable'.tr;
+  static String get dataTypes => 'Data Types'.tr;
+  static String get comments => 'Comments'.tr;
+  static String get oprator => 'Oprators'.tr;
+  static String get userInput => 'User Input'.tr;
+  static String get metaData => 'Meta Data'.tr;
+  static String get libraries => 'Libraries'.tr;
+  static String get string => 'String'.tr;
+  static String get keywords => 'Keywords'.tr;
+
   static String get employees => 'Employees'.tr;
   static String get lead => 'Lead'.tr;
   static String get license => 'License'.tr;
   static String get logout => 'Logout'.tr;
-  static String get myPartners => 'My Partners'.tr;
+
   static String get addPartner => 'Add Partner'.tr;
   static String get myEmployees => 'My Employees'.tr;
   static String get addEmployee => 'Add Employee'.tr;

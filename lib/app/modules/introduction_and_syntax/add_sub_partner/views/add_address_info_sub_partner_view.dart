@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:dart_programing/app/modules/partners/add_sub_partner/controllers/add_sub_partner_controller.dart';
+import 'package:dart_programing/app/modules/introduction_and_syntax/add_sub_partner/controllers/add_sub_partner_controller.dart';
 
 import '../../../../../constants/colors.dart';
 import '../../../../views/common_text_field_view.dart';

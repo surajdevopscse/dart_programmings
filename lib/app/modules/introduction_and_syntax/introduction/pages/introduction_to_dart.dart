@@ -1,19 +1,18 @@
 import 'package:dart_programing/app/common_widgets/big_text.dart';
 import 'package:dart_programing/app/common_widgets/common_height.dart';
 import 'package:dart_programing/app/common_widgets/footter.dart';
-import 'package:dart_programing/app/common_widgets/small_text.dart';
+import 'package:dart_programing/app/common_widgets/page_header.dart';
+import 'package:dart_programing/app/modules/home/views/home_page_widget.dart';
 import 'package:dart_programing/app/modules/home/views/video_intro.dart';
-import 'package:dart_programing/constants/colors.dart';
 import 'package:dart_programing/constants/common_text_style/app_style.dart';
+import 'package:dart_programing/constants/strings/string_keys.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../controllers/home_controller.dart';
-import '../views/home_page_widget.dart';
-import '../../../common_widgets/page_header.dart';
+import '../../../../../constants/colors.dart';
+import '../controllers/introduction_controller.dart';
 
-class HomePage extends GetView<HomeController> {
-  const HomePage({Key? key}) : super(key: key);
-
+class IntroductionToDart extends GetView<IntroductionController> {
+  const IntroductionToDart({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,14 +24,16 @@ class HomePage extends GetView<HomeController> {
             child: CustomScrollView(
               controller: controller.scrollController,
               slivers: [
-                const SliverAppBar(
+                SliverAppBar(
                   toolbarHeight: 60,
                   automaticallyImplyLeading: false,
                   elevation: 0,
                   expandedHeight: 60, // Adjust the height as needed
                   floating: false,
                   pinned: true,
-                  flexibleSpace: PageHeader(),
+                  flexibleSpace: PageHeader(
+                    headerName: SK.introductionToDart,
+                  ),
                   backgroundColor: AppColors.baseWhite, // Your header widget
                 ),
                 SliverToBoxAdapter(
@@ -65,49 +66,6 @@ class HomePage extends GetView<HomeController> {
                       ),
                       const CommonHeight(
                         height: 20,
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: controller.whyShouldLearnList
-                            .map(
-                              (point) => SmallText(
-                                textAlign: TextAlign.start,
-                                text: '• $point',
-                                style: AppStyle.globalSmallTextStyle.copyWith(
-                                  fontSize: 20,
-                                ),
-                              ),
-                            )
-                            .toList(),
-                      ),
-                      const CommonHeight(),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: controller.featureList
-                            .map(
-                              (point) => Wrap(
-                                children: [
-                                  BigText(
-                                    text: point[0],
-                                    style: AppStyle.globalBigTextStyle
-                                        .copyWith(fontSize: 24),
-                                  ),
-                                  SmallText(
-                                    textAlign: TextAlign.start,
-                                    text: point[1],
-                                    style:
-                                        AppStyle.globalSmallTextStyle.copyWith(
-                                      fontSize: 20,
-                                      letterSpacing: 0,
-                                    ),
-                                  ),
-                                  const CommonHeight(),
-                                ],
-                              ),
-                            )
-                            .toList(),
                       ),
                       const CommonHeight(
                         height: 30,
