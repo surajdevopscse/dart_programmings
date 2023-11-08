@@ -1,7 +1,5 @@
 import 'package:get/get.dart';
-import '../../modules/control_flow/control_flow_and_loops/dialogs/add_employee_dialog.dart';
-import '../../modules/licence/licence/dialogs/request_licence_key_dialog.dart';
-import '../../modules/licence/licence/dialogs/transfer_licence_key_dialog.dart';
+
 import '../enum/side_menu_enum.dart';
 
 class SideMenuController extends GetxController {
@@ -59,7 +57,6 @@ class SideMenuController extends GetxController {
       } else {
         // Open Dialog
         if (child.childPath == null) {
-          openDialog(child);
           return;
         }
 
@@ -69,22 +66,6 @@ class SideMenuController extends GetxController {
         Get.toNamed(selectedChild!.childPath!);
         update();
       }
-    }
-  }
-
-  void openDialog(SideNavBarChildEnum childDialog) {
-    switch (childDialog) {
-      case SideNavBarChildEnum.conditions:
-        addEmployeeDialog(Get.context!);
-        break;
-      case SideNavBarChildEnum.transferLicenseKey:
-        transferLicenseKeyDialog(Get.context!);
-        break;
-      case SideNavBarChildEnum.requestLicenseKey:
-        requestLicenseKeyDialog(Get.context!);
-        break;
-      default:
-        break;
     }
   }
 }
