@@ -4,11 +4,13 @@ typedef C = AppColors;
 
 abstract class AppColors {
   static const backgroundColor = Color(0xFFF5F5F5);
-  static const background = Color(0xFF0071BC);
+  static const yellow = Color(0xFFFFDE59);
+  static const green = Color(0xFF03FA6E);
+  static const error = Color(0xFFDA3E33);
   static const primaryText = Color(0xFF140F29);
   static const seconderyText = Color(0xFF93919D);
   static const subTitleText = Color(0xFF625E70);
-  static const error = Color(0xFFDA3E33);
+  static const primary700 = Color.fromARGB(255, 98, 71, 236);
   static const border = Color(0xFFE8E7EA);
   static const button = Color(0xFF0071BC);
   static const buttonBorder = Color(0xFF0071C2);
@@ -27,7 +29,7 @@ abstract class AppColors {
   static const tableHeaderColor = Color(0xFF0071BC);
   static const blue50 = Color(0xFFF0F9FF);
   static const purple50 = Color(0xFFF5F1FD);
-  static const green = Color(0xFF03FA6E);
+
   static const primary500 = Color(0xFF0071C2);
   static const success600 = Color(0xFF10A760);
   static const success500 = Color(0xFF12B76A);
@@ -35,7 +37,7 @@ abstract class AppColors {
   static const purple600 = Color(0xFF906CD8);
   static const warning600 = Color(0xFFE18308);
   static const primary600 = Color(0xFF0067B1);
-  static const primary700 = Color(0xFF00508A);
+
   static const bluishGray300 = Color(0xFF625E70);
   static const bluishGray200 = Color(0xFF93919D);
   static const bluishGray100 = Color(0xFFB6B5BD);
@@ -47,7 +49,7 @@ abstract class AppColors {
   static const primary100 = Color(0xFFB0D3EC);
   static const gold = Color(0xFFA997A0);
   static const goldApiKey = Color(0xFF967988);
-  static const yellow = Color(0xFFFFDE59);
+
   static const seconday700 = Color(0xFF7054A8);
   static const bgHeader = Color(0xFFF8F8F9);
   static const warning500 = Color(0xFFF79009);

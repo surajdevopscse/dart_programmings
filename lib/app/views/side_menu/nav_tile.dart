@@ -53,8 +53,12 @@ class NavTileChild extends StatelessWidget {
   final bool isSelected;
   final String title;
   final void Function()? onTap;
-  const NavTileChild(
-      {required this.isSelected, required this.title, this.onTap, super.key});
+  const NavTileChild({
+    required this.isSelected,
+    required this.title,
+    this.onTap,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -72,13 +76,9 @@ class NavTileChild extends StatelessWidget {
           fontWeight: isSelected ? FontWeight.w500 : FontWeight.w400),
       selected: isSelected,
       contentPadding: const EdgeInsets.only(left: 8),
-      leading: SizedBox(
-        width: 6,
-        child: Text(
-          '•',
-          style: TextStyle(
-              color: isSelected ? C.primary700 : C.bluishGray300, fontSize: 16),
-        ),
+      leading: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Icon(isSelected ? Icons.check : Icons.check_box),
       ),
       title: Text(
         title,

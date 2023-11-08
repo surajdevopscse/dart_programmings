@@ -45,7 +45,7 @@ class MyApp extends StatelessWidget {
         return AdaptiveTheme(
           light: AppLightTheme.data,
           dark: AppDarkTheme.data,
-          debugShowFloatingThemeButton: true, // <------ add this line
+          debugShowFloatingThemeButton: true,
           initial: snapshot.data ?? AdaptiveThemeMode.system,
           builder: (theme, darkTheme) {
             return LayoutBuilder(

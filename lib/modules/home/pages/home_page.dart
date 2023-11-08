@@ -147,7 +147,7 @@ class HomePage extends GetView<HomeController> {
                   backgroundColor: AppColors.yellow,
                   child: Icon(
                     Icons.arrow_upward,
-                    color: AppColors.baseWhite,
+                    color: AppColors.primary700,
                   ),
                 ),
               ),

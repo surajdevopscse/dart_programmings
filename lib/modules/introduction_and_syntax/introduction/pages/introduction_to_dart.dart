@@ -31,6 +31,7 @@ class IntroductionToDart extends GetView<IntroductionController> {
                   expandedHeight: 60, // Adjust the height as needed
                   floating: false,
                   pinned: true,
+
                   flexibleSpace: PageHeader(
                     headerName: SK.introductionToDart,
                   ),
@@ -105,7 +106,7 @@ class IntroductionToDart extends GetView<IntroductionController> {
                   backgroundColor: AppColors.yellow,
                   child: Icon(
                     Icons.arrow_upward,
-                    color: AppColors.baseWhite,
+                    color: AppColors.primary700,
                   ),
                 ),
               ),

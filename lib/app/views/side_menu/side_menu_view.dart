@@ -66,12 +66,15 @@ class SideMenuView extends GetView<SideMenuController> {
                           return Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 8),
                             child: NavTileChild(
-                                onTap: () {
-                                  controller.navigate(
-                                      parent: parent, child: child);
-                                },
-                                isSelected: controller.selectedChild == child,
-                                title: child.title),
+                              onTap: () {
+                                controller.navigate(
+                                  parent: parent,
+                                  child: child,
+                                );
+                              },
+                              isSelected: controller.selectedChild == child,
+                              title: child.title,
+                            ),
                           );
                         }).toList(),
                       ),

@@ -12,7 +12,7 @@ class AppFooter extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Footer(
-      backgroundColor: AppColors.bluishGray500,
+      backgroundColor: AppColors.primary700,
       child: Column(
         children: [
           Text.rich(
@@ -38,7 +38,6 @@ class AppFooter extends GetView<HomeController> {
               color: AppColors.baseWhite,
             ),
           ),
-          
         ],
       ),
     );
