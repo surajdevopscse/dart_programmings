@@ -2,11 +2,11 @@
 
 import 'package:dart_programing/app/common_widgets/empty_screen.dart';
 import 'package:get/get.dart';
-import '../modules/home/bindings/dashboard_binding.dart';
-import '../modules/home/pages/home_page.dart';
-import '../modules/control_flow/control_flow_and_loops/bindings/control_flow_binding.dart';
-import '../modules/introduction_and_syntax/introduction/bindings/introduction_binding.dart';
-import '../modules/introduction_and_syntax/introduction/pages/introduction_to_dart.dart';
+import '../../modules/home/bindings/dashboard_binding.dart';
+import '../../modules/home/pages/home_page.dart';
+import '../../modules/control_flow/control_flow_and_loops/bindings/control_flow_binding.dart';
+import '../../modules/introduction_and_syntax/introduction/bindings/introduction_binding.dart';
+import '../../modules/introduction_and_syntax/introduction/pages/introduction_to_dart.dart';
 
 part 'app_routes.dart';
 

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:svg_flutter/svg_flutter.dart';
 
-import '../../../constants/colors.dart';
-import '../../../constants/images.dart';
+import '../../../utils/constants/colors.dart';
+import '../../../utils/constants/images.dart';
 
 class NavParentTile extends StatelessWidget {
   final bool isSelected;

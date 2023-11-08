@@ -3,7 +3,7 @@ import 'package:svg_flutter/svg.dart';
 import 'package:syncfusion_flutter_datagrid/datagrid.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
-import '../../../constants/colors.dart';
+import '../../../utils/constants/colors.dart';
 import 'common_table_column.dart';
 
 enum HbDataTableRow { name, text, amount, tag, action, avatar, number }

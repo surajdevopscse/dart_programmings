@@ -6,8 +6,8 @@ import 'package:dart_programing/app/views/table/pagination_controller.dart';
 import 'package:dart_programing/app/views/table/table_row_type_enum.dart';
 import 'package:syncfusion_flutter_datagrid/datagrid.dart';
 
-import '../../../constants/colors.dart';
-import '../../../constants/strings/string_keys.dart';
+import '../../../utils/constants/colors.dart';
+import '../../../utils/constants/strings/string_keys.dart';
 import 'common_table_column.dart';
 import 'common_table_data_source.dart';
 import 'package:syncfusion_flutter_core/theme.dart';

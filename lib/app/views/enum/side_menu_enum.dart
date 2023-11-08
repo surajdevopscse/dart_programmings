@@ -1,5 +1,5 @@
-import '../../../constants/images.dart';
-import '../../../constants/strings/string_keys.dart';
+import '../../../utils/constants/images.dart';
+import '../../../utils/constants/strings/string_keys.dart';
 import '../../routes/app_pages.dart';
 
 enum SideNavBarParentEnum {

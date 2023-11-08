@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:dart_programing/app/views/table/table_row_type_enum.dart';
 import 'package:syncfusion_flutter_datagrid/datagrid.dart';
 
-import '../../../constants/colors.dart';
+import '../../../utils/constants/colors.dart';
 import 'common_table_column.dart';
 
 class CommonTableRowSelection extends RowSelectionManager {

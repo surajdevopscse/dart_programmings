@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import '../../constants/colors.dart';
+import '../../utils/constants/colors.dart';
 
 class DropDownTextFieldView extends GetView {
   const DropDownTextFieldView({Key? key}) : super(key: key);

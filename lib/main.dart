@@ -1,22 +1,22 @@
 import 'dart:math';
 
 import 'package:adaptive_theme/adaptive_theme.dart';
-import 'package:dart_programing/constants/colors.dart';
+import 'package:dart_programing/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:dart_programing/app/views/side_menu/side_menu_controller.dart';
 import 'package:dart_programing/services/navigator_observer/custom_navigator_observer.dart';
 
-import 'package:dart_programing/theme/dark_theme.dart';
-import 'package:dart_programing/theme/light_theme.dart';
+import 'package:dart_programing/utils/theme/dark_theme.dart';
+import 'package:dart_programing/utils/theme/light_theme.dart';
 
 import 'app/routes/app_pages.dart';
 import 'app/views/side_menu/side_menu_view.dart';
 import 'services/settings/settings_service.dart';
 import 'services/shared_preference_service/shared_preference_service.dart';
 import 'services/webservice/webservice.dart';
-import 'constants/strings/strings.dart';
+import 'utils/constants/strings/strings.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

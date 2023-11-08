@@ -1,4 +1,4 @@
-import 'package:dart_programing/constants/common_text_style/app_style.dart';
+import 'package:dart_programing/utils/constants/common_text_style/app_style.dart';
 import 'package:flutter/material.dart';
 
 class PageHeader extends StatelessWidget {

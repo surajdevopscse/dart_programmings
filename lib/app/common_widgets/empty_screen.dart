@@ -1,5 +1,5 @@
-import 'package:dart_programing/constants/colors.dart';
-import 'package:dart_programing/constants/common_text_style/app_style.dart';
+import 'package:dart_programing/utils/constants/colors.dart';
+import 'package:dart_programing/utils/constants/common_text_style/app_style.dart';
 import 'package:flutter/material.dart';
 
 class ComingSoonPage extends StatelessWidget {

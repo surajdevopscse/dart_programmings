@@ -1,4 +1,4 @@
-import 'package:dart_programing/constants/images.dart';
+import 'package:dart_programing/utils/constants/images.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 

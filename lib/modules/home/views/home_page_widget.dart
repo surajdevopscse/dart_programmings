@@ -1,7 +1,7 @@
 import 'package:dart_programing/app/common_widgets/big_text.dart';
 import 'package:dart_programing/app/common_widgets/common_height.dart';
 import 'package:dart_programing/app/common_widgets/small_text.dart';
-import 'package:dart_programing/constants/common_text_style/app_style.dart';
+import 'package:dart_programing/utils/constants/common_text_style/app_style.dart';
 import 'package:flutter/material.dart';
 
 class HomePageWidget extends StatelessWidget {

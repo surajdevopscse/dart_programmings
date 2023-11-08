@@ -21,7 +21,7 @@
 //   }
 // }
 import 'package:flutter/material.dart';
-import '../../constants/colors.dart';
+import '../../utils/constants/colors.dart';
 
 class CommonTextFieldController {
   final textController = TextEditingController();

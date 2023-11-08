@@ -1,7 +1,7 @@
 import 'package:dart_programing/app/common_widgets/small_text.dart';
-import 'package:dart_programing/app/modules/home/controllers/home_controller.dart';
-import 'package:dart_programing/constants/colors.dart';
-import 'package:dart_programing/constants/common_text_style/app_style.dart';
+import 'package:dart_programing/modules/home/controllers/home_controller.dart';
+import 'package:dart_programing/utils/constants/colors.dart';
+import 'package:dart_programing/utils/constants/common_text_style/app_style.dart';
 import 'package:flutter/material.dart';
 import 'package:footer/footer.dart';
 import 'package:get/get.dart';

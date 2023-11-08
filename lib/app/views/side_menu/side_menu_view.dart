@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../constants/colors.dart';
-import '../../../constants/images.dart';
+import '../../../utils/constants/colors.dart';
+import '../../../utils/constants/images.dart';
 import 'custom_expansion_panel.dart';
 import 'nav_tile.dart';
 import 'side_menu_controller.dart';

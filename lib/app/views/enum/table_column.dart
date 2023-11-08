@@ -1,4 +1,4 @@
-import '../../../constants/strings/string_keys.dart';
+import '../../../utils/constants/strings/string_keys.dart';
 
 enum TableColumn {
   sNo,
