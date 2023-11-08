@@ -73,7 +73,7 @@ abstract class _Paths {
   static const EXCEPTION = '/exceptions';
 
   static const LOGIN = '/login';
-  static const EMPLOYEES = '/employees';
+
   static const LEADS = '/leads';
   static const ADD_LEADS = '/add';
   static const LICENCE = '/licence';
