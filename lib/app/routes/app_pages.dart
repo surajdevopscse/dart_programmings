@@ -1,5 +1,6 @@
 // ignore_for_file: constant_identifier_names
 
+import 'package:dart_programing/app/common_widgets/empty_screen.dart';
 import 'package:get/get.dart';
 
 import '../modules/home/bindings/dashboard_binding.dart';
@@ -19,8 +20,6 @@ import '../modules/licence/licence/bindings/licence_binding.dart';
 import '../modules/licence/licence/pages/licence_page.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/pages/login_page.dart';
-import '../modules/introduction_and_syntax/add_sub_partner/bindings/add_sub_partner_binding.dart';
-import '../modules/introduction_and_syntax/add_sub_partner/pages/add_sub_partner_page.dart';
 import '../modules/introduction_and_syntax/introduction/bindings/introduction_binding.dart';
 import '../modules/introduction_and_syntax/introduction/pages/introduction_to_dart.dart';
 
@@ -63,48 +62,48 @@ class AppPages {
       children: [
         GetPage(
           name: _Paths.INSTALL_DART,
-          page: () => const AddSubPartnerPage(),
-          binding: AddSubPartnerBinding(),
+          page: () => const ComingSoonPage(),
+          binding: IntroductionBinding(),
         ),
         GetPage(
           name: _Paths.DART_BASIC,
-          page: () => const AddSubPartnerPage(),
-          binding: AddSubPartnerBinding(),
+          page: () => const ComingSoonPage(),
+          binding: IntroductionBinding(),
         ),
         GetPage(
           name: _Paths.VARIABLE_IN_DART,
-          page: () => const AddSubPartnerPage(),
-          binding: AddSubPartnerBinding(),
+          page: () => const ComingSoonPage(),
+          binding: IntroductionBinding(),
         ),
         GetPage(
           name: _Paths.DATA_TYPES_IN_DART,
-          page: () => const AddSubPartnerPage(),
-          binding: AddSubPartnerBinding(),
+          page: () => const ComingSoonPage(),
+          binding: IntroductionBinding(),
         ),
         GetPage(
           name: _Paths.COMMENTS_IN_DART,
-          page: () => const AddSubPartnerPage(),
-          binding: AddSubPartnerBinding(),
+          page: () => const ComingSoonPage(),
+          binding: IntroductionBinding(),
         ),
         GetPage(
           name: _Paths.OPRATOR_IN_DART,
-          page: () => const AddSubPartnerPage(),
-          binding: AddSubPartnerBinding(),
+          page: () => const ComingSoonPage(),
+          binding: IntroductionBinding(),
         ),
         GetPage(
           name: _Paths.USER_INPUT_IN_DART,
-          page: () => const AddSubPartnerPage(),
-          binding: AddSubPartnerBinding(),
+          page: () => const ComingSoonPage(),
+          binding: IntroductionBinding(),
         ),
         GetPage(
           name: _Paths.STRING_IN_DART,
-          page: () => const AddSubPartnerPage(),
-          binding: AddSubPartnerBinding(),
+          page: () => const ComingSoonPage(),
+          binding: IntroductionBinding(),
         ),
         GetPage(
           name: _Paths.KEYWORDS_IN_DART,
-          page: () => const AddSubPartnerPage(),
-          binding: AddSubPartnerBinding(),
+          page: () => const ComingSoonPage(),
+          binding: IntroductionBinding(),
         ),
       ],
     ),

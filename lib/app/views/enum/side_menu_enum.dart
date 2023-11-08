@@ -151,19 +151,10 @@ enum SideNavBarChildEnum {
         return SK.myEmployees;
       case SideNavBarChildEnum.addEmployee:
         return SK.addEmployee;
+      //Home
       case SideNavBarChildEnum.home:
         return SK.home;
-      case SideNavBarChildEnum.addLead:
-        return SK.addLead;
-
-      case SideNavBarChildEnum.licenseKeys:
-        return SK.licenseKeys;
-      case SideNavBarChildEnum.addLicenseKey:
-        return SK.addLicenseKey;
-      case SideNavBarChildEnum.transferLicenseKey:
-        return SK.transferLicenseKey;
-      case SideNavBarChildEnum.requestLicenseKey:
-        return SK.requestLicenseKey;
+      //Introduction
       case SideNavBarChildEnum.introductionToDart:
         return SK.introductionToDart;
       case SideNavBarChildEnum.installDart:
@@ -188,6 +179,17 @@ enum SideNavBarChildEnum {
         return SK.string;
       case SideNavBarChildEnum.keywords:
         return SK.keywords;
+      case SideNavBarChildEnum.addLead:
+        return SK.addLead;
+
+      case SideNavBarChildEnum.licenseKeys:
+        return SK.licenseKeys;
+      case SideNavBarChildEnum.addLicenseKey:
+        return SK.addLicenseKey;
+      case SideNavBarChildEnum.transferLicenseKey:
+        return SK.transferLicenseKey;
+      case SideNavBarChildEnum.requestLicenseKey:
+        return SK.requestLicenseKey;
     }
   }
 }
