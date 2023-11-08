@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 typedef SK = StringKeys;
 
 abstract class StringKeys {
-  static String get hello => 'hello'.tr;
   //Home
   static String get home => 'Home'.tr;
 
@@ -22,6 +21,21 @@ abstract class StringKeys {
   static String get string => 'String'.tr;
   static String get keywords => 'Keywords'.tr;
 
+  //Controlls and Flow
+  static String get controlFlow => 'Control Flow'.tr;
+  static String get conditions => 'Conditions'.tr;
+  static String get assertInDart => 'Assert'.tr;
+  static String get switchCase => 'Switch Case'.tr;
+  static String get terneryOprator => 'Ternery Oprator'.tr;
+  static String get loops => 'Loops'.tr;
+  static String get forLoop => 'For Loop'.tr;
+  static String get forEach => 'For Each Loop'.tr;
+  static String get whileLoop => 'While Loop'.tr;
+  static String get doWhile => 'Do While'.tr;
+  static String get breakAnndContinue => 'Break and Continue'.tr;
+  static String get exception => 'Exception Handling'.tr;
+
+  static String get hello => 'hello'.tr;
   static String get employees => 'Employees'.tr;
   static String get lead => 'Lead'.tr;
   static String get license => 'License'.tr;

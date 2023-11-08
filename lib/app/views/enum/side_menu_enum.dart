@@ -3,10 +3,12 @@ import '../../../constants/strings/string_keys.dart';
 import '../../routes/app_pages.dart';
 
 enum SideNavBarParentEnum {
-  dashboard(
+  //Home
+  home(
     children: [],
     parentPath: Routes.HOME,
   ),
+  //Introduction
   introductionAndSyntax(
     children: [
       SideNavBarChildEnum.introductionToDart,
@@ -22,12 +24,23 @@ enum SideNavBarParentEnum {
     ],
     parentPath: Routes.INTRODUCTION,
   ),
-  employees(
+
+  //Control Flow and Loops
+  controlFlowAndLoop(
     children: [
-      SideNavBarChildEnum.myEmployees,
-      SideNavBarChildEnum.addEmployee
+      SideNavBarChildEnum.conditions,
+      SideNavBarChildEnum.assertInDart,
+      SideNavBarChildEnum.switchCase,
+      SideNavBarChildEnum.ternery,
+      SideNavBarChildEnum.loops,
+      SideNavBarChildEnum.forLoop,
+      SideNavBarChildEnum.forEachLoop,
+      SideNavBarChildEnum.whileLoop,
+      SideNavBarChildEnum.doWhileLoop,
+      SideNavBarChildEnum.breakContinue,
+      SideNavBarChildEnum.exception,
     ],
-    parentPath: Routes.EMPLOYEES,
+    parentPath: Routes.CONDITIONS,
   ),
   lead(
     children: [
@@ -59,12 +72,12 @@ enum SideNavBarParentEnum {
 
   String get title {
     switch (this) {
-      case SideNavBarParentEnum.dashboard:
+      case SideNavBarParentEnum.home:
         return SK.home;
       case SideNavBarParentEnum.introductionAndSyntax:
         return SK.introductionAndSyntax;
-      case SideNavBarParentEnum.employees:
-        return SK.employees;
+      case SideNavBarParentEnum.controlFlowAndLoop:
+        return SK.controlFlow;
       case SideNavBarParentEnum.lead:
         return SK.lead;
       case SideNavBarParentEnum.license:
@@ -76,11 +89,11 @@ enum SideNavBarParentEnum {
 
   (String selectedImage, String unSelectedImage) get image {
     switch (this) {
-      case SideNavBarParentEnum.dashboard:
+      case SideNavBarParentEnum.home:
         return (I.icCategory2Active, I.icCategory2);
       case SideNavBarParentEnum.introductionAndSyntax:
         return (I.icBriefcaseActive, I.icBriefcase);
-      case SideNavBarParentEnum.employees:
+      case SideNavBarParentEnum.controlFlowAndLoop:
         return (I.icProfile2userActive, I.icProfile2user);
       case SideNavBarParentEnum.lead:
         return (I.icUserSearchActive, I.icUserSearch);
@@ -93,17 +106,14 @@ enum SideNavBarParentEnum {
 }
 
 enum SideNavBarChildEnum {
-  myEmployees(childPath: Routes.EMPLOYEES),
-
-  addEmployee,
-  home(childPath: Routes.LEADS),
   addLead(childPath: Routes.ADD_LEADS),
 
   licenseKeys(childPath: Routes.LICENCE),
   addLicenseKey(childPath: Routes.ADD_LICENCE),
   transferLicenseKey,
   requestLicenseKey,
-
+  //HOME
+  home(childPath: Routes.HOME),
   //Introduction to Dart
   introductionToDart(
     childPath: Routes.INTRODUCTION,
@@ -140,6 +150,44 @@ enum SideNavBarChildEnum {
   ),
   installDart(
     childPath: Routes.INSTALL_DART,
+  ),
+
+  //Control Flow
+  controllFLow(
+    childPath: Routes.CONDITIONS,
+  ),
+  assertInDart(
+    childPath: Routes.ASSERT,
+  ),
+  switchCase(
+    childPath: Routes.SWITCH,
+  ),
+  ternery(
+    childPath: Routes.TERNERY,
+  ),
+  loops(
+    childPath: Routes.LOOPS,
+  ),
+  forLoop(
+    childPath: Routes.FORLOOP,
+  ),
+  forEachLoop(
+    childPath: Routes.FOREACHLOOP,
+  ),
+  whileLoop(
+    childPath: Routes.WHILE,
+  ),
+  doWhileLoop(
+    childPath: Routes.DOWHILE,
+  ),
+  breakContinue(
+    childPath: Routes.BREAKCONTINUE,
+  ),
+  conditions(
+    childPath: Routes.CONDITIONS,
+  ),
+  exception(
+    childPath: Routes.EXCEPTION,
   );
 
   final String? childPath;
@@ -147,10 +195,6 @@ enum SideNavBarChildEnum {
 
   String get title {
     switch (this) {
-      case SideNavBarChildEnum.myEmployees:
-        return SK.myEmployees;
-      case SideNavBarChildEnum.addEmployee:
-        return SK.addEmployee;
       //Home
       case SideNavBarChildEnum.home:
         return SK.home;
@@ -181,6 +225,31 @@ enum SideNavBarChildEnum {
         return SK.keywords;
       case SideNavBarChildEnum.addLead:
         return SK.addLead;
+      //Control Flow
+      case SideNavBarChildEnum.controllFLow:
+        return SK.controlFlow;
+      case SideNavBarChildEnum.conditions:
+        return SK.conditions;
+      case SideNavBarChildEnum.assertInDart:
+        return SK.assertInDart;
+      case SideNavBarChildEnum.switchCase:
+        return SK.switchCase;
+      case SideNavBarChildEnum.ternery:
+        return SK.terneryOprator;
+      case SideNavBarChildEnum.loops:
+        return SK.loops;
+      case SideNavBarChildEnum.forLoop:
+        return SK.forLoop;
+      case SideNavBarChildEnum.forEachLoop:
+        return SK.forEach;
+      case SideNavBarChildEnum.whileLoop:
+        return SK.whileLoop;
+      case SideNavBarChildEnum.doWhileLoop:
+        return SK.doWhile;
+      case SideNavBarChildEnum.breakContinue:
+        return SK.breakAnndContinue;
+      case SideNavBarChildEnum.exception:
+        return SK.exception;
 
       case SideNavBarChildEnum.licenseKeys:
         return SK.licenseKeys;

@@ -24,12 +24,19 @@ abstract class Routes {
   static const KEYWORDS = _Paths.INTRODUCION + _Paths.KEYWORDS_IN_DART;
 
   //CONDITIONS AND LOOPS
-  static const LOGIN = _Paths.LOGIN;
+  static const CONDITIONS = _Paths.CONDITIONS;
+  static const ASSERT = _Paths.CONDITIONS + _Paths.ASSERT;
+  static const SWITCH = _Paths.CONDITIONS + _Paths.SWITCH;
+  static const TERNERY = _Paths.CONDITIONS + _Paths.TERNERY;
+  static const LOOPS = _Paths.CONDITIONS + _Paths.LOOPS;
+  static const FORLOOP = _Paths.CONDITIONS + _Paths.FORLOOP;
+  static const FOREACHLOOP = _Paths.CONDITIONS + _Paths.FOREACHLOOP;
+  static const WHILE = _Paths.CONDITIONS + _Paths.WHILE;
+  static const DOWHILE = _Paths.CONDITIONS + _Paths.DOWHILE;
+  static const BREAKCONTINUE = _Paths.CONDITIONS + _Paths.BREAK;
+  static const EXCEPTION = _Paths.CONDITIONS + _Paths.EXCEPTION;
 
-  static const PARTNER_PROFILE = _Paths.INTRODUCION + _Paths.PARTNER_PROFILE;
-  static const EMPLOYEES = _Paths.EMPLOYEES;
-  static const ADD_EMPLOYEE = _Paths.EMPLOYEES + _Paths.ADD_EMPLOYEE;
-  static const EMPLOYEE_PROFILE = _Paths.EMPLOYEES + _Paths.EMPLOYEE_PROFILE;
+  static const LOGIN = _Paths.LOGIN;
   static const LEADS = _Paths.LEADS;
   static const ADD_LEADS = _Paths.LEADS + _Paths.ADD_LEADS;
   static const LICENCE = _Paths.LICENCE;
@@ -52,12 +59,21 @@ abstract class _Paths {
   static const STRING_IN_DART = '/strings';
   static const KEYWORDS_IN_DART = '/keywords';
 
-  static const LOGIN = '/login';
+  //Control Flow and Loops
+  static const CONDITIONS = '/control_flow';
+  static const ASSERT = '/assert';
+  static const SWITCH = '/switch';
+  static const TERNERY = '/ternery';
+  static const LOOPS = '/loops';
+  static const FORLOOP = '/for_loop';
+  static const FOREACHLOOP = '/for_each_loop';
+  static const WHILE = '/while';
+  static const DOWHILE = '/do_while';
+  static const BREAK = '/break_continue';
+  static const EXCEPTION = '/exceptions';
 
-  static const PARTNER_PROFILE = '/:profile';
+  static const LOGIN = '/login';
   static const EMPLOYEES = '/employees';
-  static const ADD_EMPLOYEE = '/add';
-  static const EMPLOYEE_PROFILE = '/:profile';
   static const LEADS = '/leads';
   static const ADD_LEADS = '/add';
   static const LICENCE = '/licence';

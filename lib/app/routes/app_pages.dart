@@ -2,13 +2,9 @@
 
 import 'package:dart_programing/app/common_widgets/empty_screen.dart';
 import 'package:get/get.dart';
-
 import '../modules/home/bindings/dashboard_binding.dart';
 import '../modules/home/pages/home_page.dart';
-import '../modules/employees/employee_profile/bindings/employee_profile_binding.dart';
-import '../modules/employees/employee_profile/pages/employee_profile_page.dart';
-import '../modules/employees/employees/bindings/employees_binding.dart';
-import '../modules/employees/employees/pages/employees_page.dart';
+import '../modules/control_flow/employees/bindings/control_flow_binding.dart';
 import '../modules/leads/add_leads/bindings/add_leads_binding.dart';
 import '../modules/leads/add_leads/pages/add_leads_page.dart';
 
@@ -27,22 +23,7 @@ part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
-
-  // static const INITIAL = Routes.LOGIN;
   static const INITIAL = Routes.HOME;
-
-  // static const INITIAL = Routes.EMPLOYEES;
-  // static const INITIAL = Routes.EMPLOYEE_PROFILE;
-  // static const INITIAL = Routes.ADD_LEADS;
-  // static const INITIAL = Routes.LEADS;
-  // static const INITIAL = Routes.ADD_SUB_PARTNER;
-  // static const INITIAL = Routes.PARTNERS;
-  // static const INITIAL = Routes.PARTNER_PROFILE;
-
-  // static const INITIAL = Routes.LICENCE;
-  // static const INITIAL = Routes.ADD_LICENCE;
-
-  // static const INITIAL = Routes.LEAD_LISTING;
 
   static final routes = [
     GetPage(
@@ -50,11 +31,15 @@ class AppPages {
       page: () => const LoginPage(),
       binding: LoginBinding(),
     ),
+
+    //Home
     GetPage(
       name: _Paths.HOME,
       page: () => const HomePage(),
       binding: HomeBinding(),
     ),
+
+    //Introductions
     GetPage(
       name: _Paths.INTRODUCION,
       page: () => const IntroductionToDart(),
@@ -107,20 +92,62 @@ class AppPages {
         ),
       ],
     ),
+
+    //Control Flow
     GetPage(
-      name: _Paths.EMPLOYEES,
-      page: () => const EmployeesPage(),
-      binding: EmployeesBinding(),
+      name: _Paths.CONDITIONS,
+      page: () => const ComingSoonPage(),
+      binding: ControlFlowBinding(),
       children: [
         GetPage(
-          name: _Paths.ADD_EMPLOYEE,
-          page: () => const EmployeesPage(),
-          binding: EmployeesBinding(shouldShowAddEmployeeDialog: true),
+          name: _Paths.ASSERT,
+          page: () => const ComingSoonPage(),
+          binding: ControlFlowBinding(),
         ),
         GetPage(
-          name: _Paths.EMPLOYEE_PROFILE,
-          page: () => const EmployeeProfilePage(),
-          binding: EmployeeProfileBinding(),
+          name: _Paths.SWITCH,
+          page: () => const ComingSoonPage(),
+          binding: ControlFlowBinding(),
+        ),
+        GetPage(
+          name: _Paths.TERNERY,
+          page: () => const ComingSoonPage(),
+          binding: ControlFlowBinding(),
+        ),
+        GetPage(
+          name: _Paths.LOOPS,
+          page: () => const ComingSoonPage(),
+          binding: ControlFlowBinding(),
+        ),
+        GetPage(
+          name: _Paths.FORLOOP,
+          page: () => const ComingSoonPage(),
+          binding: ControlFlowBinding(),
+        ),
+        GetPage(
+          name: _Paths.FOREACHLOOP,
+          page: () => const ComingSoonPage(),
+          binding: ControlFlowBinding(),
+        ),
+        GetPage(
+          name: _Paths.WHILE,
+          page: () => const ComingSoonPage(),
+          binding: ControlFlowBinding(),
+        ),
+        GetPage(
+          name: _Paths.DOWHILE,
+          page: () => const ComingSoonPage(),
+          binding: ControlFlowBinding(),
+        ),
+        GetPage(
+          name: _Paths.BREAK,
+          page: () => const ComingSoonPage(),
+          binding: ControlFlowBinding(),
+        ),
+        GetPage(
+          name: _Paths.EXCEPTION,
+          page: () => const ComingSoonPage(),
+          binding: ControlFlowBinding(),
         ),
       ],
     ),

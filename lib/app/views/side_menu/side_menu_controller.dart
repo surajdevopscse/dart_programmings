@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import '../../modules/employees/employees/dialogs/add_employee_dialog.dart';
+import '../../modules/control_flow/employees/dialogs/add_employee_dialog.dart';
 import '../../modules/licence/licence/dialogs/request_licence_key_dialog.dart';
 import '../../modules/licence/licence/dialogs/transfer_licence_key_dialog.dart';
 import '../enum/side_menu_enum.dart';
@@ -26,7 +26,7 @@ class SideMenuController extends GetxController {
     return SideNavBarParentEnum.values.firstWhereOrNull((e) {
           return currentRoute.startsWith(e.parentPath);
         }) ??
-        SideNavBarParentEnum.dashboard;
+        SideNavBarParentEnum.home;
   }
 
   void navigate({
@@ -74,7 +74,7 @@ class SideMenuController extends GetxController {
 
   void openDialog(SideNavBarChildEnum childDialog) {
     switch (childDialog) {
-      case SideNavBarChildEnum.addEmployee:
+      case SideNavBarChildEnum.conditions:
         addEmployeeDialog(Get.context!);
         break;
       case SideNavBarChildEnum.transferLicenseKey:
