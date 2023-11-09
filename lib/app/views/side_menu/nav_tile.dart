@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:svg_flutter/svg_flutter.dart';
 
 import '../../../utils/constants/colors.dart';
-import '../../../utils/constants/images.dart';
 
 class NavParentTile extends StatelessWidget {
   final bool isSelected;
@@ -37,14 +36,14 @@ class NavParentTile extends StatelessWidget {
       selected: isSelected,
       contentPadding: const EdgeInsets.only(left: 8),
       minVerticalPadding: 0,
-      leading: SvgPicture.asset(image),
-      title: Text(title),
-      trailing: isExpended
-          ? Padding(
-              padding: const EdgeInsets.only(right: 8),
-              child: SvgPicture.asset(I.icMinus),
+      leading: !isSelected
+          ? SvgPicture.asset(
+              image,
+              width: 15,
+              height: 20,
             )
-          : null,
+          : const Icon(Icons.check),
+      title: Text(title),
     );
   }
 }
@@ -78,7 +77,7 @@ class NavTileChild extends StatelessWidget {
       contentPadding: const EdgeInsets.only(left: 8),
       leading: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Icon(isSelected ? Icons.check : Icons.check_box),
+        child: Icon(isSelected ? Icons.check : null),
       ),
       title: Text(
         title,

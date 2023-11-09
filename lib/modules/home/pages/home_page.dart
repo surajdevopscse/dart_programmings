@@ -3,6 +3,7 @@ import 'package:dart_programing/app/common_widgets/common_height.dart';
 import 'package:dart_programing/app/common_widgets/footter.dart';
 import 'package:dart_programing/app/common_widgets/small_text.dart';
 import 'package:dart_programing/modules/home/views/video_intro.dart';
+import 'package:dart_programing/utils/app_constants.dart';
 import 'package:dart_programing/utils/constants/colors.dart';
 import 'package:dart_programing/utils/constants/common_text_style/app_style.dart';
 import 'package:flutter/material.dart';
@@ -29,11 +30,11 @@ class HomePage extends GetView<HomeController> {
                   toolbarHeight: 60,
                   automaticallyImplyLeading: false,
                   elevation: 0,
-                  expandedHeight: 60, // Adjust the height as needed
+                  expandedHeight: 60,
                   floating: false,
                   pinned: true,
                   flexibleSpace: PageHeader(),
-                  backgroundColor: AppColors.baseWhite, // Your header widget
+                  backgroundColor: AppColors.baseWhite,
                 ),
                 SliverToBoxAdapter(
                   child: Column(
@@ -58,7 +59,7 @@ class HomePage extends GetView<HomeController> {
                       ),
                       Center(
                         child: BigText(
-                          text: 'Why Should You Learn Dart?',
+                          text: AppConstant.dartWhy,
                           style: AppStyle.globalBigTextStyle
                               .copyWith(fontSize: 28),
                         ),
@@ -113,13 +114,12 @@ class HomePage extends GetView<HomeController> {
                         height: 30,
                       ),
                       BigText(
-                        text: 'Summary',
+                        text: AppConstant.summaryTitle,
                         style:
                             AppStyle.globalBigTextStyle.copyWith(fontSize: 26),
                       ),
                       BigText(
-                        text:
-                            'In summary, learning Dart can be a strategic decision if you\'re interested in mobile app development, web development, or concurrent programming. It\'s a versatile language that offers good performance, developer-friendly features, and a growing ecosystem. Additionally, Dart\'s strong ties to Flutter make it an excellent choice for cross-platform mobile app development',
+                        text: AppConstant.summary,
                         style: AppStyle.globalSmallTextStyle
                             .copyWith(fontSize: 20),
                       ),

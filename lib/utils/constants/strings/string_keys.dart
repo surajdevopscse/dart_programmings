@@ -20,6 +20,8 @@ abstract class StringKeys {
   static String get libraries => 'Libraries'.tr;
   static String get string => 'String'.tr;
   static String get keywords => 'Keywords'.tr;
+    static String get finalVsConst => 'Final Vs Const'.tr;
+  static String get dateTime => 'DateTime'.tr;
 
   //Controlls and Flow
   static String get controlFlow => 'Control Flow'.tr;
@@ -34,6 +36,66 @@ abstract class StringKeys {
   static String get doWhile => 'Do While'.tr;
   static String get breakAnndContinue => 'Break and Continue'.tr;
   static String get exception => 'Exception Handling'.tr;
+
+//Functions
+  static String get functions => 'Functions'.tr;
+  static String get typesOfFunctions => 'Types of Functions'.tr;
+  static String get functionParameter => 'Functions Parameter'.tr;
+  static String get anonymousFunctions => 'Anonymous Functions'.tr;
+  static String get arrowFunctions => 'Arrow Functions'.tr;
+  static String get scope => 'Scope'.tr;
+  static String get mathInDart => 'Math in Dart'.tr;
+
+  //Collections
+  static String get collection => 'Collection'.tr;
+  static String get listInDart => 'List'.tr;
+  static String get setInDart => 'Set'.tr;
+  static String get mapInDart => 'Map'.tr;
+  static String get whereInDart => 'Where '.tr;
+
+  //File Handling
+   static String get fileHandling => 'File Handling'.tr;
+  static String get readFile => 'Read File'.tr;
+  static String get writeFile => 'Write File'.tr;
+  static String get deleteFile => 'Delete File'.tr;
+
+  //OOPS in Dart
+  static String get oopsInDart => 'Oops'.tr;
+  static String get classInDart => 'Class'.tr;
+  static String get objectInDart => 'Object'.tr;
+  static String get classAndObject => 'Class And Object'.tr;
+  static String get constructor => 'Constructor'.tr;
+  static String get defaultConstructor => 'Default Constructor'.tr;
+  static String get paramterizedConstructor => 'Parameterized Constructor'.tr;
+  static String get namedConstructor => 'Named Construtor'.tr;
+  static String get constantContructor => 'Constant Constructor'.tr;
+  static String get encapsulation => 'Encapsulation'.tr;
+  static String get getter => 'Getter'.tr;
+  static String get setter => 'Setter'.tr;
+  static String get inheritence => 'Inheritence'.tr;
+  static String get polymorphism => 'Polymorphism'.tr;
+  static String get static => 'Static'.tr;
+  static String get superInDart => 'Super'.tr;
+  static String get enumInDart => 'Enum'.tr;
+  static String get abstarctClassInDart => 'Abstract'.tr;
+  static String get interface => 'Interface'.tr;
+  static String get mixinInDart => 'Mixin'.tr;
+  static String get generic => 'Generic'.tr;
+  static String get extension => 'Extention'.tr;
+  static String get callableObject => 'Callable Object'.tr;
+  static String get factoryConstructor => 'Factory Constructor'.tr;
+
+  //Null Safety
+  static String get nullSafety => 'Null Safety'.tr;
+  static String get typePromotions => 'Type Promotion'.tr;
+  static String get lateKeywords => 'Late'.tr;
+
+  //Async Programming
+  static String get asyncProgramming => 'Async Programming'.tr;
+  static String get futureInDart => 'Future'.tr;
+  static String get asyncAndAwait => 'Async and Await'.tr;
+  static String get streamInDart => 'Stream'.tr;
+  static String get isolate => 'Isolate'.tr;
 
   static String get hello => 'hello'.tr;
   static String get employees => 'Employees'.tr;

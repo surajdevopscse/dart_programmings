@@ -72,6 +72,9 @@ abstract class Resource {
   static const icUserSearchActive = 'assets/images/icUserSearchActive.svg';
   static const icPersonalcardActive = 'assets/images/icPersonalcardActive.svg';
 
-  //Videos
+//SVG Image
+  static const codeActive = 'assets/images/codeActive.svg';
+  static const codeInactive = 'assets/images/codeInactive.svg';
+//Videos
   static const homeVideo = 'assets/videos/home_video.mp4';
 }
