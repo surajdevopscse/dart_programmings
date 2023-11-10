@@ -25,13 +25,11 @@ Future<void> main() async {
 }
 
 Future<void> initServices() async {
-  debugPrint('starting services ...');
   await Get.putAsync(() => SharedPreferenceService().init());
   await Get.putAsync(() => Webservice().init());
   await Get.putAsync(() => SettingsService().init());
   // Get.lazyPut(() => SideMenuController());
   Get.put(SideMenuController());
-  debugPrint('All services started...');
 }
 
 class MyApp extends StatelessWidget {

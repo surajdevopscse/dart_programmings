@@ -40,11 +40,6 @@ class CustomNavigatorObserver extends NavigatorObserver {
     }
     final sideMenuController = Get.find<SideMenuController>();
     final newParentVal = sideMenuController.getParentNavEnumByURL();
-    // print("New Parent Value");
-    // print(newParentVal);
-
-    // print("Current Parent Value");
-    // print(sideMenuController.selectedParent);
 
     if (newParentVal != sideMenuController.selectedParent) {
       sideMenuController.selectedParent = newParentVal;
