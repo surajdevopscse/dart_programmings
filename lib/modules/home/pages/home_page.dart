@@ -1,6 +1,6 @@
 import 'package:dart_programing/app/common_widgets/big_text.dart';
 import 'package:dart_programing/app/common_widgets/common_height.dart';
-import 'package:dart_programing/app/common_widgets/footter.dart';
+import 'package:dart_programing/app/common_widgets/footer.dart';
 import 'package:dart_programing/app/common_widgets/small_text.dart';
 import 'package:dart_programing/utils/app_constants.dart';
 import 'package:dart_programing/utils/constants/colors.dart';
@@ -79,6 +79,7 @@ class HomePage extends GetView<HomeController> {
                                     style:
                                         AppStyle.globalSmallTextStyle.copyWith(
                                       fontSize: 20,
+                                      letterSpacing: 0,
                                     ),
                                   ),
                                 )

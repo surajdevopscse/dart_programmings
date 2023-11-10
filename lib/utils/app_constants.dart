@@ -11,5 +11,5 @@ class AppConstant {
   static String summaryTitle = 'Summary';
 
   static String summary =
-      'In summary, learning Dart can be a strategic decision if you\'re interested in mobile app development, web development, or concurrent programming. It\'s a versatile language that offers good performance, developer-friendly features, and a growing ecosystem. Additionally, Dart\'s strong ties to Flutter make it an excellent choice for cross-platform mobile app development';
+      'In summary, learning Dart can be a strategic decision if you\'re interested in mobile app development, web development, or concurrent programming. It\'s a versatile language that offers good performance, developer-friendly features, and a growing ecosystem. Additionally, Dart\'s strong ties to Flutter make it an excellent choice for cross-platform mobile app development.';
 }

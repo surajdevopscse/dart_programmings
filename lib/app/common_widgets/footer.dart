@@ -17,24 +17,29 @@ class AppFooter extends GetView<HomeController> {
         children: [
           Text.rich(
             TextSpan(
-              style: AppStyle.globalBigTextStyle.copyWith(
+              style: AppStyle.globalSmallTextStyle.copyWith(
                 color: AppColors.baseWhite,
               ),
               text: 'Copyright © ',
               children: <InlineSpan>[
-                const TextSpan(
+                TextSpan(
                   text: 'Learn Dart Programming',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  style: AppStyle.globalSmallTextStyle.copyWith(
+                    color: AppColors.baseWhite,
+                  ),
                 ),
                 TextSpan(
                   text: ' ${DateTime.now().year.toString()} All Right Reserved',
+                  style: AppStyle.globalSmallTextStyle.copyWith(
+                    color: AppColors.baseWhite,
+                  ),
                 ),
               ],
             ),
           ),
           SmallText(
             text: 'Developed With ❤️ by Flutter',
-            style: AppStyle.globalBigTextStyle.copyWith(
+            style: AppStyle.globalSmallTextStyle.copyWith(
               color: AppColors.baseWhite,
             ),
           ),

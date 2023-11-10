@@ -51,15 +51,15 @@ class HomeController extends GetxController {
     ],
     [
       'Productivity and Readabilit:',
-      'Dart has a clean and straightforward syntax, making it easy to learn and read. It emphasizes developer-friendliness with features like type inference, strong static typing, and concise code. This can lead to increased productivity in your development work'
+      'Dart has a clean and straightforward syntax, making it easy to learn and read. It emphasizes developer-friendliness with features like type inference, strong static typing, and concise code. This can lead to increased productivity in your development work.'
     ],
     [
       'Strong Ecosystem:',
-      'Dart\'s ecosystem is growing, with a growing number of packages and libraries available on pub.dev. This allows you to leverage existing code to enhance your projects and build applications more quickly'
+      'Dart\'s ecosystem is growing, with a growing number of packages and libraries available on pub.dev. This allows you to leverage existing code to enhance your projects and build applications more quickly.'
     ],
     [
       'Performance:',
-      'Dart is known for its high performance. It compiles to native machine code, resulting in fast and smooth applications. For mobile app development, this performance is crucial for delivering a seamless user experience'
+      'Dart is known for its high performance. It compiles to native machine code, resulting in fast and smooth applications. For mobile app development, this performance is crucial for delivering a seamless user experience.'
     ],
     [
       'Single Codebase for Multiple Platforms:',
@@ -71,15 +71,15 @@ class HomeController extends GetxController {
     ],
     [
       'Concurrent Programming:',
-      'Dart offers built-in support for isolates, which are lightweight concurrent processes that can run in parallel. This feature is beneficial for tasks that require concurrent execution and managing heavy workloads'
+      'Dart offers built-in support for isolates, which are lightweight concurrent processes that can run in parallel. This feature is beneficial for tasks that require concurrent execution and managing heavy workloads.'
     ],
     [
       'Stable and Backed by Google:',
-      'Dart is developed and maintained by Google, providing it with a stable and reputable backing. This can be reassuring for developers looking for a language with strong support'
+      'Dart is developed and maintained by Google, providing it with a stable and reputable backing. This can be reassuring for developers looking for a language with strong support.'
     ],
     [
       'Modern Tooling:',
-      'Dart offers a range of development tools, including a package manager (pub), a development server, and excellent debugging support. Various integrated development environments (IDEs) and code editors support Dart, making it a convenient language to work with'
+      'Dart offers a range of development tools, including a package manager (pub), a development server, and excellent debugging support. Various integrated development environments (IDEs) and code editors support Dart, making it a convenient language to work with.'
     ],
   ];
   void scrollToTop() {
