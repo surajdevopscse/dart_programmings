@@ -1,11 +1,14 @@
+import 'package:dart_programing/utils/constants/images.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:video_player/video_player.dart';
 
 class HomeController extends GetxController {
   bool showBackToTopButton = false;
 
   // scroll controller
   late ScrollController scrollController;
+  late VideoPlayerController videoController;
 
   @override
   void onInit() async {
@@ -16,6 +19,15 @@ class HomeController extends GetxController {
         } else {
           showBackToTopButton = false;
         }
+      });
+    videoController = VideoPlayerController.asset(
+      I.homeVideo,
+      videoPlayerOptions: VideoPlayerOptions(
+        allowBackgroundPlayback: true,
+      ),
+    )..initialize().then((_) {
+        videoController.play();
+        videoController.setLooping(true);
       });
     update();
     super.onInit();

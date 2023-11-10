@@ -2,14 +2,15 @@ import 'package:dart_programing/app/common_widgets/big_text.dart';
 import 'package:dart_programing/app/common_widgets/common_height.dart';
 import 'package:dart_programing/app/common_widgets/footter.dart';
 import 'package:dart_programing/app/common_widgets/page_header.dart';
-import 'package:dart_programing/modules/home/views/home_page_widget.dart';
-import 'package:dart_programing/modules/home/views/video_intro.dart';
+import 'package:dart_programing/modules/home/widgets/home_page_widget.dart';
 import 'package:dart_programing/utils/app_constants.dart';
 import 'package:dart_programing/utils/constants/common_text_style/app_style.dart';
+import 'package:dart_programing/utils/constants/images.dart';
 import 'package:dart_programing/utils/constants/strings/string_keys.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../../utils/constants/colors.dart';
+import 'package:svg_flutter/svg_flutter.dart';
+import '../../../utils/constants/colors.dart';
 import '../controllers/introduction_controller.dart';
 
 class IntroductionToDart extends GetView<IntroductionController> {
@@ -35,7 +36,7 @@ class IntroductionToDart extends GetView<IntroductionController> {
                   flexibleSpace: PageHeader(
                     headerName: SK.introductionToDart,
                   ),
-                  backgroundColor: AppColors.baseWhite,
+                  backgroundColor: C.primary50,
                 ),
                 SliverToBoxAdapter(
                   child: Column(
@@ -48,12 +49,8 @@ class IntroductionToDart extends GetView<IntroductionController> {
                       const CommonHeight(
                         height: 20,
                       ),
-                      const Center(
-                        child: SizedBox(
-                          height: 600,
-                          width: 1400,
-                          child: VideoApp(),
-                        ),
+                      Center(
+                        child: SvgPicture.asset(I.homeSvg),
                       ),
                       const CommonHeight(
                         height: 40,

@@ -42,7 +42,10 @@ class NavParentTile extends StatelessWidget {
               width: 15,
               height: 20,
             )
-          : const Icon(Icons.check),
+          : const Padding(
+              padding: EdgeInsets.only(right: 8.0),
+              child: Icon(Icons.check),
+            ),
       title: Text(title),
     );
   }

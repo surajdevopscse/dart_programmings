@@ -1,7 +1,8 @@
 typedef I = Resource;
 
 abstract class Resource {
-  static const leanrnDartLogo = "assets/images/learn_dart_logo.png";
+  static const leanrnDartLogo = "assets/images/logo.png";
+  static const homeSvg = "assets/images/home.svg";
   static const icCamera = "assets/images/icCamera.svg";
 
   static const icCalendar = "assets/images/icCalendar.svg";

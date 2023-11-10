@@ -23,4 +23,10 @@ class IntroductionController extends GetxController {
     scrollController.animateTo(0,
         duration: const Duration(seconds: 1), curve: Curves.linear);
   }
+
+  @override
+  void dispose() {
+    scrollController.dispose();
+    super.dispose();
+  }
 }
