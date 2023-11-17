@@ -54,4 +54,6 @@ abstract class AppColors {
   static const bgHeader = Color(0xFFF8F8F9);
   static const warning500 = Color(0xFFF79009);
   static const stepper = Color(0xFF0071BC);
+
+  static const appTextColor = Color(0xFF000000);
 }

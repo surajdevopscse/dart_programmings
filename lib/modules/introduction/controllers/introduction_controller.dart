@@ -5,6 +5,12 @@ class IntroductionController extends GetxController {
   bool showBackToTopButton = false;
   late ScrollController scrollController;
 
+  String code = '''
+  void main() {
+    print("Hello, Flutter Web!");
+  }
+                ''';
+
   @override
   void onInit() async {
     scrollController = ScrollController()

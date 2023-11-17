@@ -35,7 +35,7 @@ class SideMenuView extends GetView<SideMenuController> {
               ),
               CustomExpansionPanelList.radio(
                 animationDuration: const Duration(milliseconds: 600),
-                dividerColor: Colors.white,
+                dividerColor: C.baseWhite,
                 headerMargin: const EdgeInsets.all(8),
                 expandedHeaderMargin: const EdgeInsets.all(8),
                 materialGapSize: 0,

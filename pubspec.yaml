@@ -35,6 +35,7 @@ dependencies:
   footer:
   syncfusion_flutter_core: ^23.1.44
   auto_size_text: ^3.0.0
+  flutter_highlight: 
 
 dev_dependencies: 
   flutter_lints: 2.0.3

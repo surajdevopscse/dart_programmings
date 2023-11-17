@@ -16,19 +16,19 @@ extension HbDataTableRowMapping on HbDataTableRow {
       case HbDataTableRow.text:
       case HbDataTableRow.number:
         // return kGrey500;
-        return Colors.grey;
+        return C.bluishGray400;
       case HbDataTableRow.amount:
         // return kGrey500;
-        return Colors.grey;
+        return C.bluishGray400;
       case HbDataTableRow.tag:
         // return kSuccess500;
-        return Colors.green;
+        return C.green;
       case HbDataTableRow.action:
         // return kPureBlack;
-        return Colors.amber;
+        return C.yellow;
       case HbDataTableRow.avatar:
         // return kblue800;
-        return Colors.blue;
+        return C.blue50;
     }
   }
 

@@ -15,7 +15,7 @@ class ComingSoonPage extends StatelessWidget {
             const Icon(
               Icons.timer,
               size: 100,
-              color: Colors.grey,
+              color: C.bluishGray400,
             ),
             Text(
               'Coming Soon',

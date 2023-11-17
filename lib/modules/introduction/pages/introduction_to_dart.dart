@@ -1,15 +1,9 @@
-import 'package:dart_programing/app/common_widgets/big_text.dart';
-import 'package:dart_programing/app/common_widgets/common_height.dart';
 import 'package:dart_programing/app/common_widgets/footer.dart';
 import 'package:dart_programing/app/common_widgets/page_header.dart';
-import 'package:dart_programing/modules/home/widgets/home_page_widget.dart';
-import 'package:dart_programing/utils/app_constants.dart';
-import 'package:dart_programing/utils/constants/common_text_style/app_style.dart';
-import 'package:dart_programing/utils/constants/images.dart';
 import 'package:dart_programing/utils/constants/strings/string_keys.dart';
 import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
-import 'package:svg_flutter/svg_flutter.dart';
 import '../../../utils/constants/colors.dart';
 import '../controllers/introduction_controller.dart';
 
@@ -38,50 +32,11 @@ class IntroductionToDart extends GetView<IntroductionController> {
                   ),
                   backgroundColor: C.primary50,
                 ),
-                SliverToBoxAdapter(
+                const SliverToBoxAdapter(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const CommonHeight(
-                        height: 40,
-                      ),
-                      const Center(child: HomePageWidget()),
-                      const CommonHeight(
-                        height: 20,
-                      ),
-                      Center(
-                        child: SvgPicture.asset(I.homeSvg),
-                      ),
-                      const CommonHeight(
-                        height: 40,
-                      ),
-                      Center(
-                        child: BigText(
-                          text: AppConstant.dartWhy,
-                          style: AppStyle.globalBigTextStyle
-                              .copyWith(fontSize: 28),
-                        ),
-                      ),
-                      const CommonHeight(
-                        height: 20,
-                      ),
-                      const CommonHeight(
-                        height: 30,
-                      ),
-                      BigText(
-                        text: AppConstant.summaryTitle,
-                        style:
-                            AppStyle.globalBigTextStyle.copyWith(fontSize: 26),
-                      ),
-                      BigText(
-                        text: AppConstant.summary,
-                        style: AppStyle.globalSmallTextStyle
-                            .copyWith(fontSize: 20),
-                      ),
-                      const CommonHeight(
-                        height: 30,
-                      ),
-                      const AppFooter(),
+                      AppFooter(),
                     ],
                   ),
                 ),
