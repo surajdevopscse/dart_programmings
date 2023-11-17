@@ -1,6 +1,5 @@
 import 'package:dart_programing/app/common_widgets/big_text.dart';
 import 'package:dart_programing/app/common_widgets/common_height.dart';
-import 'package:dart_programing/app/common_widgets/footer.dart';
 import 'package:dart_programing/app/common_widgets/small_text.dart';
 import 'package:dart_programing/utils/app_constants.dart';
 import 'package:dart_programing/utils/constants/colors.dart';
@@ -71,41 +70,30 @@ class HomePage extends GetView<HomeController> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.start,
-                            children: controller.whyShouldLearnList
-                                .map(
-                                  (point) => SmallText(
-                                    textAlign: TextAlign.start,
-                                    text: '• $point',
-                                    style:
-                                        AppStyle.globalSmallTextStyle.copyWith(
-                                      fontSize: 20,
-                                      letterSpacing: 0,
-                                    ),
-                                  ),
-                                )
-                                .toList(),
-                          ),
-                          const CommonHeight(),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.start,
                             children: controller.featureList
                                 .map(
-                                  (point) => Wrap(
+                                  (point) => Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
                                       BigText(
                                         text: point[0],
                                         style: AppStyle.globalBigTextStyle
                                             .copyWith(fontSize: 24),
                                       ),
-                                      SmallText(
-                                        textAlign: TextAlign.start,
-                                        text: point[1],
-                                        style: AppStyle.globalSmallTextStyle
-                                            .copyWith(
-                                          fontSize: 20,
-                                          letterSpacing: 0,
-                                        ),
+                                      Wrap(
+                                        children: [
+                                          SmallText(
+                                            textAlign: TextAlign.start,
+                                            text: point[1],
+                                            style: AppStyle.globalSmallTextStyle
+                                                .copyWith(
+                                              fontSize: 20,
+                                              letterSpacing: 0,
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                       const CommonHeight(),
                                     ],
@@ -132,7 +120,9 @@ class HomePage extends GetView<HomeController> {
                         ],
                       ),
                     ),
-                    const AppFooter(),
+                    const CommonHeight(
+                      height: 80,
+                    ),
                   ],
                 ),
               ),

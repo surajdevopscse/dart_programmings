@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:adaptive_theme/adaptive_theme.dart';
+import 'package:dart_programing/app/common_widgets/footer.dart';
 import 'package:dart_programing/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -79,6 +80,13 @@ class MyApp extends StatelessWidget {
                         start: 0,
                         width: sideMenuWidth,
                         child: const SideMenuView(),
+                      ),
+                      Positioned(
+                        bottom: 0,
+                        child: SizedBox(
+                          width: MediaQuery.of(context).size.width,
+                          child: const AppFooter(),
+                        ),
                       ),
                     ],
                   ),
