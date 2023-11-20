@@ -34,96 +34,99 @@ class HomePage extends GetView<HomeController> {
                 backgroundColor: C.primary50,
               ),
               SliverToBoxAdapter(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 16, right: 16),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const CommonHeight(
-                            height: 40,
-                          ),
-                          const Center(
-                            child: HomePageWidget(),
-                          ),
-                          const CommonHeight(
-                            height: 20,
-                          ),
-                          Center(
-                            child: SvgPicture.asset(I.homeSvg),
-                          ),
-                          const CommonHeight(
-                            height: 40,
-                          ),
-                          Center(
-                            child: BigText(
-                              text: AppConstant.dartWhy,
-                              style: AppStyle.globalBigTextStyle
-                                  .copyWith(fontSize: 28),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 16.0, right: 8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 16, right: 16),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const CommonHeight(
+                              height: 40,
                             ),
-                          ),
-                          const CommonHeight(
-                            height: 20,
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: controller.featureList
-                                .map(
-                                  (point) => Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      BigText(
-                                        text: point[0],
-                                        style: AppStyle.globalBigTextStyle
-                                            .copyWith(fontSize: 24),
-                                      ),
-                                      Wrap(
-                                        children: [
-                                          SmallText(
-                                            textAlign: TextAlign.start,
-                                            text: point[1],
-                                            style: AppStyle.globalSmallTextStyle
-                                                .copyWith(
-                                              fontSize: 20,
-                                              letterSpacing: 0,
+                            const Center(
+                              child: HomePageWidget(),
+                            ),
+                            const CommonHeight(
+                              height: 20,
+                            ),
+                            Center(
+                              child: SvgPicture.asset(I.homeSvg),
+                            ),
+                            const CommonHeight(
+                              height: 40,
+                            ),
+                            Center(
+                              child: BigText(
+                                text: AppConstant.dartWhy,
+                                style: AppStyle.globalBigTextStyle
+                                    .copyWith(fontSize: 28),
+                              ),
+                            ),
+                            const CommonHeight(
+                              height: 20,
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: controller.featureList
+                                  .map(
+                                    (point) => Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      children: [
+                                        BigText(
+                                          text: point[0],
+                                          style: AppStyle.globalBigTextStyle
+                                              .copyWith(fontSize: 24),
+                                        ),
+                                        Wrap(
+                                          children: [
+                                            SmallText(
+                                              textAlign: TextAlign.start,
+                                              text: point[1],
+                                              style: AppStyle.globalSmallTextStyle
+                                                  .copyWith(
+                                                fontSize: 20,
+                                                letterSpacing: 0,
+                                              ),
                                             ),
-                                          ),
-                                        ],
-                                      ),
-                                      const CommonHeight(),
-                                    ],
-                                  ),
-                                )
-                                .toList(),
-                          ),
-                          const CommonHeight(
-                            height: 30,
-                          ),
-                          BigText(
-                            text: AppConstant.summaryTitle,
-                            style: AppStyle.globalBigTextStyle
-                                .copyWith(fontSize: 26),
-                          ),
-                          BigText(
-                            text: AppConstant.summary,
-                            style: AppStyle.globalSmallTextStyle
-                                .copyWith(fontSize: 20),
-                          ),
-                          const CommonHeight(
-                            height: 30,
-                          ),
-                        ],
+                                          ],
+                                        ),
+                                        const CommonHeight(),
+                                      ],
+                                    ),
+                                  )
+                                  .toList(),
+                            ),
+                            const CommonHeight(
+                              height: 30,
+                            ),
+                            BigText(
+                              text: AppConstant.summaryTitle,
+                              style: AppStyle.globalBigTextStyle
+                                  .copyWith(fontSize: 26),
+                            ),
+                            BigText(
+                              text: AppConstant.summary,
+                              style: AppStyle.globalSmallTextStyle
+                                  .copyWith(fontSize: 20),
+                            ),
+                            const CommonHeight(
+                              height: 30,
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                    const CommonHeight(
-                      height: 80,
-                    ),
-                  ],
+                      const CommonHeight(
+                        height: 80,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],

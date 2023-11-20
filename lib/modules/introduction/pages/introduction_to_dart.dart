@@ -21,27 +21,26 @@ class IntroductionToDart extends GetView<IntroductionController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.baseWhite,
       body: Stack(
         children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 16.0, right: 8.0),
-            child: CustomScrollView(
-              controller: controller.scrollController,
-              slivers: [
-                SliverAppBar(
-                  toolbarHeight: 60,
-                  automaticallyImplyLeading: false,
-                  elevation: 0,
-                  expandedHeight: 60,
-                  floating: false,
-                  pinned: true,
-                  flexibleSpace: PageHeader(
-                    headerName: SK.introductionToDart,
-                  ),
-                  backgroundColor: C.primary50,
+          CustomScrollView(
+            controller: controller.scrollController,
+            slivers: [
+              SliverAppBar(
+                toolbarHeight: 60,
+                automaticallyImplyLeading: false,
+                elevation: 0,
+                expandedHeight: 60,
+                floating: false,
+                pinned: true,
+                flexibleSpace: PageHeader(
+                  headerName: SK.introductionToDart,
                 ),
-                SliverToBoxAdapter(
+                backgroundColor: C.primary50,
+              ),
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 16.0, right: 8.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -113,7 +112,7 @@ class IntroductionToDart extends GetView<IntroductionController> {
                                         text: point[1],
                                         style: AppStyle.globalSmallTextStyle
                                             .copyWith(
-                                          fontSize: 20,
+                                          fontSize: 18,
                                           letterSpacing: 0,
                                         ),
                                       ),
@@ -186,7 +185,7 @@ class IntroductionToDart extends GetView<IntroductionController> {
                         text:
                             '• Here are some basic programming terms that are commonly used in the world of software development, Important words that you often hear while learning programming languages.',
                         style: AppStyle.globalSmallTextStyle.copyWith(
-                          fontSize: 20,
+                          fontSize: 18,
                           fontWeight: FontWeight.normal,
                         ),
                       ),
@@ -198,6 +197,8 @@ class IntroductionToDart extends GetView<IntroductionController> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: controller.programingTerms
                             .map((e) => Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
                                     Text.rich(
                                       TextSpan(
@@ -213,7 +214,7 @@ class IntroductionToDart extends GetView<IntroductionController> {
                                             text: e[1],
                                             style: AppStyle.globalSmallTextStyle
                                                 .copyWith(
-                                              fontSize: 20,
+                                              fontSize: 18,
                                               letterSpacing: 0,
                                             ),
                                           ),
@@ -281,8 +282,8 @@ class IntroductionToDart extends GetView<IntroductionController> {
                     ],
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
           Positioned(
             right: 0,

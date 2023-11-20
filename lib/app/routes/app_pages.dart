@@ -1,6 +1,8 @@
 // ignore_for_file: constant_identifier_names
 
 import 'package:dart_programing/app/common_widgets/empty_screen.dart';
+import 'package:dart_programing/modules/introduction/bindings/install_dart_binding.dart';
+import 'package:dart_programing/modules/introduction/pages/install_dart.dart';
 import 'package:get/get.dart';
 import '../../modules/home/bindings/dashboard_binding.dart';
 import '../../modules/home/pages/home_page.dart';
@@ -33,8 +35,8 @@ class AppPages {
         GetPage(
           name: _Paths.INSTALL_DART,
           transition: Transition.rightToLeft,
-          page: () => const ComingSoonPage(),
-          binding: IntroductionBinding(),
+          page: () => const InstallDart(),
+          binding: InstallDartBinding(),
         ),
         GetPage(
           name: _Paths.DART_BASIC,
