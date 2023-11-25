@@ -28,6 +28,7 @@ dependencies:
   syncfusion_flutter_datagrid: ^23.1.39
   number_paginator: ^0.4.0
   dotted_line: ^3.2.2
+  url_launcher:
   flutter: 
     sdk: flutter
   svg_flutter: ^0.0.1
