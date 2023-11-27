@@ -4,9 +4,11 @@ import 'package:dart_programing/app/common_widgets/page_header.dart';
 import 'package:dart_programing/modules/introduction/controllers/install_dart_controller.dart';
 import 'package:dart_programing/utils/constants/colors.dart';
 import 'package:dart_programing/utils/constants/common_text_style/app_style.dart';
+import 'package:dart_programing/utils/constants/images.dart';
 import 'package:dart_programing/utils/constants/strings/string_keys.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:svg_flutter/svg_flutter.dart';
 
 class InstallDart extends GetView<InstallDartController> {
   const InstallDart({super.key});
@@ -63,6 +65,9 @@ class InstallDart extends GetView<InstallDartController> {
                           fontSize: 20,
                           fontWeight: FontWeight.normal,
                         ),
+                      ),
+                      Center(
+                        child: SvgPicture.asset(I.install),
                       ),
                       BigText(
                         text: 'Dart Window Installation: ',

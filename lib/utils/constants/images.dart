@@ -4,6 +4,7 @@ abstract class Resource {
   static const leanrnDartLogo = "assets/images/logo.png";
   static const homeSvg = "assets/images/home.svg";
   static const diffrence = "assets/images/diffrence.svg";
+    static const install = "assets/images/install.svg";
   static const icCamera = "assets/images/icCamera.svg";
 
   static const icCalendar = "assets/images/icCalendar.svg";

@@ -13,6 +13,7 @@ class SideMenuView extends GetView<SideMenuController> {
   Widget build(BuildContext context) {
     return GetBuilder<SideMenuController>(builder: (_) {
       return Container(
+        padding: const EdgeInsets.only(bottom: 60),
         height: MediaQuery.of(context).size.height,
         decoration: const BoxDecoration(
             border: Border(
