@@ -16,8 +16,8 @@ import 'package:svg_flutter/svg.dart';
 import '../../../utils/constants/colors.dart';
 import '../controllers/introduction_controller.dart';
 
-class IntroductionToDart extends GetView<IntroductionController> {
-  const IntroductionToDart({Key? key}) : super(key: key);
+class IntroductionToDartPage extends GetView<IntroductionController> {
+  const IntroductionToDartPage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(

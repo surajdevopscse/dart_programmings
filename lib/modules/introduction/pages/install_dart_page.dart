@@ -10,8 +10,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:svg_flutter/svg_flutter.dart';
 
-class InstallDart extends GetView<InstallDartController> {
-  const InstallDart({super.key});
+class InstallDartPage extends GetView<InstallDartController> {
+  const InstallDartPage({super.key});
 
   @override
   Widget build(BuildContext context) {

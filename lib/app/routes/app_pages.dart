@@ -1,14 +1,16 @@
 // ignore_for_file: constant_identifier_names
 
 import 'package:dart_programing/app/common_widgets/empty_screen.dart';
+import 'package:dart_programing/modules/introduction/bindings/basic_dart_binding.dart';
 import 'package:dart_programing/modules/introduction/bindings/install_dart_binding.dart';
-import 'package:dart_programing/modules/introduction/pages/install_dart.dart';
+import 'package:dart_programing/modules/introduction/pages/basic_dart_page.dart';
+import 'package:dart_programing/modules/introduction/pages/install_dart_page.dart';
 import 'package:get/get.dart';
 import '../../modules/home/bindings/dashboard_binding.dart';
 import '../../modules/home/pages/home_page.dart';
 import '../../modules/control_flow_and_loops/bindings/control_flow_binding.dart';
 import '../../modules/introduction/bindings/introduction_binding.dart';
-import '../../modules/introduction/pages/introduction_to_dart.dart';
+import '../../modules/introduction/pages/introduction_to_dart_page.dart';
 
 part 'app_routes.dart';
 
@@ -28,21 +30,21 @@ class AppPages {
     //Introductions
     GetPage(
       name: _Paths.INTRODUCION,
-      page: () => const IntroductionToDart(),
+      page: () => const IntroductionToDartPage(),
       transition: Transition.rightToLeft,
       binding: IntroductionBinding(),
       children: [
         GetPage(
           name: _Paths.INSTALL_DART,
           transition: Transition.rightToLeft,
-          page: () => const InstallDart(),
+          page: () => const InstallDartPage(),
           binding: InstallDartBinding(),
         ),
         GetPage(
           name: _Paths.DART_BASIC,
           transition: Transition.rightToLeft,
-          page: () => const ComingSoonPage(),
-          binding: IntroductionBinding(),
+          page: () => const BasicDartPage(),
+          binding: BasicDartBinding(),
         ),
         GetPage(
           name: _Paths.VARIABLE_IN_DART,
