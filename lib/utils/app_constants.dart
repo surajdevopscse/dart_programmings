@@ -7,6 +7,10 @@ class AppConstant {
     return tabBarValue;
   }
 
+  static  getBullet() {
+    return '• ';
+  }
+
   static String dartWhy = 'Why Should You Learn Dart?';
   static String summaryTitle = 'Summary';
 

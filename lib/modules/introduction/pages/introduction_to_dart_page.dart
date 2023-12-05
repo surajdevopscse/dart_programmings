@@ -1,15 +1,15 @@
 import 'package:dart_programing/app/common_widgets/big_text.dart';
+import 'package:dart_programing/app/common_widgets/code_widget.dart';
 import 'package:dart_programing/app/common_widgets/common_height.dart';
 
 import 'package:dart_programing/app/common_widgets/page_header.dart';
 import 'package:dart_programing/app/common_widgets/small_text.dart';
+import 'package:dart_programing/utils/app_constants.dart';
 
 import 'package:dart_programing/utils/constants/common_text_style/app_style.dart';
 import 'package:dart_programing/utils/constants/images.dart';
 import 'package:dart_programing/utils/constants/strings/string_keys.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_highlight/flutter_highlight.dart';
-import 'package:flutter_highlight/themes/github.dart';
 
 import 'package:get/get.dart';
 import 'package:svg_flutter/svg.dart';
@@ -152,7 +152,7 @@ class IntroductionToDartPage extends GetView<IntroductionController> {
                                           letterSpacing: 0,
                                           fontWeight: FontWeight.bold,
                                         ),
-                                        text: '• ${e[0]}',
+                                        text: '${AppConstant.getBullet()} ${e[0]}',
                                         children: <InlineSpan>[
                                           TextSpan(
                                             text: e[1],
@@ -222,20 +222,7 @@ class IntroductionToDartPage extends GetView<IntroductionController> {
                                       ),
                                     ),
                                     if (e[0] == 'Expressions: ')
-                                      SizedBox(
-                                        width: double.infinity,
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(16.0),
-                                          child: HighlightView(
-                                            controller.expresion,
-                                            language: 'dart',
-                                            theme: githubTheme,
-                                            padding: const EdgeInsets.all(12),
-                                            textStyle:
-                                                const TextStyle(fontSize: 16),
-                                          ),
-                                        ),
-                                      ),
+                                      CodeWidget(code: controller.expresion),
                                     const CommonHeight(
                                       height: 10,
                                     ),
