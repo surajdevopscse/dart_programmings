@@ -20,7 +20,7 @@ abstract class StringKeys {
   static String get libraries => 'Libraries'.tr;
   static String get string => 'String'.tr;
   static String get keywords => 'Keywords'.tr;
-    static String get finalVsConst => 'Final Vs Const'.tr;
+  static String get finalVsConst => 'Final Vs Const'.tr;
   static String get dateTime => 'DateTime'.tr;
 
   //Controlls and Flow
@@ -54,7 +54,7 @@ abstract class StringKeys {
   static String get whereInDart => 'Where '.tr;
 
   //File Handling
-   static String get fileHandling => 'File Handling'.tr;
+  static String get fileHandling => 'File Handling'.tr;
   static String get readFile => 'Read File'.tr;
   static String get writeFile => 'Write File'.tr;
   static String get deleteFile => 'Delete File'.tr;
