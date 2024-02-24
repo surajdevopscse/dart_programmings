@@ -2,11 +2,15 @@ typedef I = Resource;
 
 abstract class Resource {
   static const leanrnDartLogo = "assets/images/logo.png";
+  static const basicDart = "assets/images/basic.png";
   static const homeSvg = "assets/images/home.svg";
   static const diffrence = "assets/images/diffrence.svg";
-    static const install = "assets/images/install.svg";
-  static const icCamera = "assets/images/icCamera.svg";
+  static const install = "assets/images/install.svg";
+  static const staticVariable = "assets/images/static_variable.png";
+  static const variable = "assets/images/variable.png";
+  static const instanceVariable = "assets/images/instance_variable.png";
 
+  static const icCamera = "assets/images/icCamera.svg";
   static const icCalendar = "assets/images/icCalendar.svg";
   static const icTotalLead = "assets/images/icTotalLead.svg";
   static const icPendingLeads = "assets/images/icPendingLeads.svg";

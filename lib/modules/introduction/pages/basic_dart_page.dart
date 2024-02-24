@@ -7,6 +7,7 @@ import 'package:dart_programing/modules/introduction/controllers/basic_dart_cont
 import 'package:dart_programing/utils/app_constants.dart';
 import 'package:dart_programing/utils/constants/colors.dart';
 import 'package:dart_programing/utils/constants/common_text_style/app_style.dart';
+import 'package:dart_programing/utils/constants/images.dart';
 import 'package:dart_programing/utils/constants/strings/string_keys.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -68,6 +69,7 @@ class BasicDartPage extends GetView<BasicDartController> {
                         ),
                       ),
                       CodeWidget(code: controller.helloWorld),
+                      Center(child: Image.asset(I.basicDart)),
                       BigText(
                         text: 'Output : ',
                         style: AppStyle.globalBigTextStyle.copyWith(
@@ -174,10 +176,11 @@ class BasicDartPage extends GetView<BasicDartController> {
                         ),
                       ),
                       SmallText(
-                          text:
-                              'Performing addition, subtraction, multiplication, and division in dart.',
-                          style: AppStyle.globalSmallTextStyle
-                              .copyWith(fontSize: 16)),
+                        text:
+                            'Performing addition, subtraction, multiplication, and division in dart.',
+                        style: AppStyle.globalSmallTextStyle
+                            .copyWith(fontSize: 16),
+                      ),
                       CodeWidget(code: controller.basicCalculation),
                       BigText(
                         text: 'Output : ',

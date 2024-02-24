@@ -7,6 +7,7 @@ import 'package:dart_programing/modules/introduction/controllers/variables_coont
 import 'package:dart_programing/utils/app_constants.dart';
 import 'package:dart_programing/utils/constants/colors.dart';
 import 'package:dart_programing/utils/constants/common_text_style/app_style.dart';
+import 'package:dart_programing/utils/constants/images.dart';
 import 'package:dart_programing/utils/constants/strings/string_keys.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -68,6 +69,12 @@ class VariablesDart extends GetView<VaribalesController> {
                         ),
                       ),
                       CodeWidget(code: controller.variableExample),
+                      Center(
+                        child: Padding(
+                          padding: const EdgeInsets.all(40.0),
+                          child: Image.asset(I.variable),
+                        ),
+                      ),
                       BigText(
                         text: 'Variable Types : ',
                         style: AppStyle.globalBigTextStyle.copyWith(
@@ -256,7 +263,7 @@ class VariablesDart extends GetView<VaribalesController> {
                           fontWeight: FontWeight.normal,
                         ),
                       ),
-                       BigText(
+                      BigText(
                         text: 'Naming Convention Example : ',
                         style: AppStyle.globalBigTextStyle.copyWith(
                           fontSize: 24,
@@ -265,8 +272,159 @@ class VariablesDart extends GetView<VaribalesController> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                       CodeWidget(
+                      CodeWidget(
                         code: controller.nameingConvetionExample,
+                      ),
+                      BigText(
+                        text: 'Dart has 4 types of variables namely : ',
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                          fontSize: 24,
+                          letterSpacing: 1.8,
+                          height: 2.5,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const CommonHeight(
+                        height: 10,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: controller.typesOfVaribales
+                            .map(
+                              (e) => Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  SmallText(
+                                    textAlign: TextAlign.start,
+                                    text: '${AppConstant.getBullet()} $e',
+                                    style: AppStyle.globalBigTextStyle.copyWith(
+                                      fontSize: 18,
+                                      letterSpacing: 0,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            )
+                            .toList(),
+                      ),
+                      const CommonHeight(
+                        height: 20,
+                      ),
+                      BigText(
+                        text: 'Top-Level variables : ',
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                          fontSize: 24,
+                          letterSpacing: 1.8,
+                          height: 2.5,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      BigText(
+                        text:
+                            'Top-level variables are variables that are not linked to any class and that can be accessed from anywhere else in your program.',
+                        style: AppStyle.globalSmallTextStyle.copyWith(
+                          fontSize: 20,
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+                      BigText(
+                        text: 'Static variables : ',
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                          fontSize: 24,
+                          letterSpacing: 1.8,
+                          height: 2.5,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      BigText(
+                        text:
+                            'Static variables are variables that are related to the class. (mostly called class variables). That is a member variable of a given class that is shared across all instances (objects).',
+                        style: AppStyle.globalSmallTextStyle.copyWith(
+                          fontSize: 20,
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+                      Center(child: Image.asset(I.staticVariable)),
+                      BigText(
+                        text: 'Example: ',
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                          fontSize: 24,
+                          letterSpacing: 1.8,
+                          height: 2.5,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      CodeWidget(
+                        code: controller.staticVarExample,
+                      ),
+                      BigText(
+                        text: 'Instance variables : ',
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                          fontSize: 24,
+                          letterSpacing: 1.8,
+                          height: 2.5,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      BigText(
+                        text:
+                            'Instance variables are variables that are defined in the class, for which each instantiated object of that class has a separate copy or instance of the variables.',
+                        style: AppStyle.globalSmallTextStyle.copyWith(
+                          fontSize: 20,
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+                      Center(child: Image.asset(I.instanceVariable)),
+                      BigText(
+                        text: 'Example: ',
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                          fontSize: 24,
+                          letterSpacing: 1.8,
+                          height: 2.5,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      CodeWidget(
+                        code: controller.instanceVarExample,
+                      ),
+                      BigText(
+                        text: 'Local variables : ',
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                          fontSize: 24,
+                          letterSpacing: 1.8,
+                          height: 2.5,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      BigText(
+                        text:
+                            'Local variables are variables that only exist within a local scope meaning they can only exist only within the local context of a function or method.',
+                        style: AppStyle.globalSmallTextStyle.copyWith(
+                          fontSize: 20,
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+                      BigText(
+                        text: 'Example: ',
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                          fontSize: 24,
+                          letterSpacing: 1.8,
+                          height: 2.5,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      CodeWidget(
+                        code: controller.localVarExample,
+                      ),
+                      BigText(
+                        text:
+                            'In the above example, the variables number and x are local variables, which means they can only with the local scope of the function calculate. After the calculate function executes, the local variables will no longer exist except of cases of closures.',
+                        style: AppStyle.globalSmallTextStyle.copyWith(
+                          fontSize: 20,
+                          fontWeight: FontWeight.normal,
+                        ),
                       ),
                       const CommonHeight(
                         height: 80,

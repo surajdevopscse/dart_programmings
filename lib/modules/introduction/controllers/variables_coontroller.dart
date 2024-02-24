@@ -71,6 +71,66 @@ Married Status is false
     'Blank spaces are not allowed in a variable name.',
     'Special characters are not allowed except for the underscore (_) and the dollar (\$) sign.',
   ];
+
+  List<String> typesOfVaribales = [
+    'Top-level variables.',
+    'Static variables.',
+    'Instance variables.',
+    'Local variables.',
+  ];
+
+  String staticVarExample = '''
+void main() {
+
+print(A.id);
+
+}
+
+class A {
+
+static int id = 0;
+
+}
+
+''';
+
+  String instanceVarExample = '''
+void main(List<String> args) {
+
+Car toyota = Car(color: “Red”, model: “RAV4”);
+
+Car nissan = Car(color: “Yellow”, model: “Altima”);
+
+print(toyota.model); // RAV4
+
+print(nissan.model); // Altima
+
+}
+
+class Car{
+
+String color;
+
+String model;
+
+Car({this.color, this.model});
+
+}''';
+
+  String localVarExample = '''
+void main(List<String> args) {
+
+print(calculate(4)); // 5
+
+}
+
+int calculate(int number){
+
+int x = 5;
+
+return x+number;
+
+}''';
   String constants =
       'Constant is the type of variable whose value never changes. In programming, changeable values are mutable and unchangeable values are immutable. Sometimes, you don’t need to change the value once declared. Like the value of PI=3.14, it never changes. To create a constant in Dart, you can use the const keyword';
 
