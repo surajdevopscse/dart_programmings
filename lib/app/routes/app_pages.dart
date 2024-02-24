@@ -2,9 +2,11 @@
 
 import 'package:dart_programing/app/common_widgets/empty_screen.dart';
 import 'package:dart_programing/modules/introduction/bindings/basic_dart_binding.dart';
+import 'package:dart_programing/modules/introduction/bindings/data_types_binding.dart';
 import 'package:dart_programing/modules/introduction/bindings/install_dart_binding.dart';
 import 'package:dart_programing/modules/introduction/bindings/variables_binding.dart';
 import 'package:dart_programing/modules/introduction/pages/basic_dart_page.dart';
+import 'package:dart_programing/modules/introduction/pages/data_types.dart';
 import 'package:dart_programing/modules/introduction/pages/install_dart_page.dart';
 import 'package:dart_programing/modules/introduction/pages/variables_page.dart';
 import 'package:get/get.dart';
@@ -57,8 +59,8 @@ class AppPages {
         GetPage(
           name: _Paths.DATA_TYPES_IN_DART,
           transition: Transition.rightToLeft,
-          page: () => const ComingSoonPage(),
-          binding: IntroductionBinding(),
+          page: () => const DataTypes(),
+          binding: DataTypesBinding(),
         ),
         GetPage(
           name: _Paths.COMMENTS_IN_DART,
