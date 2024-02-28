@@ -2,7 +2,6 @@ import 'dart:math';
 
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:dart_programing/app/common_widgets/footer.dart';
-import 'package:dart_programing/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -29,7 +28,7 @@ Future<void> initServices() async {
   await Get.putAsync(() => SharedPreferenceService().init());
   await Get.putAsync(() => Webservice().init());
   await Get.putAsync(() => SettingsService().init());
-  // Get.lazyPut(() => SideMenuController());
+  Get.lazyPut(() => SideMenuController());
   Get.put(SideMenuController());
 }
 
@@ -51,26 +50,31 @@ class MyApp extends StatelessWidget {
               builder: (context, constraints) {
                 final width = constraints.maxWidth;
                 final tempSideMenuWidth = width * (280 / 1728);
-                final sideMenuWidth = max(tempSideMenuWidth, 150).toDouble();
+                final sideMenuWidth = max(tempSideMenuWidth, 260).toDouble();
                 return Material(
-                  color: AppColors.baseWhite,
                   child: Stack(
                     children: [
                       Positioned.fill(
                         left: sideMenuWidth,
-                        child: GetMaterialApp(
-                          debugShowCheckedModeBanner: false,
-                          title: "Learn Dart Programming",
-                          initialRoute: AppPages.INITIAL,
-                          getPages: AppPages.routes,
-                          translations: Strings(),
-                          locale: const Locale('en', 'US'),
-                          fallbackLocale: const Locale('en', 'US'),
-                          theme: theme,
-                          darkTheme: darkTheme,
-                          navigatorObservers: [
-                            CustomNavigatorObserver(),
-                          ],
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                            left: width / 8,
+                            right: width / 8,
+                          ),
+                          child: GetMaterialApp(
+                            debugShowCheckedModeBanner: false,
+                            title: "Learn Dart Programming",
+                            initialRoute: AppPages.INITIAL,
+                            getPages: AppPages.routes,
+                            translations: Strings(),
+                            locale: const Locale('en', 'US'),
+                            fallbackLocale: const Locale('en', 'US'),
+                            theme: theme,
+                            darkTheme: darkTheme,
+                            navigatorObservers: [
+                              CustomNavigatorObserver(),
+                            ],
+                          ),
                         ),
                       ),
                       Positioned.directional(
