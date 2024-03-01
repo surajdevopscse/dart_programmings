@@ -28,6 +28,11 @@ class DataTypesController extends GetxController {
     ['Null', 'null', 'It represents null value.'],
   ];
 
+  List<List<String>> specialCharactor = [
+    ['Special Character', 'Work'],
+    ['\\n', 'New Line'],
+    ['\\t', 'Tab'],
+  ];
   String numbersExample = '''void main() {
 // Declaring Variables  
 int num1 = 100; // without decimal point.
@@ -112,6 +117,151 @@ I am also writing here.
 print("Multiline text is \$multiLineText");
 print("Other multiline text is \$otherMultiLineText");
 }''';
+
+  String specialString = '''
+void main() {
+// Using \\n and \\t   
+print("I am from \\nUS.");
+print("I am from \\tUS.");
+}
+''';
+
+  String specialStringOutput = '''
+I am from 
+US.
+I am from 	US.
+''';
+
+  String rawString = '''
+void main() {
+// Set price value
+num price = 10;
+String withoutRawString = "The value of price is \\t \$price"; // regular String
+String withRawString =r"The value of price is \\t \$price"; // raw String
+
+print("Without Raw: \$withoutRawString"); // regular result
+print("With Raw: \$withRawString"); // with raw result
+
+}
+''';
+
+  String rawStringOutput = '''
+Without Raw: The value of price is 	 10
+With Raw: The value of price is \\t \$price
+''';
+
+  String convertStringIntoInt = '''
+void main() {
+String strvalue = "1";
+print("Type of strvalue is \${strvalue.runtimeType}");   
+int intvalue = int.parse(strvalue);
+print("Value of intvalue is \$intvalue");
+// this will print data type
+print("Type of intvalue is \${intvalue.runtimeType}");
+}
+''';
+
+  String convertStringIntoIntOutput = '''
+Type of strvalue is String
+Value of intvalue is 1
+Type of intvalue is int
+''';
+
+  String stringToDouble = '''
+void main() {
+String strvalue = "1.1";
+print("Type of strvalue is \${strvalue.runtimeType}");
+double doublevalue = double.parse(strvalue);
+print("Value of doublevalue is \$doublevalue");
+// this will print data type
+print("Type of doublevalue is \${doublevalue.runtimeType}");
+}
+''';
+
+  String stringToDoubleOutput = '''
+Type of strvalue is String
+Value of doublevalue is 1.1
+Type of doublevalue is double
+''';
+
+  String intToString = '''
+void main() {
+int one = 1;
+print("Type of one is \${one.runtimeType}");
+String oneInString = one.toString(); 
+print("Value of oneInString is \$oneInString");
+// this will print data type
+print("Type of oneInString is \${oneInString.runtimeType}");
+}
+''';
+
+  String intTStringOutput = '''
+Type of one is int
+Value of oneInString is 1
+Type of oneInString is String
+''';
+
+  String doubleToInt = '''
+void main() { 
+   double num1 = 10.01;
+   int num2 = num1.toInt(); // converting double to int
+
+  print("The value of num1 is \$num1. Its type is \${num1.runtimeType}");
+  print("The value of num2 is \$num2. Its type is \${num2.runtimeType}");
+}
+''';
+
+  String doubleToIntOutput = '''
+The value of num1 is 10.01. Its type is double
+The value of num2 is 10. Its type is int
+
+''';
+
+  List<String> booleans = [
+    'Are you single?',
+    'Is the door close?',
+    'Does a dog fly?',
+    'Is the traffic light red?',
+    'Are you older than your brother?',
+  ];
+
+  String boolExample = '''
+void main() {
+bool isSingle = true;
+print("UnMarried Status: \$isSingle");
+}
+''';
+
+  String boolExampleOutput = '''
+UnMarried Status: true
+''';
+
+  String listExample = '''
+void main() {
+List<String> names = ["Raj", "Suraj", "Akash"];
+print("Value of names is \$names");
+print("Value of names[0] is \${names[0]}"); // index 0
+print("Value of names[1] is \${names[1]}"); // index 1
+print("Value of names[2] is \${names[2]}"); // index 2
+
+  // Finding Length of List 
+int length = names.length;  
+print("The Length of names is \$length");
+}
+''';
+
+  String listExampleOutput = '''
+Value of names is [Raj, Suraj, Akash]
+Value of names[0] is Raj
+Value of names[1] is Suraj
+Value of names[2] is Akash
+The Length of names is 3
+''';
+
+  List<String> typesOfList = [
+    'Fixed Length List',
+    'Growable List',
+  ];
   @override
   void onInit() async {
     scrollController = ScrollController()

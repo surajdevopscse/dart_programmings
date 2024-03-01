@@ -348,6 +348,361 @@ class DataTypes extends GetView<DataTypesController> {
                       CodeWidget(
                         code: controller.stringOutput,
                       ),
+                      BigText(
+                        text: 'Special Character In String: ',
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                          fontSize: 24,
+                          letterSpacing: 1.8,
+                          height: 2.5,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Table(
+                        border: TableBorder.all(),
+                        children: List.generate(
+                          controller.specialCharactor.length,
+                          (index) => TableRow(
+                            children: [
+                              TableCell(
+                                child: Center(
+                                    child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    controller.specialCharactor[index][0],
+                                    style:
+                                        AppStyle.globalSmallTextStyle.copyWith(
+                                      fontSize: index == 0 ? 20 : 16,
+                                      letterSpacing: 0,
+                                      fontWeight: index == 0
+                                          ? FontWeight.bold
+                                          : FontWeight.w100,
+                                    ),
+                                  ),
+                                )),
+                              ),
+                              TableCell(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Center(
+                                      child: Text(
+                                    controller.specialCharactor[index][1],
+                                    style:
+                                        AppStyle.globalSmallTextStyle.copyWith(
+                                      fontSize: index == 0 ? 20 : 16,
+                                      letterSpacing: 0,
+                                      fontWeight: index == 0
+                                          ? FontWeight.bold
+                                          : FontWeight.w100,
+                                    ),
+                                  )),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      CodeWidget(code: controller.specialString),
+                      BigText(
+                        text: 'Output : ',
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                          fontSize: 18,
+                          letterSpacing: 1.8,
+                          height: 2.5,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      CodeWidget(
+                        code: controller.specialStringOutput,
+                      ),
+                      BigText(
+                        text: 'Create A Raw String In Dart: ',
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                          fontSize: 24,
+                          letterSpacing: 1.8,
+                          height: 2.5,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      BigText(
+                        text:
+                            'You can also create raw string in dart. Special characters will not work here. You must write r after equal sign.',
+                        style: AppStyle.globalSmallTextStyle.copyWith(
+                          fontSize: 20,
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+                      CodeWidget(code: controller.rawString),
+                      BigText(
+                        text: 'Output : ',
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                          fontSize: 18,
+                          letterSpacing: 1.8,
+                          height: 2.5,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      CodeWidget(
+                        code: controller.rawStringOutput,
+                      ),
+                      BigText(
+                        text: 'Type Conversion In Dart: ',
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                          fontSize: 24,
+                          letterSpacing: 1.8,
+                          height: 2.5,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      BigText(
+                        text:
+                            'In dart, type conversion allows you to convert one data type to another type. For e.g. to convert String to int, int to String or String to bool, etc.',
+                        style: AppStyle.globalSmallTextStyle.copyWith(
+                          fontSize: 20,
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+                      BigText(
+                        text: 'Convert String To Int In Dart: ',
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                          fontSize: 24,
+                          letterSpacing: 1.8,
+                          height: 2.5,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      BigText(
+                        text:
+                            'You can convert String to int using int.parse() method. The method takes String as an argument and converts it into an integer.',
+                        style: AppStyle.globalSmallTextStyle.copyWith(
+                          fontSize: 20,
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+                      CodeWidget(code: controller.convertStringIntoInt),
+                      BigText(
+                        text: 'Output : ',
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                          fontSize: 18,
+                          letterSpacing: 1.8,
+                          height: 2.5,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      CodeWidget(
+                        code: controller.convertStringIntoIntOutput,
+                      ),
+                      BigText(
+                        text: 'Convert String To Double In Dart: ',
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                          fontSize: 24,
+                          letterSpacing: 1.8,
+                          height: 2.5,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      BigText(
+                        text:
+                            'You can convert String to double using double.parse() method. The method takes String as an argument and converts it into a double.',
+                        style: AppStyle.globalSmallTextStyle.copyWith(
+                          fontSize: 20,
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+                      CodeWidget(code: controller.stringToDouble),
+                      BigText(
+                        text: 'Output : ',
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                          fontSize: 18,
+                          letterSpacing: 1.8,
+                          height: 2.5,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      CodeWidget(
+                        code: controller.stringToDoubleOutput,
+                      ),
+                      BigText(
+                        text: 'Convert Int To String In Dart: ',
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                          fontSize: 24,
+                          letterSpacing: 1.8,
+                          height: 2.5,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      BigText(
+                        text:
+                            'You can convert int to String using the toString() method. Here is example:.',
+                        style: AppStyle.globalSmallTextStyle.copyWith(
+                          fontSize: 20,
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+                      CodeWidget(code: controller.intToString),
+                      BigText(
+                        text: 'Output : ',
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                          fontSize: 18,
+                          letterSpacing: 1.8,
+                          height: 2.5,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      CodeWidget(
+                        code: controller.intTStringOutput,
+                      ),
+                      BigText(
+                        text: 'Convert Double To Int In Dart: ',
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                          fontSize: 24,
+                          letterSpacing: 1.8,
+                          height: 2.5,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      BigText(
+                        text:
+                            'You can convert double to int using the toInt() method.',
+                        style: AppStyle.globalSmallTextStyle.copyWith(
+                          fontSize: 20,
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+                      CodeWidget(code: controller.intToString),
+                      BigText(
+                        text: 'Output : ',
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                          fontSize: 18,
+                          letterSpacing: 1.8,
+                          height: 2.5,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      CodeWidget(
+                        code: controller.intTStringOutput,
+                      ),
+                      BigText(
+                        text: 'Booleans: ',
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                          fontSize: 24,
+                          letterSpacing: 1.8,
+                          height: 2.5,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      BigText(
+                        text:
+                            'Boolean data type is used to hold true and false values. Boolean data type uses the ‘bool‘ keyword on declaration time. In Dart, boolean holds either true or false value. You can write the bool keyword to define the boolean data type. You can use boolean if the answer is true or false. Consider the answer to the following questions:',
+                        style: AppStyle.globalSmallTextStyle.copyWith(
+                          fontSize: 20,
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: controller.booleans
+                            .map((e) => Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    SmallText(
+                                      textAlign: TextAlign.start,
+                                      text: '${AppConstant.getBullet()} $e',
+                                      style: AppStyle.globalSmallTextStyle
+                                          .copyWith(
+                                        fontSize: 18,
+                                        letterSpacing: 0,
+                                        fontWeight: FontWeight.w300,
+                                      ),
+                                    ),
+                                  ],
+                                ))
+                            .toList(),
+                      ),
+                      BigText(
+                        text:
+                            'These all are yes/no questions. Its a good idea to store them in boolean. ',
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                          fontSize: 15,
+                          letterSpacing: 1.8,
+                          height: 2.5,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      CodeWidget(
+                        code: controller.boolExample,
+                      ),
+                      BigText(
+                        text: 'Output : ',
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                          fontSize: 18,
+                          letterSpacing: 1.8,
+                          height: 2.5,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      CodeWidget(
+                        code: controller.boolExampleOutput,
+                      ),
+                      BigText(
+                        text: 'Lists: ',
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                          fontSize: 24,
+                          letterSpacing: 1.8,
+                          height: 2.5,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      BigText(
+                        text:
+                            'A very commonly used collection in programming is an array. Dart represents arrays in the form of List objects. A List is simply an ordered group of objects. The dart:core library provides the List class that enables creation and manipulation of lists. The list holds multiple values in a single variable. It is also called arrays. If you want to store multiple values without creating multiple variables, you can use a list.',
+                        style: AppStyle.globalSmallTextStyle.copyWith(
+                          fontSize: 20,
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+                      const CommonHeight(),
+                      BigText(
+                        text:
+                            'Each element in the List is identified by a unique number called the index. The index starts from zero and extends up to n-1 where n is the total number of elements in the List. The index is also referred to as the subscript.',
+                        style: AppStyle.globalSmallTextStyle.copyWith(
+                          fontSize: 20,
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+                      CodeWidget(
+                        code: controller.listExample,
+                      ),
+                      BigText(
+                        text: 'Output : ',
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                          fontSize: 18,
+                          letterSpacing: 1.8,
+                          height: 2.5,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      CodeWidget(
+                        code: controller.listExampleOutput,
+                      ),
+                      BigText(
+                        text: 'Types of List: ',
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                          fontSize: 24,
+                          letterSpacing: 1.8,
+                          height: 2.5,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      BigText(
+                        text:
+                            'In Dart, the type of list can be inferred based on how it\'s initialized and used. There are two main types of lists:',
+                        style: AppStyle.globalSmallTextStyle.copyWith(
+                          fontSize: 20,
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
                       const CommonHeight(
                         height: 80,
                       ),
