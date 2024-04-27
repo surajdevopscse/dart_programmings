@@ -25,12 +25,11 @@ class SideMenuController extends GetxController {
       if (child != null && selectedChild!.childPath != currentRoute) {
         selectedChild = child;
         selectedParent = parent;
-        // AppPages.router.go(selectedChild!.childPath!);
         if (selectedChild!.childPath == parent.parentPath) {
           AppPages.router.go(selectedParent.parentPath);
         } else {
           AppPages.router
-              .go(selectedParent.parentPath + '/' + selectedChild!.childPath!);
+              .go('${selectedParent.parentPath}/${selectedChild!.childPath!}');
         }
 
         update();
