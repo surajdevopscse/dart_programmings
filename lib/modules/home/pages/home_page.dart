@@ -6,6 +6,7 @@ import 'package:dart_programing/utils/constants/colors.dart';
 import 'package:dart_programing/utils/constants/common_text_style/app_style.dart';
 import 'package:dart_programing/utils/constants/images.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:svg_flutter/svg_flutter.dart';
 import '../controllers/home_controller.dart';
@@ -35,7 +36,10 @@ class HomePage extends GetView<HomeController> {
               ),
               SliverToBoxAdapter(
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 16.0, right: 8.0),
+                  padding: EdgeInsets.only(
+                    left: 60.0.w,
+                    right: 60.0.w,
+                  ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -77,7 +81,8 @@ class HomePage extends GetView<HomeController> {
                                     (point) => Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
-                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
                                       children: [
                                         BigText(
                                           text: point[0],
@@ -89,7 +94,8 @@ class HomePage extends GetView<HomeController> {
                                             SmallText(
                                               textAlign: TextAlign.start,
                                               text: point[1],
-                                              style: AppStyle.globalSmallTextStyle
+                                              style: AppStyle
+                                                  .globalSmallTextStyle
                                                   .copyWith(
                                                 fontSize: 20,
                                                 letterSpacing: 0,

@@ -13,10 +13,8 @@ class SideMenuView extends GetView<SideMenuController> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: GetBuilder<SideMenuController>(builder: (_) {
-        return Container(
+        return SizedBox(
           height: double.maxFinite,
-          decoration: const BoxDecoration(
-              border: Border(right: BorderSide(color: Colors.blue))),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

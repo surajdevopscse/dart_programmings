@@ -1,21 +1,26 @@
 import 'dart:math';
 
 import 'package:adaptive_theme/adaptive_theme.dart';
+import 'package:dart_programing/app/app_services.dart';
 import 'package:dart_programing/app/common_widgets/footer.dart';
+import 'package:dart_programing/app/device_screen_type.dart';
 import 'package:dart_programing/app/routes/app_pages.dart';
+import 'package:dart_programing/utils/extention.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
 import 'package:dart_programing/app/views/side_menu/side_menu_controller.dart';
 
 import 'package:dart_programing/utils/theme/dark_theme.dart';
 import 'package:dart_programing/utils/theme/light_theme.dart';
+import 'package:url_strategy/url_strategy.dart';
 
 import 'app/views/side_menu/side_menu_view.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
+  setPathUrlStrategy();
   runApp(const MyApp());
 }
 
@@ -44,41 +49,52 @@ class MyApp extends StatelessWidget {
               backButtonDispatcher: AppPages.router.backButtonDispatcher,
               defaultTransition: Transition.noTransition,
               builder: (context, child) {
-                return LayoutBuilder(builder: (context, constraints) {
-                  final width = constraints.maxWidth;
-                  final tempSideMenuWidth = width * (280 / 1728);
-                  final sideMenuWidth = max(tempSideMenuWidth, 260).toDouble();
-
-                  return Stack(
-                    children: [
-                      Positioned.fill(
-                        left: sideMenuWidth,
-                        child: Padding(
-                          padding: EdgeInsets.only(
-                            left: width / 8,
-                            right: width / 8,
+                return ScreenUtilInit(
+                  minTextAdapt: true,
+                  rebuildFactor: (old, data) {
+                    final newSize = Size(
+                      data.size.width - data.viewPadding.horizontal,
+                      data.size.height - data.viewPadding.vertical,
+                    );
+                    final newScreenType = DeviceScreenType.fromSize(newSize);
+                    if (AS.deviceScreenType.isUnidentified) {
+                      AS.deviceScreenType = newScreenType;
+                      return true;
+                    }
+                    if (AS.deviceScreenType != newScreenType) {
+                      AS.deviceScreenType = newScreenType;
+                      FocusScope.of(context).requestFocus(FocusNode());
+                      return true;
+                    }
+                    return PlatformFunc.isDesktop;
+                  },
+                  builder: (context, _) {
+                    return LayoutBuilder(builder: (context, constraints) {
+                      final width = constraints.maxWidth.toInt();
+                      final tempSideMenuWidth = width * (280 / 1728);
+                      final sideMenuWidth = max(tempSideMenuWidth, 150).toInt();
+                      return Column(
+                        children: [
+                          Expanded(
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  flex: sideMenuWidth,
+                                  child: const SideMenuView(),
+                                ),
+                                Expanded(
+                                  flex: width - sideMenuWidth,
+                                  child: child ?? const SizedBox.shrink(),
+                                )
+                              ],
+                            ),
                           ),
-                          child: child,
-                        ),
-                      ),
-                      Positioned.directional(
-                        textDirection: TextDirection.ltr,
-                        top: 0,
-                        bottom: 0,
-                        start: 0,
-                        width: sideMenuWidth,
-                        child: const SideMenuView(),
-                      ),
-                      Positioned(
-                        bottom: 0,
-                        child: SizedBox(
-                          width: MediaQuery.of(context).size.width,
-                          child: const AppFooter(),
-                        ),
-                      ),
-                    ],
-                  );
-                });
+                          const AppFooter(),
+                        ],
+                      );
+                    });
+                  },
+                );
               },
             );
           },

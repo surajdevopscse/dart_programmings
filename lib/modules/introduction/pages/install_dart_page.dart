@@ -7,6 +7,7 @@ import 'package:dart_programing/utils/constants/common_text_style/app_style.dart
 import 'package:dart_programing/utils/constants/images.dart';
 import 'package:dart_programing/utils/constants/strings/string_keys.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:svg_flutter/svg_flutter.dart';
 
@@ -35,7 +36,10 @@ class InstallDartPage extends GetView<InstallDartController> {
               ),
               SliverToBoxAdapter(
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 16.0, right: 8.0),
+                 padding: EdgeInsets.only(
+                    left: 60.0.w,
+                    right: 60.0.w,
+                  ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
