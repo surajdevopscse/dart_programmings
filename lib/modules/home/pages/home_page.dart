@@ -1,6 +1,7 @@
 import 'package:dart_programing/app/common_widgets/big_text.dart';
 import 'package:dart_programing/app/common_widgets/common_height.dart';
 import 'package:dart_programing/app/common_widgets/small_text.dart';
+import 'package:dart_programing/app/device_screen_type.dart';
 import 'package:dart_programing/utils/app_constants.dart';
 import 'package:dart_programing/utils/constants/colors.dart';
 import 'package:dart_programing/utils/constants/common_text_style/app_style.dart';
@@ -36,9 +37,12 @@ class HomePage extends GetView<HomeController> {
               ),
               SliverToBoxAdapter(
                 child: Padding(
-                  padding: EdgeInsets.only(
-                    left: 60.0.w,
-                    right: 60.0.w,
+                  padding: ScreenSpecific(
+                    desktop: EdgeInsets.only(
+                      left: 54.0.w,
+                      right: 54.0.w,
+                    ),
+                    fallback: const EdgeInsets.symmetric(horizontal: 10),
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

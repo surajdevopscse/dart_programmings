@@ -3,6 +3,7 @@ import 'package:dart_programing/app/common_widgets/code_widget.dart';
 import 'package:dart_programing/app/common_widgets/common_height.dart';
 import 'package:dart_programing/app/common_widgets/page_header.dart';
 import 'package:dart_programing/app/common_widgets/small_text.dart';
+import 'package:dart_programing/app/device_screen_type.dart';
 import 'package:dart_programing/modules/introduction/controllers/variables_coontroller.dart';
 import 'package:dart_programing/utils/app_constants.dart';
 import 'package:dart_programing/utils/constants/colors.dart';
@@ -38,9 +39,12 @@ class VariablesDart extends GetView<VaribalesController> {
               ),
               SliverToBoxAdapter(
                 child: Padding(
-                  padding: EdgeInsets.only(
-                    left: 60.0.w,
-                    right: 60.0.w,
+                  padding: ScreenSpecific(
+                    desktop: EdgeInsets.only(
+                      left: 54.0.w,
+                      right: 54.0.w,
+                    ),
+                    fallback: const EdgeInsets.symmetric(horizontal: 10),
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

@@ -29,74 +29,60 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<AdaptiveThemeMode?>(
-      future: AdaptiveTheme.getThemeMode(),
-      builder: (context, snapshot) {
-        return AdaptiveTheme(
-          light: AppLightTheme.data,
-          dark: AppDarkTheme.data,
-          debugShowFloatingThemeButton: true,
-          initial: snapshot.data ?? AdaptiveThemeMode.system,
-          builder: (theme, darkTheme) {
-            return GetMaterialApp.router(
-              debugShowCheckedModeBanner: false,
-              initialBinding: BindingsBuilder.put(() => SideMenuController()),
-              title: "Dart",
-              routeInformationParser: AppPages.router.routeInformationParser,
-              routeInformationProvider:
-                  AppPages.router.routeInformationProvider,
-              routerDelegate: AppPages.router.routerDelegate,
-              backButtonDispatcher: AppPages.router.backButtonDispatcher,
-              defaultTransition: Transition.noTransition,
-              builder: (context, child) {
-                return ScreenUtilInit(
-                  minTextAdapt: true,
-                  rebuildFactor: (old, data) {
-                    final newSize = Size(
-                      data.size.width - data.viewPadding.horizontal,
-                      data.size.height - data.viewPadding.vertical,
-                    );
-                    final newScreenType = DeviceScreenType.fromSize(newSize);
-                    if (AS.deviceScreenType.isUnidentified) {
-                      AS.deviceScreenType = newScreenType;
-                      return true;
-                    }
-                    if (AS.deviceScreenType != newScreenType) {
-                      AS.deviceScreenType = newScreenType;
-                      FocusScope.of(context).requestFocus(FocusNode());
-                      return true;
-                    }
-                    return PlatformFunc.isDesktop;
-                  },
-                  builder: (context, _) {
-                    return LayoutBuilder(builder: (context, constraints) {
-                      final width = constraints.maxWidth.toInt();
-                      final tempSideMenuWidth = width * (280 / 1728);
-                      final sideMenuWidth = max(tempSideMenuWidth, 150).toInt();
-                      return Column(
-                        children: [
-                          Expanded(
-                            child: Row(
-                              children: [
-                                Expanded(
-                                  flex: sideMenuWidth,
-                                  child: const SideMenuView(),
-                                ),
-                                Expanded(
-                                  flex: width - sideMenuWidth,
-                                  child: child ?? const SizedBox.shrink(),
-                                )
-                              ],
-                            ),
-                          ),
-                          const AppFooter(),
-                        ],
-                      );
-                    });
-                  },
-                );
-              },
+    return GetMaterialApp.router(
+      debugShowCheckedModeBanner: false,
+      initialBinding: BindingsBuilder.put(() => SideMenuController()),
+      title: "Dart",
+      routeInformationParser: AppPages.router.routeInformationParser,
+      routeInformationProvider: AppPages.router.routeInformationProvider,
+      routerDelegate: AppPages.router.routerDelegate,
+      backButtonDispatcher: AppPages.router.backButtonDispatcher,
+      defaultTransition: Transition.noTransition,
+      builder: (context, child) {
+        return ScreenUtilInit(
+          minTextAdapt: true,
+          rebuildFactor: (old, data) {
+            final newSize = Size(
+              data.size.width - data.viewPadding.horizontal,
+              data.size.height - data.viewPadding.vertical,
             );
+            final newScreenType = DeviceScreenType.fromSize(newSize);
+            if (AS.deviceScreenType.isUnidentified) {
+              AS.deviceScreenType = newScreenType;
+              return true;
+            }
+            if (AS.deviceScreenType != newScreenType) {
+              AS.deviceScreenType = newScreenType;
+              FocusScope.of(context).requestFocus(FocusNode());
+              return true;
+            }
+            return true;
+          },
+          builder: (context, _) {
+            return LayoutBuilder(builder: (context, constraints) {
+              final width = constraints.maxWidth.toInt();
+              final tempSideMenuWidth = width * (280 / 1728);
+              final sideMenuWidth = max(tempSideMenuWidth, 150).toInt();
+              return Column(
+                children: [
+                  Expanded(
+                    child: Row(
+                      children: [
+                        Expanded(
+                          flex: sideMenuWidth,
+                          child: const SideMenuView(),
+                        ),
+                        Expanded(
+                          flex: width - sideMenuWidth,
+                          child: child ?? const SizedBox.shrink(),
+                        )
+                      ],
+                    ),
+                  ),
+                  const AppFooter(),
+                ],
+              );
+            });
           },
         );
       },
