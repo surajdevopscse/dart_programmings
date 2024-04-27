@@ -1,12 +1,13 @@
+import 'package:dart_programing/app/routes/path.dart';
+
 import '../../../utils/constants/images.dart';
 import '../../../utils/constants/strings/string_keys.dart';
-import '../../routes/app_pages.dart';
 
 enum SideNavBarParentEnum {
   //Home
   home(
     children: [],
-    parentPath: Routes.HOME,
+    parentPath: AppPath.HOME,
   ),
   //Introduction
   introductionAndSyntax(
@@ -24,7 +25,7 @@ enum SideNavBarParentEnum {
       SideNavBarChildEnum.finalVSConst,
       SideNavBarChildEnum.dateTimeInDart,
     ],
-    parentPath: Routes.INTRODUCTION,
+    parentPath: AppPath.INTRODUCION,
   ),
 
   //Control Flow and Loops
@@ -42,7 +43,7 @@ enum SideNavBarParentEnum {
       SideNavBarChildEnum.breakContinue,
       SideNavBarChildEnum.exception,
     ],
-    parentPath: Routes.CONDITIONS,
+    parentPath: AppPath.CONDITIONS,
   ),
 
 //Funtions In Dart
@@ -56,7 +57,7 @@ enum SideNavBarParentEnum {
       SideNavBarChildEnum.scope,
       SideNavBarChildEnum.mathInDart,
     ],
-    parentPath: Routes.FUNCTIONS,
+    parentPath: AppPath.FUNCTIONS,
   ),
 
 //Colletions in Dart
@@ -67,7 +68,7 @@ enum SideNavBarParentEnum {
       SideNavBarChildEnum.mapInDart,
       SideNavBarChildEnum.whereInDart,
     ],
-    parentPath: Routes.LISTINDART,
+    parentPath: AppPath.LISTINDART,
   ),
 
 //FileHanding In Dart
@@ -77,7 +78,7 @@ enum SideNavBarParentEnum {
       SideNavBarChildEnum.writeFile,
       SideNavBarChildEnum.deleteFile,
     ],
-    parentPath: Routes.READFILE,
+    parentPath: AppPath.READFILE,
   ),
 
   //OOPS in Dart
@@ -108,7 +109,7 @@ enum SideNavBarParentEnum {
       SideNavBarChildEnum.callableObject,
       SideNavBarChildEnum.factoryConstructor,
     ],
-    parentPath: Routes.OOPSINDART,
+    parentPath: AppPath.OOPSINDART,
   ),
 
   //Null Safety
@@ -118,7 +119,7 @@ enum SideNavBarParentEnum {
       SideNavBarChildEnum.typePromotions,
       SideNavBarChildEnum.lateKeywords,
     ],
-    parentPath: Routes.NullSAFETY,
+    parentPath: AppPath.NullSAFETY,
   ),
 
 //Async Programming
@@ -130,7 +131,7 @@ enum SideNavBarParentEnum {
       SideNavBarChildEnum.streamInDart,
       SideNavBarChildEnum.isolate,
     ],
-    parentPath: Routes.ASYNCPROGRAMMING,
+    parentPath: AppPath.ASYNCPROGRAMMING,
   ),
   ;
 
@@ -189,236 +190,236 @@ enum SideNavBarParentEnum {
 
 enum SideNavBarChildEnum {
   //HOME
-  home(childPath: Routes.HOME),
+  home(childPath: AppPath.HOME),
   //Introduction to Dart
   introductionToDart(
-    childPath: Routes.INTRODUCTION,
+    childPath: AppPath.INTRODUCION,
   ),
   installDart(
-    childPath: Routes.INSTALL_DART,
+    childPath: AppPath.INSTALL_DART,
   ),
   dartBasic(
-    childPath: Routes.DART_BASIC,
+    childPath: AppPath.DART_BASIC,
   ),
   variables(
-    childPath: Routes.VARIABLE,
+    childPath: AppPath.VARIABLE_IN_DART,
   ),
   dataTypes(
-    childPath: Routes.DATATYPES,
+    childPath: AppPath.DATA_TYPES_IN_DART,
   ),
   comments(
-    childPath: Routes.COMMENTS,
+    childPath: AppPath.COMMENTS_IN_DART,
   ),
   oprators(
-    childPath: Routes.OPRATOR,
+    childPath: AppPath.OPRATOR_IN_DART,
   ),
   userInput(
-    childPath: Routes.USERINPUT,
+    childPath: AppPath.USER_INPUT_IN_DART,
   ),
   metaData(
-    childPath: Routes.METADATA,
+    childPath: AppPath.METADATA_IN_DART,
   ),
   libraries(
-    childPath: Routes.LIBRARIES,
+    childPath: AppPath.LIBRARIES_AND_IMPORTS_IN_DART,
   ),
   string(
-    childPath: Routes.STRING,
+    childPath: AppPath.STRING_IN_DART,
   ),
   keywords(
-    childPath: Routes.KEYWORDS,
+    childPath: AppPath.KEYWORDS_IN_DART,
   ),
   finalVSConst(
-    childPath: Routes.FINALVSCONST,
+    childPath: AppPath.FINAL_VS_CONST,
   ),
   dateTimeInDart(
-    childPath: Routes.DATETIME,
+    childPath: AppPath.DATETIME,
   ),
 
   //Control Flow
   controllFLow(
-    childPath: Routes.CONDITIONS,
+    childPath: AppPath.CONDITIONS,
   ),
   assertInDart(
-    childPath: Routes.ASSERT,
+    childPath: AppPath.ASSERT,
   ),
   switchCase(
-    childPath: Routes.SWITCH,
+    childPath: AppPath.SWITCH,
   ),
   ternery(
-    childPath: Routes.TERNERY,
+    childPath: AppPath.TERNERY,
   ),
   loops(
-    childPath: Routes.LOOPS,
+    childPath: AppPath.LOOPS,
   ),
   forLoop(
-    childPath: Routes.FORLOOP,
+    childPath: AppPath.FORLOOP,
   ),
   forEachLoop(
-    childPath: Routes.FOREACHLOOP,
+    childPath: AppPath.FOREACHLOOP,
   ),
   whileLoop(
-    childPath: Routes.WHILE,
+    childPath: AppPath.WHILE,
   ),
   doWhileLoop(
-    childPath: Routes.DOWHILE,
+    childPath: AppPath.DOWHILE,
   ),
   breakContinue(
-    childPath: Routes.BREAKCONTINUE,
+    childPath: AppPath.BREAK,
   ),
   conditions(
-    childPath: Routes.CONDITIONS,
+    childPath: AppPath.CONDITIONS,
   ),
   exception(
-    childPath: Routes.EXCEPTION,
+    childPath: AppPath.EXCEPTION,
   ),
   //Funtions
   functions(
-    childPath: Routes.FUNCTIONS,
+    childPath: AppPath.FUNCTIONS,
   ),
   typesOfFunctions(
-    childPath: Routes.TYPESOFFUNCTIONS,
+    childPath: AppPath.TYPESOFFUNCTIONS,
   ),
   functionParameter(
-    childPath: Routes.FUNCTIONPARAMETER,
+    childPath: AppPath.FUNCTIONPARAMETER,
   ),
   anonymousFunctions(
-    childPath: Routes.ANONYMOUSFUNCTION,
+    childPath: AppPath.ANONYMOUSFUNCTIONS,
   ),
   arrowFunctions(
-    childPath: Routes.ARROWFUNCTIONS,
+    childPath: AppPath.ARROWFUNCTIONS,
   ),
   scope(
-    childPath: Routes.SCOPE,
+    childPath: AppPath.SCOPE,
   ),
   mathInDart(
-    childPath: Routes.MATHINDART,
+    childPath: AppPath.MATHINDART,
   ),
 
   //Collections In Dart
   listInDart(
-    childPath: Routes.LISTINDART,
+    childPath: AppPath.LISTINDART,
   ),
   setInDart(
-    childPath: Routes.SETINDART,
+    childPath: AppPath.SETINDART,
   ),
   mapInDart(
-    childPath: Routes.MAPINDART,
+    childPath: AppPath.MAPINDART,
   ),
   whereInDart(
-    childPath: Routes.WHERE,
+    childPath: AppPath.WHERE,
   ),
 
   //File Handling in Dart
   readFile(
-    childPath: Routes.READFILE,
+    childPath: AppPath.READFILE,
   ),
   writeFile(
-    childPath: Routes.WRITEFILE,
+    childPath: AppPath.WRITEFILE,
   ),
   deleteFile(
-    childPath: Routes.DELETEFILE,
+    childPath: AppPath.DELETEFILE,
   ),
 
   //OOPS in Dart
   oopsInDart(
-    childPath: Routes.OOPSINDART,
+    childPath: AppPath.OOPSINDART,
   ),
   classInDart(
-    childPath: Routes.CLASINDART,
+    childPath: AppPath.CLASINDART,
   ),
   objectInDart(
-    childPath: Routes.OBJECTINDART,
+    childPath: AppPath.OBJECTINDART,
   ),
   classAndObject(
-    childPath: Routes.CLASSANDOBJECT,
+    childPath: AppPath.CLASSANDOBJECT,
   ),
   constructor(
-    childPath: Routes.CONSTRUCTOR,
+    childPath: AppPath.CONSTRUCTOR,
   ),
   defaultConstructor(
-    childPath: Routes.DEFAULTCONSTRUCTOR,
+    childPath: AppPath.DEFAULTCONSTRUCTOR,
   ),
   paramterizedConstructor(
-    childPath: Routes.PARAMETERIZEDCONSTRUCTOR,
+    childPath: AppPath.PARAMETERIZEDCONSTRUCTOR,
   ),
   namedConstructor(
-    childPath: Routes.NAMEDCONSTRUCTOR,
+    childPath: AppPath.NAMEDCONSTRUCTOR,
   ),
   constantContructor(
-    childPath: Routes.CONSTANTCONTRUCTOR,
+    childPath: AppPath.CONSTANTCONTRUCTOR,
   ),
   encapsulation(
-    childPath: Routes.ENCAPSULATION,
+    childPath: AppPath.ENCAPSULATION,
   ),
   getter(
-    childPath: Routes.GETTER,
+    childPath: AppPath.GETTER,
   ),
   setter(
-    childPath: Routes.SETTER,
+    childPath: AppPath.SETTER,
   ),
   inheritence(
-    childPath: Routes.INHERITENCE,
+    childPath: AppPath.INHERITENCE,
   ),
   polymorphism(
-    childPath: Routes.POLYMORPHISM,
+    childPath: AppPath.POLYMORPHISM,
   ),
   static(
-    childPath: Routes.STATIS,
+    childPath: AppPath.STATIS,
   ),
   superInDart(
-    childPath: Routes.SUPERINDART,
+    childPath: AppPath.SUPERINDART,
   ),
   enumInDart(
-    childPath: Routes.ENUM,
+    childPath: AppPath.ENUM,
   ),
   abstarctClassInDart(
-    childPath: Routes.ABSTRACTINDSRT,
+    childPath: AppPath.ABSTRACTINDSRT,
   ),
   interface(
-    childPath: Routes.INTERFACE,
+    childPath: AppPath.INTERFACE,
   ),
   mixinInDart(
-    childPath: Routes.MIXINDART,
+    childPath: AppPath.MIXINDART,
   ),
   generic(
-    childPath: Routes.GENERIC,
+    childPath: AppPath.GENERIC,
   ),
   extension(
-    childPath: Routes.EXTENSION,
+    childPath: AppPath.EXTENSION,
   ),
   callableObject(
-    childPath: Routes.CALLABLEOBJECT,
+    childPath: AppPath.CALLABLEOBJECT,
   ),
   factoryConstructor(
-    childPath: Routes.FACTORYCONSTRUCTOR,
+    childPath: AppPath.FACTORYCONSTRUCTOR,
   ),
 
   //Null Safety
   nullSafety(
-    childPath: Routes.NullSAFETY,
+    childPath: AppPath.NullSAFETY,
   ),
   typePromotions(
-    childPath: Routes.TYPEPROMOTIONS,
+    childPath: AppPath.TYPEPROMOTIONS,
   ),
   lateKeywords(
-    childPath: Routes.LATE,
+    childPath: AppPath.LATE,
   ),
 
   //Asynchronous Programing
   asyncProgramming(
-    childPath: Routes.ASYNCPROGRAMMING,
+    childPath: AppPath.ASYNCPROGRAMMING,
   ),
   futureInDart(
-    childPath: Routes.FUTURE,
+    childPath: AppPath.FUTURE,
   ),
   asyncAndAwait(
-    childPath: Routes.ASYNCANDAWAIT,
+    childPath: AppPath.ASYNCANDAWAIT,
   ),
   streamInDart(
-    childPath: Routes.STREAM,
+    childPath: AppPath.STREAM,
   ),
   isolate(
-    childPath: Routes.ISOLATE,
+    childPath: AppPath.ISOLATE,
   ),
   ;
 

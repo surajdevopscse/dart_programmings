@@ -1,3 +1,5 @@
+import 'package:dart_programing/app/views/enum/side_menu_enum.dart';
+import 'package:dart_programing/app/views/side_menu/side_menu_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -91,6 +93,10 @@ dart run''';
           showBackToTopButton = false;
         }
       });
+    Get.find<SideMenuController>().selectPage(
+      parent: SideNavBarParentEnum.introductionAndSyntax,
+      child: SideNavBarChildEnum.dartBasic,
+    );
     update();
     super.onInit();
   }
@@ -98,5 +104,11 @@ dart run''';
   void scrollToTop() {
     scrollController.animateTo(0,
         duration: const Duration(seconds: 1), curve: Curves.linear);
+  }
+
+  @override
+  void dispose() {
+    scrollController.dispose();
+    super.dispose();
   }
 }

@@ -1,3 +1,5 @@
+import 'package:dart_programing/app/views/enum/side_menu_enum.dart';
+import 'package:dart_programing/app/views/side_menu/side_menu_controller.dart';
 import 'package:dart_programing/utils/constants/images.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -29,6 +31,9 @@ class HomeController extends GetxController {
         videoController.play();
         videoController.setLooping(true);
       });
+    Get.find<SideMenuController>().selectPage(
+      parent: SideNavBarParentEnum.home,
+    );
     update();
     super.onInit();
   }

@@ -1,3 +1,5 @@
+import 'package:dart_programing/app/views/enum/side_menu_enum.dart';
+import 'package:dart_programing/app/views/side_menu/side_menu_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -143,6 +145,10 @@ class IntroductionController extends GetxController {
           showBackToTopButton = false;
         }
       });
+    Get.find<SideMenuController>().selectPage(
+      parent: SideNavBarParentEnum.introductionAndSyntax,
+      child: SideNavBarChildEnum.introductionToDart,
+    );
     update();
     super.onInit();
   }

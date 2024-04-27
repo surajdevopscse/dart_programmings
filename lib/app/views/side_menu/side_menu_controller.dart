@@ -1,71 +1,62 @@
+import 'package:dart_programing/app/routes/app_pages.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../enum/side_menu_enum.dart';
 
 class SideMenuController extends GetxController {
-  late SideNavBarParentEnum selectedParent = getParentNavEnumByURL();
+  SideNavBarParentEnum selectedParent = SideNavBarParentEnum.home;
   SideNavBarChildEnum? selectedChild;
-  late Map<int, bool> expansionList;
+  bool isExpande = true;
 
-  @override
-  void onInit() {
-    expansionList =
-        SideNavBarParentEnum.values.asMap().map((i, v) => MapEntry(i, false));
-    super.onInit();
-  }
+  void navigate(
+      {required SideNavBarParentEnum parent, SideNavBarChildEnum? child}) {
+    final currentRoute = Get.currentRoute;
 
-  SideNavBarParentEnum getParentNavEnumByURL() {
-    String currentRoute = Uri.base.toString().replaceAll(Uri.base.origin, '');
-    if (currentRoute.startsWith('/#/')) {
-      currentRoute = currentRoute.replaceRange(0, 2, '');
-    } else if (currentRoute.startsWith('#')) {
-      currentRoute = currentRoute.replaceRange(0, 1, '');
+    if (parent.children.isEmpty) {
+      if (currentRoute != parent.parentPath) {
+        AppPages.router.go(parent.parentPath);
+        selectedParent = parent;
+        update();
+      }
+
+      return;
+    } else {
+      if (child != null && selectedChild!.childPath != currentRoute) {
+        selectedChild = child;
+        selectedParent = parent;
+        // AppPages.router.go(selectedChild!.childPath!);
+        if (selectedChild!.childPath == parent.parentPath) {
+          AppPages.router.go(selectedParent.parentPath);
+        } else {
+          AppPages.router
+              .go(selectedParent.parentPath + '/' + selectedChild!.childPath!);
+        }
+
+        update();
+        return;
+      } else {
+        // on Parent Tab
+
+        if (currentRoute != parent.parentPath) {
+          AppPages.router.go(parent.parentPath);
+          selectedChild = parent.children[0];
+          selectedParent = parent;
+          update();
+        }
+      }
     }
-    return SideNavBarParentEnum.values.firstWhereOrNull((e) {
-          return currentRoute.startsWith(e.parentPath);
-        }) ??
-        SideNavBarParentEnum.home;
   }
 
-  void navigate({
+  void selectPage({
     required SideNavBarParentEnum parent,
     SideNavBarChildEnum? child,
   }) {
-    final currentRoute = Get.currentRoute;
+    selectedParent = parent;
+    selectedChild = child;
 
-    if ((selectedParent == parent) && (selectedChild == child)) {
-      return;
-    } else {
-      selectedParent = parent;
-      // when parent have not children
-      if (parent.children.isEmpty) {
-        if (selectedParent.parentPath != currentRoute) {
-          Get.toNamed(selectedParent.parentPath);
-          selectedChild = child;
-        }
-
-        // update()
-        return;
-        // when tab on parent
-      } else if (child == null) {
-        // Don't Navigate on collapse
-        if (parent.children.contains(selectedChild)) {
-          return;
-        }
-        selectedChild = parent.children[0];
-        // when tab on child
-      } else {
-        // Open Dialog
-        if (child.childPath == null) {
-          return;
-        }
-
-        selectedChild = child;
-      }
-      if ((selectedChild!.childPath!) != currentRoute) {
-        Get.toNamed(selectedChild!.childPath!);
-        update();
-      }
-    }
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      update();
+    });
   }
 }
