@@ -1,9 +1,13 @@
+import 'package:dart_programing/app/app_services.dart';
 import 'package:dart_programing/app/common_widgets/big_text.dart';
 import 'package:dart_programing/app/common_widgets/code_widget.dart';
 import 'package:dart_programing/app/common_widgets/common_height.dart';
 import 'package:dart_programing/app/common_widgets/page_header.dart';
+import 'package:dart_programing/app/common_widgets/previous_next_btn.dart';
 import 'package:dart_programing/app/common_widgets/small_text.dart';
 import 'package:dart_programing/app/device_screen_type.dart';
+import 'package:dart_programing/app/routes/app_pages.dart';
+import 'package:dart_programing/app/routes/path.dart';
 import 'package:dart_programing/modules/introduction/controllers/data_types_controller.dart';
 import 'package:dart_programing/utils/app_constants.dart';
 import 'package:dart_programing/utils/constants/colors.dart';
@@ -25,6 +29,7 @@ class DataTypes extends GetView<DataTypesController> {
           CustomScrollView(
             controller: controller.scrollController,
             slivers: [
+               if(!AS.deviceScreenType.isMobile)
               SliverAppBar(
                 toolbarHeight: 60,
                 automaticallyImplyLeading: false,
@@ -39,7 +44,7 @@ class DataTypes extends GetView<DataTypesController> {
               ),
               SliverToBoxAdapter(
                 child: Padding(
-                   padding: ScreenSpecific(
+                  padding: ScreenSpecific(
                     desktop: EdgeInsets.only(
                       left: 54.0.w,
                       right: 54.0.w,
@@ -711,8 +716,231 @@ class DataTypes extends GetView<DataTypesController> {
                           fontWeight: FontWeight.normal,
                         ),
                       ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: controller.typesOfList
+                            .map((e) => Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    SmallText(
+                                      textAlign: TextAlign.start,
+                                      text: '${AppConstant.getBullet()} $e',
+                                      style: AppStyle.globalSmallTextStyle
+                                          .copyWith(
+                                        fontSize: 18,
+                                        letterSpacing: 0,
+                                        fontWeight: FontWeight.w300,
+                                      ),
+                                    ),
+                                  ],
+                                ))
+                            .toList(),
+                      ),
+                      BigText(
+                        text: 'Fixed List: ',
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                          fontSize: 24,
+                          letterSpacing: 1.8,
+                          height: 2.5,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      CodeWidget(
+                        code: controller.fixedList,
+                      ),
+                      BigText(
+                        text: 'Growable List: ',
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                          fontSize: 24,
+                          letterSpacing: 1.8,
+                          height: 2.5,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      CodeWidget(
+                        code: controller.growableeList,
+                      ),
+                      BigText(
+                        text: 'List Properties: ',
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                          fontSize: 24,
+                          letterSpacing: 1.8,
+                          height: 2.5,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SmallText(
+                        text:
+                            'The following table lists some commonly used properties of the List class in the dart:core library.',
+                        style: AppStyle.globalSmallTextStyle.copyWith(
+                          fontSize: 18,
+                        ),
+                      ),
                       const CommonHeight(
-                        height: 80,
+                        height: 10,
+                      ),
+                      Table(
+                        border: TableBorder.all(),
+                        children: List.generate(
+                          controller.listProperties.length,
+                          (index) => TableRow(
+                            children: [
+                              TableCell(
+                                child: Center(
+                                    child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    controller.listProperties[index][0],
+                                    style:
+                                        AppStyle.globalSmallTextStyle.copyWith(
+                                      fontSize: index == 0 ? 20 : 16,
+                                      letterSpacing: 0,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                )),
+                              ),
+                              TableCell(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    controller.listProperties[index][1],
+                                    style:
+                                        AppStyle.globalSmallTextStyle.copyWith(
+                                      fontSize: index == 0 ? 20 : 16,
+                                      letterSpacing: 0,
+                                      fontWeight: index == 0
+                                          ? FontWeight.bold
+                                          : FontWeight.w100,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      BigText(
+                        text: 'Example : ',
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                          fontSize: 18,
+                          letterSpacing: 1.8,
+                          height: 2.5,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      CodeWidget(
+                        code: controller.listPropertiesExample,
+                      ),
+                      BigText(
+                        text: 'Output : ',
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                          fontSize: 18,
+                          letterSpacing: 1.8,
+                          height: 2.5,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      CodeWidget(
+                        code: controller.listPropertiesExampleOutput,
+                      ),
+                      BigText(
+                        text: 'Maps: ',
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                          fontSize: 24,
+                          letterSpacing: 1.8,
+                          height: 2.5,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      BigText(
+                        text:
+                            'In Dart, a map is an object where you can store data in key-value pairs. Each key occurs only once, but you can use same value multiple time. Map are like objects with multiple values.',
+                        style: AppStyle.globalSmallTextStyle.copyWith(
+                          fontSize: 20,
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+                      CodeWidget(
+                        code: controller.maps,
+                      ),
+                      BigText(
+                        text: 'Map — Properties: ',
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                          fontSize: 24,
+                          letterSpacing: 1.8,
+                          height: 2.5,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Table(
+                        border: TableBorder.all(),
+                        children: List.generate(
+                          controller.mapProperties.length,
+                          (index) => TableRow(
+                            children: [
+                              TableCell(
+                                child: Center(
+                                    child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    controller.mapProperties[index][0],
+                                    style:
+                                        AppStyle.globalSmallTextStyle.copyWith(
+                                      fontSize: index == 0 ? 20 : 16,
+                                      letterSpacing: 0,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                )),
+                              ),
+                              TableCell(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    controller.mapProperties[index][1],
+                                    style:
+                                        AppStyle.globalSmallTextStyle.copyWith(
+                                      fontSize: index == 0 ? 20 : 16,
+                                      letterSpacing: 0,
+                                      fontWeight: index == 0
+                                          ? FontWeight.bold
+                                          : FontWeight.w100,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      BigText(
+                        text: 'Example : ',
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                          fontSize: 18,
+                          letterSpacing: 1.8,
+                          height: 2.5,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      CodeWidget(
+                        code: controller.mapPropertiesExapmle,
+                      ),
+                      const CommonHeight(
+                        height: 10,
+                      ),
+                      PreviousNextButton(
+                        back: () {
+                          AppPages.router.go(AppPath.VARIABLE_IN_DART);
+                        },
+                        next: () {
+                          AppPages.router.go(AppPath.COMMENTS_IN_DART);
+                        },
+                      ),
+                      const CommonHeight(
+                        height: 70,
                       ),
                     ],
                   ),
@@ -722,7 +950,7 @@ class DataTypes extends GetView<DataTypesController> {
           ),
           Positioned(
             right: 0,
-            bottom: 0,
+            bottom: AS.deviceScreenType.isDesktop ? 40.h : 60.h,
             child: Align(
               alignment: Alignment.bottomRight,
               child: GestureDetector(

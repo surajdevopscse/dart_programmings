@@ -1,12 +1,13 @@
 import 'package:dart_programing/app/views/enum/side_menu_enum.dart';
 import 'package:dart_programing/app/views/side_menu/side_menu_controller.dart';
+import 'package:dart_programing/modules/home/controllers/app_bar_controller.dart';
+import 'package:dart_programing/utils/constants/strings/string_keys.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class IntroductionController extends GetxController {
   bool showBackToTopButton = false;
   late ScrollController scrollController;
-
   String expresion = '''
  void main() {
   // Example of an expression
@@ -149,6 +150,7 @@ class IntroductionController extends GetxController {
       parent: SideNavBarParentEnum.introductionAndSyntax,
       child: SideNavBarChildEnum.introductionToDart,
     );
+    Get.find<AppBarController>().appBarTitle = SK.introductionToDart;
     update();
     super.onInit();
   }

@@ -1,7 +1,11 @@
+import 'package:dart_programing/app/app_services.dart';
 import 'package:dart_programing/app/common_widgets/big_text.dart';
 import 'package:dart_programing/app/common_widgets/common_height.dart';
 import 'package:dart_programing/app/common_widgets/page_header.dart';
+import 'package:dart_programing/app/common_widgets/previous_next_btn.dart';
 import 'package:dart_programing/app/device_screen_type.dart';
+import 'package:dart_programing/app/routes/app_pages.dart';
+import 'package:dart_programing/app/routes/path.dart';
 import 'package:dart_programing/modules/introduction/controllers/install_dart_controller.dart';
 import 'package:dart_programing/utils/constants/colors.dart';
 import 'package:dart_programing/utils/constants/common_text_style/app_style.dart';
@@ -23,18 +27,19 @@ class InstallDartPage extends GetView<InstallDartController> {
           CustomScrollView(
             controller: controller.scrollController,
             slivers: [
-              SliverAppBar(
-                toolbarHeight: 60,
-                automaticallyImplyLeading: false,
-                elevation: 0,
-                expandedHeight: 60,
-                floating: false,
-                pinned: true,
-                flexibleSpace: PageHeader(
-                  headerName: SK.installDart,
+              if (!AS.deviceScreenType.isMobile)
+                SliverAppBar(
+                  toolbarHeight: 60,
+                  automaticallyImplyLeading: false,
+                  elevation: 0,
+                  expandedHeight: 60,
+                  floating: false,
+                  pinned: true,
+                  flexibleSpace: PageHeader(
+                    headerName: SK.installDart,
+                  ),
+                  backgroundColor: C.primary50,
                 ),
-                backgroundColor: C.primary50,
-              ),
               SliverToBoxAdapter(
                 child: Padding(
                   padding: ScreenSpecific(
@@ -330,7 +335,18 @@ class InstallDartPage extends GetView<InstallDartController> {
                         ),
                       ),
                       const CommonHeight(
-                        height: 80,
+                        height: 10,
+                      ),
+                      PreviousNextButton(
+                        back: () {
+                          AppPages.router.go(AppPath.INTRODUCION);
+                        },
+                        next: () {
+                          AppPages.router.go(AppPath.DART_BASIC);
+                        },
+                      ),
+                      const CommonHeight(
+                        height: 70,
                       ),
                     ],
                   ),
@@ -340,7 +356,7 @@ class InstallDartPage extends GetView<InstallDartController> {
           ),
           Positioned(
             right: 0,
-            bottom: 0,
+            bottom: AS.deviceScreenType.isDesktop ? 40.h : 60.h,
             child: Align(
               alignment: Alignment.bottomRight,
               child: GestureDetector(

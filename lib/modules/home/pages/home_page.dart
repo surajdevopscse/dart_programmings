@@ -1,7 +1,11 @@
+import 'package:dart_programing/app/app_services.dart';
 import 'package:dart_programing/app/common_widgets/big_text.dart';
 import 'package:dart_programing/app/common_widgets/common_height.dart';
+import 'package:dart_programing/app/common_widgets/previous_next_btn.dart';
 import 'package:dart_programing/app/common_widgets/small_text.dart';
 import 'package:dart_programing/app/device_screen_type.dart';
+import 'package:dart_programing/app/routes/app_pages.dart';
+import 'package:dart_programing/app/routes/path.dart';
 import 'package:dart_programing/utils/app_constants.dart';
 import 'package:dart_programing/utils/constants/colors.dart';
 import 'package:dart_programing/utils/constants/common_text_style/app_style.dart';
@@ -25,16 +29,17 @@ class HomePage extends GetView<HomeController> {
           CustomScrollView(
             controller: controller.scrollController,
             slivers: [
-              const SliverAppBar(
-                toolbarHeight: 60,
-                automaticallyImplyLeading: false,
-                elevation: 0,
-                expandedHeight: 60,
-                floating: false,
-                pinned: true,
-                flexibleSpace: PageHeader(),
-                backgroundColor: C.primary50,
-              ),
+              if (!AS.deviceScreenType.isMobile)
+                const SliverAppBar(
+                  toolbarHeight: 60,
+                  automaticallyImplyLeading: false,
+                  elevation: 0,
+                  expandedHeight: 60,
+                  floating: false,
+                  pinned: true,
+                  flexibleSpace: PageHeader(),
+                  backgroundColor: C.primary50,
+                ),
               SliverToBoxAdapter(
                 child: Padding(
                   padding: ScreenSpecific(
@@ -133,7 +138,17 @@ class HomePage extends GetView<HomeController> {
                         ),
                       ),
                       const CommonHeight(
-                        height: 80,
+                        height: 10,
+                      ),
+                      PreviousNextButton(
+                        isEnableBack: false,
+                        back: () {},
+                        next: () {
+                          AppPages.router.go(AppPath.INTRODUCION);
+                        },
+                      ),
+                      const CommonHeight(
+                        height: 70,
                       ),
                     ],
                   ),
@@ -143,7 +158,7 @@ class HomePage extends GetView<HomeController> {
           ),
           Positioned(
             right: 0,
-            bottom: 0,
+            bottom: AS.deviceScreenType.isDesktop ? 40.h : 60.h,
             child: Align(
               alignment: Alignment.bottomRight,
               child: GestureDetector(

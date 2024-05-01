@@ -1,9 +1,13 @@
+import 'package:dart_programing/app/app_services.dart';
 import 'package:dart_programing/app/common_widgets/big_text.dart';
 import 'package:dart_programing/app/common_widgets/code_widget.dart';
 import 'package:dart_programing/app/common_widgets/common_height.dart';
 import 'package:dart_programing/app/common_widgets/page_header.dart';
+import 'package:dart_programing/app/common_widgets/previous_next_btn.dart';
 import 'package:dart_programing/app/common_widgets/small_text.dart';
 import 'package:dart_programing/app/device_screen_type.dart';
+import 'package:dart_programing/app/routes/app_pages.dart';
+import 'package:dart_programing/app/routes/path.dart';
 import 'package:dart_programing/modules/introduction/controllers/variables_coontroller.dart';
 import 'package:dart_programing/utils/app_constants.dart';
 import 'package:dart_programing/utils/constants/colors.dart';
@@ -25,6 +29,7 @@ class VariablesDart extends GetView<VaribalesController> {
           CustomScrollView(
             controller: controller.scrollController,
             slivers: [
+               if(!AS.deviceScreenType.isMobile)
               SliverAppBar(
                 toolbarHeight: 60,
                 automaticallyImplyLeading: false,
@@ -434,8 +439,19 @@ class VariablesDart extends GetView<VaribalesController> {
                           fontWeight: FontWeight.normal,
                         ),
                       ),
+                     const CommonHeight(
+                        height: 10,
+                      ),
+                      PreviousNextButton(
+                        back: () {
+                          AppPages.router.go(AppPath.DART_BASIC);
+                        },
+                        next: () {
+                          AppPages.router.go(AppPath.DATA_TYPES_IN_DART);
+                        },
+                      ),
                       const CommonHeight(
-                        height: 80,
+                        height: 70,
                       ),
                     ],
                   ),
@@ -445,7 +461,7 @@ class VariablesDart extends GetView<VaribalesController> {
           ),
           Positioned(
             right: 0,
-            bottom: 0,
+            bottom: AS.deviceScreenType.isDesktop ? 40.h : 60.h,
             child: Align(
               alignment: Alignment.bottomRight,
               child: GestureDetector(

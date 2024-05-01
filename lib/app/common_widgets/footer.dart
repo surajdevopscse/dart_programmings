@@ -14,27 +14,32 @@ class AppFooter extends GetView<HomeController> {
     return Footer(
       backgroundColor: AppColors.primary700,
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text.rich(
-            TextSpan(
-              style: AppStyle.globalSmallTextStyle.copyWith(
-                color: AppColors.baseWhite,
+          FittedBox(
+            child: Text.rich(
+              TextSpan(
+                style: AppStyle.globalSmallTextStyle.copyWith(
+                  color: AppColors.baseWhite,
+                ),
+                text: 'Copyright © ',
+                children: <InlineSpan>[
+                  TextSpan(
+                    text: 'Learn Dart Programming',
+                    style: AppStyle.globalSmallTextStyle.copyWith(
+                      color: AppColors.baseWhite,
+                    ),
+                  ),
+                  TextSpan(
+                    text:
+                        ' ${DateTime.now().year.toString()} All Right Reserved',
+                    style: AppStyle.globalSmallTextStyle.copyWith(
+                      color: AppColors.baseWhite,
+                    ),
+                  ),
+                ],
               ),
-              text: 'Copyright © ',
-              children: <InlineSpan>[
-                TextSpan(
-                  text: 'Learn Dart Programming',
-                  style: AppStyle.globalSmallTextStyle.copyWith(
-                    color: AppColors.baseWhite,
-                  ),
-                ),
-                TextSpan(
-                  text: ' ${DateTime.now().year.toString()} All Right Reserved',
-                  style: AppStyle.globalSmallTextStyle.copyWith(
-                    color: AppColors.baseWhite,
-                  ),
-                ),
-              ],
             ),
           ),
           SmallText(

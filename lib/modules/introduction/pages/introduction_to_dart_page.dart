@@ -1,10 +1,14 @@
+import 'package:dart_programing/app/app_services.dart';
 import 'package:dart_programing/app/common_widgets/big_text.dart';
 import 'package:dart_programing/app/common_widgets/code_widget.dart';
 import 'package:dart_programing/app/common_widgets/common_height.dart';
 
 import 'package:dart_programing/app/common_widgets/page_header.dart';
+import 'package:dart_programing/app/common_widgets/previous_next_btn.dart';
 import 'package:dart_programing/app/common_widgets/small_text.dart';
 import 'package:dart_programing/app/device_screen_type.dart';
+import 'package:dart_programing/app/routes/app_pages.dart';
+import 'package:dart_programing/app/routes/path.dart';
 import 'package:dart_programing/utils/app_constants.dart';
 
 import 'package:dart_programing/utils/constants/common_text_style/app_style.dart';
@@ -28,18 +32,19 @@ class IntroductionToDartPage extends GetView<IntroductionController> {
           CustomScrollView(
             controller: controller.scrollController,
             slivers: [
-              SliverAppBar(
-                toolbarHeight: 60,
-                automaticallyImplyLeading: false,
-                elevation: 0,
-                expandedHeight: 60,
-                floating: false,
-                pinned: true,
-                flexibleSpace: PageHeader(
-                  headerName: SK.introductionToDart,
+              if (!AS.deviceScreenType.isMobile)
+                SliverAppBar(
+                  toolbarHeight: 60,
+                  automaticallyImplyLeading: false,
+                  elevation: 0,
+                  expandedHeight: 60,
+                  floating: false,
+                  pinned: true,
+                  flexibleSpace: PageHeader(
+                    headerName: SK.introductionToDart,
+                  ),
+                  backgroundColor: C.primary50,
                 ),
-                backgroundColor: C.primary50,
-              ),
               SliverToBoxAdapter(
                 child: Padding(
                   padding: ScreenSpecific(
@@ -160,7 +165,8 @@ class IntroductionToDartPage extends GetView<IntroductionController> {
                                           letterSpacing: 0,
                                           fontWeight: FontWeight.bold,
                                         ),
-                                        text: '${AppConstant.getBullet()} ${e[0]}',
+                                        text:
+                                            '${AppConstant.getBullet()} ${e[0]}',
                                         children: <InlineSpan>[
                                           TextSpan(
                                             text: e[1],
@@ -272,7 +278,18 @@ class IntroductionToDartPage extends GetView<IntroductionController> {
                             .toList(),
                       ),
                       const CommonHeight(
-                        height: 80,
+                        height: 10,
+                      ),
+                      PreviousNextButton(
+                        back: () {
+                          AppPages.router.go(AppPath.HOME);
+                        },
+                        next: () {
+                          AppPages.router.go(AppPath.INSTALL_DART);
+                        },
+                      ),
+                      const CommonHeight(
+                        height: 70,
                       ),
                     ],
                   ),
@@ -282,7 +299,7 @@ class IntroductionToDartPage extends GetView<IntroductionController> {
           ),
           Positioned(
             right: 0,
-            bottom: 0,
+            bottom: AS.deviceScreenType.isDesktop ? 40.h : 60.h,
             child: Align(
               alignment: Alignment.bottomRight,
               child: GestureDetector(

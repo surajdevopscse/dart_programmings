@@ -1,5 +1,7 @@
 import 'package:dart_programing/app/views/enum/side_menu_enum.dart';
 import 'package:dart_programing/app/views/side_menu/side_menu_controller.dart';
+import 'package:dart_programing/modules/home/controllers/app_bar_controller.dart';
+import 'package:dart_programing/utils/constants/strings/string_keys.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -8,7 +10,6 @@ class BasicDartController extends GetxController {
   late ScrollController scrollController;
   String dart =
       'This is a simple dart program that prints Hello World on screen. Most programmers write the Hello World program as their first program.';
-
   String helloWorld = '''
 void main() { 
    print("Hello World!"); 
@@ -97,6 +98,7 @@ dart run''';
       parent: SideNavBarParentEnum.introductionAndSyntax,
       child: SideNavBarChildEnum.dartBasic,
     );
+    Get.find<AppBarController>().appBarTitle = SK.dartBasic;
     update();
     super.onInit();
   }

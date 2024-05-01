@@ -1,5 +1,7 @@
 import 'package:dart_programing/app/views/enum/side_menu_enum.dart';
 import 'package:dart_programing/app/views/side_menu/side_menu_controller.dart';
+import 'package:dart_programing/modules/home/controllers/app_bar_controller.dart';
+import 'package:dart_programing/utils/constants/strings/string_keys.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -7,7 +9,6 @@ import 'package:url_launcher/url_launcher.dart';
 class InstallDartController extends GetxController {
   bool showBackToTopButton = false;
   late ScrollController scrollController;
-
   String dartInstall =
       'There are multiple ways to install a dart on your system. You can install Dart on Windows, Mac, and Linux or run it from the browser.\nTo install Dart, you can follow these general steps. Keep in mind that specific instructions might vary based on your operating system.';
   String dartCheckVersion =
@@ -139,6 +140,7 @@ class InstallDartController extends GetxController {
       parent: SideNavBarParentEnum.introductionAndSyntax,
       child: SideNavBarChildEnum.installDart,
     );
+    Get.find<AppBarController>().appBarTitle = SK.installDart;
     update();
     super.onInit();
   }

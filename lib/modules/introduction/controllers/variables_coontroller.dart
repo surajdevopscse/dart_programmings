@@ -1,5 +1,7 @@
 import 'package:dart_programing/app/views/enum/side_menu_enum.dart';
 import 'package:dart_programing/app/views/side_menu/side_menu_controller.dart';
+import 'package:dart_programing/modules/home/controllers/app_bar_controller.dart';
+import 'package:dart_programing/utils/constants/strings/string_keys.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -9,7 +11,6 @@ class VaribalesController extends GetxController {
 
   String varibales =
       'Consider variables as containers that store data; data types determine the data type they can keep. For example, a variable can have a number, a word, or even a collection of values. Here is an example of creating a variable and initializing it';
-
   String helloWorld = '''
 void main() { 
    print("Hello World!"); 
@@ -167,6 +168,7 @@ const pi = 3.14;
       parent: SideNavBarParentEnum.introductionAndSyntax,
       child: SideNavBarChildEnum.variables,
     );
+    Get.find<AppBarController>().appBarTitle = SK.variables;
     update();
     super.onInit();
   }

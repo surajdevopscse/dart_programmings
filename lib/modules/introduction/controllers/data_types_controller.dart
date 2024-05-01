@@ -1,5 +1,7 @@
 import 'package:dart_programing/app/views/enum/side_menu_enum.dart';
 import 'package:dart_programing/app/views/side_menu/side_menu_controller.dart';
+import 'package:dart_programing/modules/home/controllers/app_bar_controller.dart';
+import 'package:dart_programing/utils/constants/strings/string_keys.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -17,6 +19,7 @@ class DataTypesController extends GetxController {
     'Runes',
     'Null',
   ];
+
 
   List<List<String>> tableData = [
     ['Data Type', 'Keyword', 'Description.'],
@@ -264,6 +267,332 @@ The Length of names is 3
     'Fixed Length List',
     'Growable List',
   ];
+
+  String fixedList = '''
+var list_name = new List(initial_size)
+--------------------------------------------------------------------
+void main() { 
+   var lst = List(3); 
+   lst[0] = 12; 
+   lst[1] = 13; 
+   lst[2] = 11; 
+   print(lst); 
+}
+Output:
+[12, 13, 11]
+''';
+
+  String growableeList = '''
+var list_name = [val1,val2,val3]   
+--- creates a list containing the specified values  
+OR  
+var list_name = [] 
+--- creates a list of size zero
+--------------------------------------------------------------------
+void main() { 
+   var num_list = [1,2,3]; 
+   print(num_list); 
+}
+Output:
+[1, 2, 3]
+''';
+
+  List<List<String>> listProperties = [
+    ['Propeerties', 'Work'],
+    ['first', 'Returns the first element case.'],
+    ['isEmpty', 'Returns true if the collection has no elements.'],
+    ['isNotEmpty', 'Returns true if the collection has at least one element.'],
+    ['length', 'Returns the size of the list.'],
+    ['last', 'Returns the last element in the list.'],
+    [
+      'reversed',
+      'Returns an iterable object containing the lists values in the reverse order.'
+    ],
+    ['Single', 'Checks if the list has only one element and returns it.'],
+    ['add', ' Adds an element to the end of the list.'],
+    ['insert', ' Inserts an element at a specified index.'],
+    ['remove', 'Removes the first occurrence of a specified value.'],
+    ['removeAt', 'Removes the element at the specified index..'],
+    ['contains', 'Checks if the list contains a specified element.'],
+    ['forEach', 'Executes a function on each element in the list.'],
+    [
+      'map',
+      'Returns a new list containing the results of applying a function to each element in the original list.'
+    ],
+    [
+      'where',
+      'Returns a new list containing only the elements that satisfy a predicate function.'
+    ],
+    [
+      'fold',
+      'Combines all elements of the list into a single value by applying a function.'
+    ],
+    ['reduce', ' Similar to fold, but doesn\'t require an initial value.'],
+    ['sort', 'Sorts the list in ascending order.'],
+    [
+      'sublist',
+      'Returns a new list containing a portion of the original list.'
+    ],
+  ];
+
+  String listPropertiesExample = '''
+void main() {
+  // Example list
+  List<int> numbers = [1, 2, 3, 4, 5];
+
+  // first: Returns the first element
+  int firstElement = numbers.first;
+  print("First element: \$firstElement");
+
+  // isEmpty: Returns true if the collection has no elements
+  bool empty = numbers.isEmpty;
+  print("Is the list empty? \$empty");
+
+  // isNotEmpty: Returns true if the collection has at least one element
+  bool notEmpty = numbers.isNotEmpty;
+  print("Is the list not empty? \$notEmpty");
+
+  // length: Returns the size of the list
+  int listLength = numbers.length;
+  print("Length of the list: \$listLength");
+
+  // last: Returns the last element in the list
+  int lastElement = numbers.last;
+  print("Last element: \$lastElement");
+
+  // reversed: Returns an iterable object containing the list's values in reverse order
+  Iterable<int> reversedList = numbers.reversed;
+  print("Reversed list: \$reversedList");
+
+  // Single: Checks if the list has only one element and returns it
+  List<int> singleElementList = [7];
+  int singleElement = singleElementList.single;
+  print("Single element: \$singleElement");
+
+  // add: Adds an element to the end of the list
+  numbers.add(6);
+  print("List after adding element: \$numbers");
+
+  // insert: Inserts an element at a specified index
+  numbers.insert(2, 10);
+  print("List after inserting element: \$numbers");
+
+  // remove: Removes the first occurrence of a specified value
+  numbers.remove(3);
+  print("List after removing element: \$numbers");
+
+  // removeAt: Removes the element at the specified index
+  numbers.removeAt(0);
+  print("List after removing element at index 0: \$numbers");
+
+  // contains: Checks if the list contains a specified element
+  bool containsElement = numbers.contains(10);
+  print("Does the list contain 10? \$containsElement");
+
+  // indexOf: Returns the index of the first occurrence of a specified value
+  int index = numbers.indexOf(5);
+  print("Index of element 5: \$index");
+
+  // forEach: Executes a function on each element in the list
+  numbers.forEach((element) {
+    print("Element: \$element");
+  });
+
+  // map: Returns a new list containing the results of applying a function to each element in the original list
+  List<int> squaredNumbers = numbers.map((number) => number * number).toList();
+  print("Squared numbers: \$squaredNumbers");
+
+  // where: Returns a new list containing only the elements that satisfy a predicate function
+  List<int> evenNumbers = numbers.where((number) => number % 2 == 0).toList();
+  print("Even numbers: \$evenNumbers");
+
+  // fold: Combines all elements of the list into a single value by applying a function
+  int sum = numbers.fold(0, (prev, element) => prev + element);
+  print("Sum of all elements: \$sum");
+
+  // reduce: Similar to fold, but doesn't require an initial value
+  int product = numbers.reduce((prev, element) => prev * element);
+  print("Product of all elements: \$product");
+
+  // sort: Sorts the list in ascending order
+  numbers.sort();
+  print("Sorted list: \$numbers");
+
+  // sublist: Returns a new list containing a portion of the original list
+  List<int> sublist = numbers.sublist(2, 4);
+  print("Sublist from index 2 to 4: \$sublist");
+
+}
+
+''';
+
+  String listPropertiesExampleOutput = '''
+First element: 1
+Is the list empty? false
+Is the list not empty? true
+Length of the list: 5
+Last element: 5
+Reversed list: (5, 4, 3, 2, 1)
+Single element: 7
+List after adding element: [1, 2, 3, 4, 5, 6]
+List after inserting element: [1, 2, 10, 3, 4, 5, 6]
+List after removing element: [1, 2, 10, 4, 5, 6]
+List after removing element at index 0: [2, 10, 4, 5, 6]
+Does the list contain 10? true
+Index of element 5: 3
+Element: 2
+Element: 10
+Element: 4
+Element: 5
+Element: 6
+Squared numbers: [1, 4, 9, 16, 25]
+Even numbers: [2, 4]
+Sum of all elements: 15
+Product of all elements: 120
+Sorted list: [1, 2, 3, 4, 5]
+Sublist from index 2 to 4: [3, 4]
+''';
+
+  String maps = '''
+void main() { 
+   var details = {'Usrname':'harry','Password':'pass@123'}; 
+   print(details); 
+}
+Output :
+{Usrname: tom, Password: pass@123}
+
+*********************************************************
+
+void main() { 
+   var details = {'Usrname':'harry','Password':'pass@123'}; 
+   details['Uid'] = 'U1oo1'; 
+   print(details); 
+}
+Output :
+{Usrname: harry, Password: pass@123, Uid: U1oo1}
+''';
+
+  List<List<String>> mapProperties = [
+    ['keys', 'Returns an iterable object representing keys'],
+    ['values', 'Returns an iterable object representing values'],
+    ['length', 'Returns the size of the Map'],
+    ['isEmpty', 'Returns true if the Map is an empty Map'],
+    ['isNotEmpty', 'Returns true if the Map is not an empty Map'],
+    ['containsKey', 'Returns true if the map contains the given key'],
+    ['containsValue', 'Returns true if the map contains the given value'],
+    [
+      'remove',
+      'removes the entry for the given key and returns its value, or null if it does not exist'
+    ],
+    [
+      'putIfAbsent',
+      'Adds a new entry to the map if the given key does not exist'
+    ],
+    ['clear', 'Removes all key-value pairs from the map'],
+    [
+      'entries',
+      'Returns an iterable object representing key-value pairs (entries)'
+    ],
+    [
+      'update',
+      'Updates the value of the entry with the specified key if it exists, otherwise adds a new entry'
+    ],
+    ['forEach', 'Applies a function to each key-value pair in the map'],
+    ['addAll', 'Adds all key-value pairs from another map to this map'],
+    [
+      'removeWhere',
+      'Removes all entries for which the provided predicate returns true'
+    ],
+    [
+      'putIfAbsent',
+      'Adds a new entry to the map if the given key does not exist, with a value computed by the provided function'
+    ],
+    [
+      'updateAll',
+      'Updates all values in the map by applying a provided function'
+    ],
+    [
+      'cast',
+      'Returns a new map with the same keys and values but with a different static type'
+    ],
+    [
+      'map',
+      'Returns a new map with the same keys as this map, but with values transformed by a given function'
+    ],
+    ['toString', 'Returns a string representation of the map'],
+  ];
+
+  String mapPropertiesExapmle = '''
+Map<String, int> myMap = {
+    'apple': 10,
+    'banana': 5,
+    'orange': 7,
+  };
+
+  // Keys
+  print('Keys: \${myMap.keys}'); // Output: {apple, banana, orange}
+
+  // Values
+  print('Values: \${myMap.values}'); // Output: {10, 5, 7}
+
+  // Length
+  print('Length: \${myMap.length}'); // Output: 3
+
+  // IsEmpty
+  print('IsEmpty: \${myMap.isEmpty}'); // Output: false
+
+  // IsNotEmpty
+  print('IsNotEmpty: \${myMap.isNotEmpty}'); // Output: true
+
+  // ContainsKey
+  print('ContainsKey for "apple": \${myMap.containsKey('apple')}'); // Output: true
+
+  // ContainsValue
+  print('ContainsValue for 5: \${myMap.containsValue(5)}'); // Output: true
+
+  // Remove
+  var removedValue = myMap.remove('banana');
+  print('Removed value for "banana": \$removedValue'); // Output: Removed value for "banana": 5
+
+  // PutIfAbsent
+  myMap.putIfAbsent('grape', () => 20);
+  print('Map after PutIfAbsent: \$myMap'); // Output: {apple: 10, orange: 7, grape: 20}
+
+  // Clear
+  myMap.clear();
+  print('Map after Clear: \$myMap'); // Output: Map after Clear: {}
+
+  // Entries
+  var entries = myMap.entries;
+  print('Entries: \$entries'); // Output: Entries: {}
+
+  // Update
+  myMap.update('apple', (value) => value + 5, ifAbsent: () => 5);
+  print('Map after Update: \$myMap'); // Output: {apple: 15}
+
+  // forEach
+  myMap.forEach((key, value) => print('\$key: \$value')); // Output: apple: 15
+
+  // AddAll
+  myMap.addAll({'banana': 10, 'orange': 12});
+  print('Map after AddAll: \$myMap'); // Output: {apple: 15, banana: 10, orange: 12}
+
+  // RemoveWhere
+  myMap.removeWhere((key, value) => value < 13);
+  print('Map after RemoveWhere: \$myMap'); // Output: {orange: 12}
+
+  // putIfAbsent
+  myMap.putIfAbsent('apple', () => 10);
+  print('Map after putIfAbsent: \$myMap'); // Output: {orange: 12, apple: 10}
+
+  // UpdateAll
+  myMap.updateAll((key, value) => value * 2);
+  print('Map after UpdateAll: \$myMap'); // Output: {orange: 24, apple: 20}
+
+  // Map
+  var mapped = myMap.map((key, value) => MapEntry(key.toUpperCase(), value));
+  print('Mapped Map: \$mapped'); // Output: Mapped Map: {ORANGE: 24, APPLE: 20}
+''';
   @override
   void onInit() async {
     scrollController = ScrollController()
@@ -278,6 +607,7 @@ The Length of names is 3
       parent: SideNavBarParentEnum.introductionAndSyntax,
       child: SideNavBarChildEnum.dataTypes,
     );
+    Get.find<AppBarController>().appBarTitle = SK.dataTypes;
     update();
     super.onInit();
   }

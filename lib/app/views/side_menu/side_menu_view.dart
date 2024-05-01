@@ -1,10 +1,10 @@
+import 'package:dart_programing/app/app_services.dart';
 import 'package:dart_programing/app/views/side_menu/custom_expansion_panel.dart';
 import 'package:dart_programing/app/views/side_menu/nav_tile.dart';
 import 'package:dart_programing/utils/constants/colors.dart';
 import 'package:dart_programing/utils/constants/images.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import 'side_menu_controller.dart';
 import '../enum/side_menu_enum.dart';
 
@@ -70,6 +70,9 @@ class SideMenuView extends GetView<SideMenuController> {
                                       onTap: () {
                                         controller.navigate(
                                             parent: parent, child: child);
+                                        if (AS.deviceScreenType.isMobile) {
+                                          Navigator.pop(context);
+                                        }
                                       },
                                       isSelected:
                                           controller.selectedChild == child,

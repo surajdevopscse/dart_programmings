@@ -27,40 +27,6 @@ enum DeviceScreenType {
   }
 }
 
-class Responsive<T> extends StatelessWidget {
-  final Widget mobile;
-  final Widget? mobileLarge;
-  final Widget? tablet;
-  final Widget desktop;
-
-  const Responsive({
-    required this.mobile,
-    required this.desktop,
-    this.tablet,
-    Key? key,
-    this.mobileLarge,
-  }) : super(key: key);
-
-  static bool isMobile() => Get.size.isMobile;
-
-  static bool isTablet() => Get.size.isTablet;
-
-  static bool isDesktop() => Get.size.isDesktop;
-
-  @override
-  Widget build(BuildContext context) {
-    if (Get.size.isDesktop) {
-      return desktop;
-    } else if (Get.size.isTablet && tablet != null) {
-      return tablet!;
-    } else if (Get.size.isMobile && mobileLarge != null) {
-      return mobileLarge!;
-    } else {
-      return mobile;
-    }
-  }
-}
-
 T ScreenSpecific<T>({
   required T fallback,
   T? fullScreenDesktop,
