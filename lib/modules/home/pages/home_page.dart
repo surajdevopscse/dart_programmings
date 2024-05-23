@@ -5,7 +5,7 @@ import 'package:dart_programing/app/common_widgets/previous_next_btn.dart';
 import 'package:dart_programing/app/common_widgets/small_text.dart';
 import 'package:dart_programing/app/device_screen_type.dart';
 import 'package:dart_programing/app/routes/app_pages.dart';
-import 'package:dart_programing/app/routes/path.dart';
+import 'package:dart_programing/app/views/enum/side_menu_enum.dart';
 import 'package:dart_programing/utils/app_constants.dart';
 import 'package:dart_programing/utils/constants/colors.dart';
 import 'package:dart_programing/utils/constants/common_text_style/app_style.dart';
@@ -144,7 +144,8 @@ class HomePage extends GetView<HomeController> {
                         isEnableBack: false,
                         back: () {},
                         next: () {
-                          AppPages.router.go(AppPath.INTRODUCION);
+                          AppPages.router.goNamed(
+                              SideNavBarParentEnum.introductionAndSyntax.title);
                         },
                       ),
                       const CommonHeight(

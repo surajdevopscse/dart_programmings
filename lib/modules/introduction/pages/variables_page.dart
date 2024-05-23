@@ -7,7 +7,7 @@ import 'package:dart_programing/app/common_widgets/previous_next_btn.dart';
 import 'package:dart_programing/app/common_widgets/small_text.dart';
 import 'package:dart_programing/app/device_screen_type.dart';
 import 'package:dart_programing/app/routes/app_pages.dart';
-import 'package:dart_programing/app/routes/path.dart';
+import 'package:dart_programing/app/views/enum/side_menu_enum.dart';
 import 'package:dart_programing/modules/introduction/controllers/variables_coontroller.dart';
 import 'package:dart_programing/utils/app_constants.dart';
 import 'package:dart_programing/utils/constants/colors.dart';
@@ -29,19 +29,19 @@ class VariablesDart extends GetView<VaribalesController> {
           CustomScrollView(
             controller: controller.scrollController,
             slivers: [
-               if(!AS.deviceScreenType.isMobile)
-              SliverAppBar(
-                toolbarHeight: 60,
-                automaticallyImplyLeading: false,
-                elevation: 0,
-                expandedHeight: 60,
-                floating: false,
-                pinned: true,
-                flexibleSpace: PageHeader(
-                  headerName: SK.variables,
+              if (!AS.deviceScreenType.isMobile)
+                SliverAppBar(
+                  toolbarHeight: 60,
+                  automaticallyImplyLeading: false,
+                  elevation: 0,
+                  expandedHeight: 60,
+                  floating: false,
+                  pinned: true,
+                  flexibleSpace: PageHeader(
+                    headerName: SK.variables,
+                  ),
+                  backgroundColor: C.primary50,
                 ),
-                backgroundColor: C.primary50,
-              ),
               SliverToBoxAdapter(
                 child: Padding(
                   padding: ScreenSpecific(
@@ -439,15 +439,17 @@ class VariablesDart extends GetView<VaribalesController> {
                           fontWeight: FontWeight.normal,
                         ),
                       ),
-                     const CommonHeight(
+                      const CommonHeight(
                         height: 10,
                       ),
                       PreviousNextButton(
                         back: () {
-                          AppPages.router.go(AppPath.DART_BASIC);
+                          AppPages.router
+                              .goNamed(SideNavBarChildEnum.dartBasic.title);
                         },
                         next: () {
-                          AppPages.router.go(AppPath.DATA_TYPES_IN_DART);
+                          AppPages.router
+                              .goNamed(SideNavBarChildEnum.dataTypes.title);
                         },
                       ),
                       const CommonHeight(

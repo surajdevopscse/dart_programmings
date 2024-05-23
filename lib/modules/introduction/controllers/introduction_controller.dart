@@ -150,6 +150,7 @@ class IntroductionController extends GetxController {
       parent: SideNavBarParentEnum.introductionAndSyntax,
       child: SideNavBarChildEnum.introductionToDart,
     );
+
     Get.find<AppBarController>().appBarTitle = SK.introductionToDart;
     update();
     super.onInit();

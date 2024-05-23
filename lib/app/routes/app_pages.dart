@@ -1,5 +1,6 @@
 import 'package:dart_programing/app/common_widgets/empty_screen.dart';
 import 'package:dart_programing/app/routes/path.dart';
+import 'package:dart_programing/app/views/enum/side_menu_enum.dart';
 import 'package:dart_programing/modules/home/controllers/home_controller.dart';
 import 'package:dart_programing/modules/home/pages/home_page.dart';
 import 'package:dart_programing/modules/introduction/controllers/basic_dart_controller.dart';
@@ -30,7 +31,8 @@ class AppPages {
         Get.delete<HomeController>();
         return true;
       },
-      path: AppPath.HOME,
+      name: SideNavBarParentEnum.home.title,
+      path: SideNavBarParentEnum.home.parentPath,
       builder: (context, state) {
         Get.put(HomeController());
         return const HomePage();
@@ -41,7 +43,8 @@ class AppPages {
         Get.delete<IntroductionController>();
         return true;
       },
-      path: AppPath.INTRODUCION,
+      name: SideNavBarParentEnum.introductionAndSyntax.title,
+      path: SideNavBarParentEnum.introductionAndSyntax.parentPath,
       builder: (context, state) {
         Get.put(IntroductionController());
         return const IntroductionToDartPage();
@@ -52,7 +55,8 @@ class AppPages {
             Get.delete<InstallDartController>();
             return true;
           },
-          path: AppPath.INSTALL_DART,
+          name: SideNavBarChildEnum.installDart.title,
+          path: SideNavBarChildEnum.installDart.childPath!,
           builder: (context, state) {
             Get.put(InstallDartController());
             return const InstallDartPage();
@@ -63,7 +67,8 @@ class AppPages {
             Get.delete<BasicDartController>();
             return true;
           },
-          path: AppPath.DART_BASIC,
+          name: SideNavBarChildEnum.dartBasic.title,
+          path: SideNavBarChildEnum.dartBasic.childPath!,
           builder: (context, state) {
             Get.put(BasicDartController());
             return const BasicDartPage();
@@ -74,7 +79,8 @@ class AppPages {
             Get.delete<VaribalesController>();
             return true;
           },
-          path: AppPath.VARIABLE_IN_DART,
+          name: SideNavBarChildEnum.variables.title,
+          path: SideNavBarChildEnum.variables.childPath!,
           builder: (context, state) {
             Get.put(VaribalesController());
             return const VariablesDart();
@@ -85,7 +91,8 @@ class AppPages {
             Get.delete<DataTypesController>();
             return true;
           },
-          path: AppPath.DATA_TYPES_IN_DART,
+          name: SideNavBarChildEnum.dataTypes.title,
+          path: SideNavBarChildEnum.dataTypes.childPath!,
           builder: (context, state) {
             Get.put(DataTypesController());
             return const DataTypes();
@@ -96,7 +103,8 @@ class AppPages {
             Get.delete<HomeController>();
             return true;
           },
-          path: AppPath.COMMENTS_IN_DART,
+          name: SideNavBarChildEnum.comments.title,
+          path: SideNavBarChildEnum.comments.childPath!,
           builder: (context, state) {
             return const ComingSoonPage();
           },
@@ -106,7 +114,8 @@ class AppPages {
             Get.delete<HomeController>();
             return true;
           },
-          path: AppPath.OPRATOR_IN_DART,
+          name: SideNavBarChildEnum.oprators.title,
+          path: SideNavBarChildEnum.oprators.childPath!,
           builder: (context, state) {
             return const ComingSoonPage();
           },
@@ -116,7 +125,8 @@ class AppPages {
             Get.delete<HomeController>();
             return true;
           },
-          path: AppPath.USER_INPUT_IN_DART,
+          name: SideNavBarChildEnum.userInput.title,
+          path: SideNavBarChildEnum.userInput.childPath!,
           builder: (context, state) {
             return const ComingSoonPage();
           },
@@ -126,7 +136,8 @@ class AppPages {
             Get.delete<HomeController>();
             return true;
           },
-          path: AppPath.METADATA_IN_DART,
+          name: SideNavBarChildEnum.metaData.title,
+          path: SideNavBarChildEnum.metaData.childPath!,
           builder: (context, state) {
             return const ComingSoonPage();
           },
@@ -136,7 +147,8 @@ class AppPages {
             Get.delete<HomeController>();
             return true;
           },
-          path: AppPath.LIBRARIES_AND_IMPORTS_IN_DART,
+          name: SideNavBarChildEnum.libraries.title,
+          path: SideNavBarChildEnum.libraries.childPath!,
           builder: (context, state) {
             return const ComingSoonPage();
           },
@@ -146,7 +158,8 @@ class AppPages {
             Get.delete<HomeController>();
             return true;
           },
-          path: AppPath.STRING_IN_DART,
+          name: SideNavBarChildEnum.string.title,
+          path: SideNavBarChildEnum.string.childPath!,
           builder: (context, state) {
             return const ComingSoonPage();
           },
@@ -156,7 +169,8 @@ class AppPages {
             Get.delete<HomeController>();
             return true;
           },
-          path: AppPath.KEYWORDS_IN_DART,
+          name: SideNavBarChildEnum.keywords.title,
+          path: SideNavBarChildEnum.keywords.childPath!,
           builder: (context, state) {
             return const ComingSoonPage();
           },
@@ -166,7 +180,8 @@ class AppPages {
             Get.delete<HomeController>();
             return true;
           },
-          path: AppPath.FINAL_VS_CONST,
+          name: SideNavBarChildEnum.finalVSConst.title,
+          path: SideNavBarChildEnum.finalVSConst.childPath!,
           builder: (context, state) {
             return const ComingSoonPage();
           },
@@ -176,7 +191,8 @@ class AppPages {
             Get.delete<HomeController>();
             return true;
           },
-          path: AppPath.DATETIME,
+          name: SideNavBarChildEnum.dateTimeInDart.title,
+          path: SideNavBarChildEnum.dateTimeInDart.childPath!,
           builder: (context, state) {
             return const ComingSoonPage();
           },

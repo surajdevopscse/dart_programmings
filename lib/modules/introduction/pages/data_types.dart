@@ -7,7 +7,7 @@ import 'package:dart_programing/app/common_widgets/previous_next_btn.dart';
 import 'package:dart_programing/app/common_widgets/small_text.dart';
 import 'package:dart_programing/app/device_screen_type.dart';
 import 'package:dart_programing/app/routes/app_pages.dart';
-import 'package:dart_programing/app/routes/path.dart';
+import 'package:dart_programing/app/views/enum/side_menu_enum.dart';
 import 'package:dart_programing/modules/introduction/controllers/data_types_controller.dart';
 import 'package:dart_programing/utils/app_constants.dart';
 import 'package:dart_programing/utils/constants/colors.dart';
@@ -29,19 +29,19 @@ class DataTypes extends GetView<DataTypesController> {
           CustomScrollView(
             controller: controller.scrollController,
             slivers: [
-               if(!AS.deviceScreenType.isMobile)
-              SliverAppBar(
-                toolbarHeight: 60,
-                automaticallyImplyLeading: false,
-                elevation: 0,
-                expandedHeight: 60,
-                floating: false,
-                pinned: true,
-                flexibleSpace: PageHeader(
-                  headerName: SK.dataTypes,
+              if (!AS.deviceScreenType.isMobile)
+                SliverAppBar(
+                  toolbarHeight: 60,
+                  automaticallyImplyLeading: false,
+                  elevation: 0,
+                  expandedHeight: 60,
+                  floating: false,
+                  pinned: true,
+                  flexibleSpace: PageHeader(
+                    headerName: SK.dataTypes,
+                  ),
+                  backgroundColor: C.primary50,
                 ),
-                backgroundColor: C.primary50,
-              ),
               SliverToBoxAdapter(
                 child: Padding(
                   padding: ScreenSpecific(
@@ -933,10 +933,12 @@ class DataTypes extends GetView<DataTypesController> {
                       ),
                       PreviousNextButton(
                         back: () {
-                          AppPages.router.go(AppPath.VARIABLE_IN_DART);
+                          AppPages.router
+                              .goNamed(SideNavBarChildEnum.variables.title);
                         },
                         next: () {
-                          AppPages.router.go(AppPath.COMMENTS_IN_DART);
+                          AppPages.router
+                              .goNamed(SideNavBarChildEnum.comments.title);
                         },
                       ),
                       const CommonHeight(

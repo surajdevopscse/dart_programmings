@@ -7,7 +7,7 @@ import 'package:dart_programing/app/common_widgets/previous_next_btn.dart';
 import 'package:dart_programing/app/common_widgets/small_text.dart';
 import 'package:dart_programing/app/device_screen_type.dart';
 import 'package:dart_programing/app/routes/app_pages.dart';
-import 'package:dart_programing/app/routes/path.dart';
+import 'package:dart_programing/app/views/enum/side_menu_enum.dart';
 import 'package:dart_programing/modules/introduction/controllers/basic_dart_controller.dart';
 import 'package:dart_programing/utils/app_constants.dart';
 import 'package:dart_programing/utils/constants/colors.dart';
@@ -362,10 +362,12 @@ class BasicDartPage extends GetView<BasicDartController> {
                       ),
                       PreviousNextButton(
                         back: () {
-                          AppPages.router.go(AppPath.INSTALL_DART);
+                          AppPages.router
+                              .goNamed(SideNavBarChildEnum.installDart.title);
                         },
                         next: () {
-                          AppPages.router.go(AppPath.VARIABLE_IN_DART);
+                          AppPages.router
+                              .goNamed(SideNavBarChildEnum.variables.title);
                         },
                       ),
                       const CommonHeight(
