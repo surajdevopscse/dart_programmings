@@ -65,6 +65,25 @@ class DataTypes extends GetView<DataTypesController> {
                           ),
                         ),
                       ),
+                      const CommonHeight(height: 10),
+                      BigText(
+                        text: 'Why Data Types Matter?',
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                          fontSize: 22,
+                          letterSpacing: 1.2,
+                          height: 2,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      BigText(
+                        text:
+                            'Data types are the foundation of programming. They define what kind of data you can store and how you can use it. Choosing the right data type helps you write safer, faster, and more reliable code. In Dart, understanding data types is essential for building robust applications, as it helps prevent bugs and makes your code easier to read and maintain.',
+                        style: AppStyle.globalSmallTextStyle.copyWith(
+                          fontSize: 18,
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+                      const CommonHeight(height: 20),
                       BigText(
                         text: 'Dive into Dart — Data Types : ',
                         style: AppStyle.globalBigTextStyle.copyWith(
@@ -192,7 +211,7 @@ class DataTypes extends GetView<DataTypesController> {
                       ),
                       BigText(
                         text:
-                            'When you need to store numeric value on dart, you can use either int or double. Both int and double are subtypes of num. You can use num to store both int or double value.',
+                            'Numbers are everywhere in programming: from counting items in a list, to tracking scores in a game, or handling money in a finance app. Dart provides two main numeric types: int for whole numbers and double for decimal numbers. Both are subtypes of num, which is useful when you want to accept either type. Choosing the right numeric type helps avoid errors, such as accidentally using a decimal where only whole numbers make sense.',
                         style: AppStyle.globalSmallTextStyle.copyWith(
                           fontSize: 20,
                           fontWeight: FontWeight.normal,
@@ -222,7 +241,7 @@ class DataTypes extends GetView<DataTypesController> {
                       ),
                       BigText(
                         text:
-                            'Integer is a type of non fractional number value without. Here non fractional means a value without point. Integer dose not support POINT values. It can only hold pure numeric values. See the example below.',
+                            'Use int when you need to represent whole numbers, such as the number of people in a room or the year in a calendar. int cannot store decimal values. If you try to assign a decimal to an int, Dart will throw an error. This helps catch mistakes early. For example, ages, counts, and indices are best stored as int.',
                         style: AppStyle.globalSmallTextStyle.copyWith(
                           fontSize: 20,
                           fontWeight: FontWeight.normal,
@@ -252,7 +271,7 @@ class DataTypes extends GetView<DataTypesController> {
                       ),
                       BigText(
                         text:
-                            'Double are basically bigger type of FLOAT values. It can hold fractional decimal values. In dart the double support 64 bit double prescription values. double also represents floating point literals.',
+                            'Use double for numbers with a fractional part, like 3.14 or 99.99. This is useful for measurements, prices, or scientific calculations. Remember that floating-point numbers can sometimes have rounding errors, so avoid using double for precise values like money—consider using packages like decimal for financial calculations.',
                         style: AppStyle.globalSmallTextStyle.copyWith(
                           fontSize: 20,
                           fontWeight: FontWeight.normal,
@@ -312,7 +331,7 @@ class DataTypes extends GetView<DataTypesController> {
                       ),
                       BigText(
                         text:
-                            'String data type represents a sequence of multiple characters text also known as group of multiple characters. In Dart string is sequence of UTF-16 code units. String can be created using both single quotes and double quotes but both should be same a creation time.\nString helps you to store text data. You can store values like I love dart, New York 2140 in String. You can use single or double quotes to store string in dart.',
+                            'Strings are used to represent text, such as names, messages, or any sequence of characters. In Dart, strings are UTF-16 encoded, which means they can store almost any character from any language. Use strings for user input, displaying messages, or storing data like email addresses. Remember to use triple quotes for multi-line strings and escape special characters when needed.',
                         style: AppStyle.globalSmallTextStyle.copyWith(
                           fontSize: 20,
                           fontWeight: FontWeight.normal,
@@ -605,7 +624,7 @@ class DataTypes extends GetView<DataTypesController> {
                       ),
                       BigText(
                         text:
-                            'Boolean data type is used to hold true and false values. Boolean data type uses the ‘bool‘ keyword on declaration time. In Dart, boolean holds either true or false value. You can write the bool keyword to define the boolean data type. You can use boolean if the answer is true or false. Consider the answer to the following questions:',
+                            'Booleans are used for true/false values. They are perfect for representing yes/no questions, toggles, or conditions. For example, isLoggedIn, hasPermission, or isVisible are all good candidates for bool. Using booleans makes your code more readable and helps prevent logic errors.',
                         style: AppStyle.globalSmallTextStyle.copyWith(
                           fontSize: 20,
                           fontWeight: FontWeight.normal,
@@ -669,7 +688,7 @@ class DataTypes extends GetView<DataTypesController> {
                       ),
                       BigText(
                         text:
-                            'A very commonly used collection in programming is an array. Dart represents arrays in the form of List objects. A List is simply an ordered group of objects. The dart:core library provides the List class that enables creation and manipulation of lists. The list holds multiple values in a single variable. It is also called arrays. If you want to store multiple values without creating multiple variables, you can use a list.',
+                            'Lists are ordered collections of items. Think of a shopping list, a list of students, or a playlist of songs. Lists are zero-indexed, meaning the first item is at position 0. Use lists when you need to store multiple values of the same type. Dart supports both fixed-length and growable lists, so you can choose the one that fits your needs.',
                         style: AppStyle.globalSmallTextStyle.copyWith(
                           fontSize: 20,
                           fontWeight: FontWeight.normal,
@@ -857,7 +876,7 @@ class DataTypes extends GetView<DataTypesController> {
                       ),
                       BigText(
                         text:
-                            'In Dart, a map is an object where you can store data in key-value pairs. Each key occurs only once, but you can use same value multiple time. Map are like objects with multiple values.',
+                            'Maps are collections of key-value pairs. They are like dictionaries or address books, where each key is unique and maps to a value. Use maps when you need to associate data, such as storing user profiles by user ID, or looking up translations for words. Remember that keys must be unique, but values can be duplicated.',
                         style: AppStyle.globalSmallTextStyle.copyWith(
                           fontSize: 20,
                           fontWeight: FontWeight.normal,
@@ -931,7 +950,148 @@ class DataTypes extends GetView<DataTypesController> {
                       const CommonHeight(
                         height: 10,
                       ),
-                      PreviousNextButton(
+                      BigText(
+                        text: 'Set: ',
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                          fontSize: 24,
+                          letterSpacing: 1.8,
+                          height: 2.5,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      BigText(
+                        text:
+                            'A Set is an unordered collection of unique items. Use a Set when you want to ensure that no duplicate values are stored, such as a collection of unique tags or IDs.',
+                        style: AppStyle.globalSmallTextStyle.copyWith(
+                          fontSize: 20,
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+                      const CodeWidget(
+                        code: "Set<String> fruits = {'apple', 'banana', 'orange'};\nfruits.add('apple'); // No effect, 'apple' already exists\nprint(fruits); // Output: {apple, banana, orange}",
+                      ),
+                      BigText(
+                        text: 'enum: ',
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                          fontSize: 24,
+                          letterSpacing: 1.8,
+                          height: 2.5,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      BigText(
+                        text:
+                            'An enum is a way to define a fixed set of constant values. Enums are great for representing a limited set of options, such as days of the week or user roles.',
+                        style: AppStyle.globalSmallTextStyle.copyWith(
+                          fontSize: 20,
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+                      const CodeWidget(
+                        code: "enum Status { pending, approved, rejected }\nStatus current = Status.approved;\nprint(current); // Output: Status.approved",
+                      ),
+                      BigText(
+                        text: 'dynamic: ',
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                          fontSize: 24,
+                          letterSpacing: 1.8,
+                          height: 2.5,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      BigText(
+                        text:
+                            'The dynamic type disables static type checking for a variable. Use dynamic with caution, as it allows any type to be assigned and loses compile-time safety.',
+                        style: AppStyle.globalSmallTextStyle.copyWith(
+                          fontSize: 20,
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+                      const CodeWidget(
+                        code: "dynamic value = 10;\nvalue = 'Now I am a string';\nprint(value); // Output: Now I am a string",
+                      ),
+                      BigText(
+                        text: 'var: ',
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                          fontSize: 24,
+                          letterSpacing: 1.8,
+                          height: 2.5,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      BigText(
+                        text:
+                            'The var keyword lets Dart infer the type at compile time. The type is fixed after the first assignment.',
+                        style: AppStyle.globalSmallTextStyle.copyWith(
+                          fontSize: 20,
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+                      const CodeWidget(
+                        code: "var name = 'Alice'; // Inferred as String\n// name = 42; // Error: can't assign int to String",
+                      ),
+                      BigText(
+                        text: 'final and const: ',
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                          fontSize: 24,
+                          letterSpacing: 1.8,
+                          height: 2.5,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      BigText(
+                        text:
+                            'Use final for variables whose value is set only once and can be determined at runtime. Use const for compile-time constants. Both help make your code safer and more predictable.',
+                        style: AppStyle.globalSmallTextStyle.copyWith(
+                          fontSize: 20,
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+                      const CodeWidget(
+                        code: "final today = DateTime.now();\nconst pi = 3.14159;",
+                      ),
+                      BigText(
+                        text: 'Other Dart Types: ',
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                          fontSize: 22,
+                          letterSpacing: 1.2,
+                          height: 2,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      BigText(
+                        text:
+                            '- Runes: For working with Unicode code points.\n- Symbol: Rarely used, for reflection.\n- Function: Functions are first-class objects in Dart and can be assigned to variables or passed as arguments.',
+                        style: AppStyle.globalSmallTextStyle.copyWith(
+                          fontSize: 18,
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+                     
+                      const CommonHeight(
+                        height: 35,
+                      ),
+                      BigText(
+                        text: 'Summary',
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                          fontSize: 22,
+                          letterSpacing: 1.2,
+                          height: 2,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      BigText(
+                        text:
+                            'Understanding data types is crucial for writing effective Dart code. Each type—numbers, strings, booleans, lists, and maps—serves a specific purpose. Choosing the right type makes your code safer, faster, and easier to maintain. As you continue learning Dart, pay attention to how and when you use each data type, and practice converting between them as needed.',
+                        style: AppStyle.globalSmallTextStyle.copyWith(
+                          fontSize: 18,
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+ const CommonHeight(
+                        height: 70,
+                      ),
+                       PreviousNextButton(
                         back: () {
                           AppPages.router
                               .goNamed(SideNavBarChildEnum.variables.title);
@@ -940,9 +1100,6 @@ class DataTypes extends GetView<DataTypesController> {
                           AppPages.router
                               .goNamed(SideNavBarChildEnum.comments.title);
                         },
-                      ),
-                      const CommonHeight(
-                        height: 70,
                       ),
                     ],
                   ),
