@@ -23,6 +23,9 @@ class HomePage extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
+    if (!Get.isRegistered<HomeController>()) {
+      Get.put(HomeController());
+    }
     return Scaffold(
       body: Stack(
         children: [
@@ -138,8 +141,9 @@ class HomePage extends GetView<HomeController> {
                         ),
                       ),
                       const CommonHeight(
-                        height: 10,
+                        height: 30,
                       ),
+                      
                       PreviousNextButton(
                         isEnableBack: false,
                         back: () {},
@@ -157,26 +161,27 @@ class HomePage extends GetView<HomeController> {
               ),
             ],
           ),
-          Positioned(
-            right: 0,
-            bottom: AS.deviceScreenType.isDesktop ? 40.h : 60.h,
-            child: Align(
-              alignment: Alignment.bottomRight,
-              child: GestureDetector(
-                onTap: () {
-                  controller.scrollToTop();
-                },
-                child: const CircleAvatar(
-                  radius: 25,
-                  backgroundColor: AppColors.yellow,
-                  child: Icon(
-                    Icons.arrow_upward,
-                    color: AppColors.primary700,
-                  ),
-                ),
-              ),
-            ),
-          ),
+          // Positioned(
+          //   right: 0,
+          //   bottom: AS.deviceScreenType.isDesktop ? 40.h : 60.h,
+          //   child: Align(
+          //     alignment: Alignment.bottomRight,
+          //     child: GestureDetector(
+          //       onTap: () {
+          //         controller.scrollToTop();
+          //       },
+          //       child: const CircleAvatar(
+          //         radius: 25,
+          //         backgroundColor: AppColors.yellow,
+          //         child: Icon(
+          //           Icons.arrow_upward,
+          //           color: AppColors.primary700,
+          //         ),
+          //       ),
+          //     ),
+          //   ),
+          // ),
+        
         ],
       ),
     );

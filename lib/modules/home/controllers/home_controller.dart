@@ -5,8 +5,12 @@ import 'package:dart_programing/utils/constants/images.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:video_player/video_player.dart';
+import '../../../models/blog_post.dart';
+import 'package:dart_programing/services/webservice/webservice.dart';
 
 class HomeController extends GetxController {
+  final RxList<BlogPost> blogs = <BlogPost>[].obs;
+
   bool showBackToTopButton = false;
 
   // scroll controller
@@ -39,6 +43,12 @@ class HomeController extends GetxController {
 
     update();
     super.onInit();
+    try {
+      final fetchedBlogs = await Webservice().fetchBlogs(page: 1, pageSize: 10);
+      blogs.assignAll(fetchedBlogs.take(6));
+    } catch (e) {
+      // Optionally handle error or fallback to static data
+    }
   }
 
   List<String> whyShouldLearnList = [
