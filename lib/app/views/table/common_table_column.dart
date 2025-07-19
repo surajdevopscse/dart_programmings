@@ -3,7 +3,6 @@ import 'package:flutter/cupertino.dart';
 
 import 'table_row_type_enum.dart';
 
-
 class HbTableColumn {
   final String value;
   final String? absPath;

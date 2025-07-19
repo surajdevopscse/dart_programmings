@@ -20,7 +20,8 @@ class NoteWidget extends StatelessWidget {
   final String message;
   final Color? color;
   final Color? iconColor;
-  const NoteWidget({super.key, required this.message, this.color, this.iconColor});
+  const NoteWidget(
+      {super.key, required this.message, this.color, this.iconColor});
 
   @override
   Widget build(BuildContext context) {
@@ -208,7 +209,8 @@ class UserInputPage extends GetView<UserInputController> {
                         children: controller.tips
                             .map((tip) => SmallText(
                                   text: '${AppConstant.getBullet()} $tip',
-                                  style: AppStyle.globalSmallTextStyle.copyWith(fontSize: 16),
+                                  style: AppStyle.globalSmallTextStyle
+                                      .copyWith(fontSize: 16),
                                   textAlign: TextAlign.start,
                                 ))
                             .toList(),
@@ -252,7 +254,8 @@ class UserInputPage extends GetView<UserInputController> {
                       const CommonHeight(height: 30),
                       PreviousNextButton(
                         back: () => AppPages.router.go(AppPath.OPRATOR_IN_DART),
-                        next: () => AppPages.router.go(AppPath.METADATA_IN_DART),
+                        next: () =>
+                            AppPages.router.go(AppPath.METADATA_IN_DART),
                         isEnableBack: true,
                         isEnableNext: true,
                       ),
@@ -283,7 +286,6 @@ class UserInputPage extends GetView<UserInputController> {
               ),
             ),
           ),
-        
         ],
       ),
     );

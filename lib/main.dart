@@ -1,4 +1,3 @@
-
 import 'package:dart_programing/app/app_services.dart';
 import 'package:dart_programing/app/device_screen_type.dart';
 import 'package:dart_programing/app/routes/app_pages.dart';
@@ -12,7 +11,6 @@ import 'package:dart_programing/app/views/side_menu/side_menu_controller.dart';
 import 'package:url_strategy/url_strategy.dart';
 
 import 'modules/home/controllers/app_bar_controller.dart';
-
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -57,11 +55,9 @@ class MyApp extends StatelessWidget {
           },
           builder: (context, _) {
             return child ?? const SizedBox.shrink();
-           
           },
         );
       },
     );
   }
 }
-

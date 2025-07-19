@@ -89,17 +89,16 @@ class CommentsPage extends GetView<CommentsController> {
                         ),
                       ),
                       BigText(
-                        text:
-                            'Dart supports three types of comments:',
+                        text: 'Dart supports three types of comments:',
                         style: AppStyle.globalSmallTextStyle.copyWith(
                           fontSize: 20,
                           fontWeight: FontWeight.normal,
                         ),
                       ),
                       const CommonHeight(height: 20),
-                     const Column(
+                      const Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children:  [
+                        children: [
                           SmallText(
                             text: '\u2022 Single-line comment',
                             style: TextStyle(fontSize: 18),
@@ -134,7 +133,8 @@ class CommentsPage extends GetView<CommentsController> {
                         textAlign: TextAlign.start,
                       ),
                       const CodeWidget(
-                        code: '// This is a single-line comment\nvoid main() {\n  print(\'Hello World\'); // This prints Hello World\n}',
+                        code:
+                            '// This is a single-line comment\nvoid main() {\n  print(\'Hello World\'); // This prints Hello World\n}',
                       ),
                       const CommonHeight(height: 20),
                       BigText(
@@ -153,7 +153,8 @@ class CommentsPage extends GetView<CommentsController> {
                         textAlign: TextAlign.start,
                       ),
                       const CodeWidget(
-                        code: '/*\n This is a multi-line comment\n It can span multiple lines\n*/\nvoid main() {\n  print(\'Hello World\');\n}',
+                        code:
+                            '/*\n This is a multi-line comment\n It can span multiple lines\n*/\nvoid main() {\n  print(\'Hello World\');\n}',
                       ),
                       const CommonHeight(height: 20),
                       BigText(
@@ -172,12 +173,15 @@ class CommentsPage extends GetView<CommentsController> {
                         textAlign: TextAlign.start,
                       ),
                       const CodeWidget(
-                        code: '/// This is a documentation comment\n/// It describes the main function\nvoid main() {\n  print(\'Hello World\');\n}',
+                        code:
+                            '/// This is a documentation comment\n/// It describes the main function\nvoid main() {\n  print(\'Hello World\');\n}',
                       ),
                       const CommonHeight(height: 30),
                       PreviousNextButton(
-                        back: () => context.goNamed(SideNavBarChildEnum.dataTypes.title),
-                        next: () => context.goNamed(SideNavBarChildEnum.oprators.title),
+                        back: () => context
+                            .goNamed(SideNavBarChildEnum.dataTypes.title),
+                        next: () =>
+                            context.goNamed(SideNavBarChildEnum.oprators.title),
                       ),
                       const CommonHeight(height: 30),
                     ],
@@ -186,7 +190,7 @@ class CommentsPage extends GetView<CommentsController> {
               ),
             ],
           ),
-         Positioned(
+          Positioned(
             right: 0,
             bottom: AS.deviceScreenType.isDesktop ? 40.h : 60.h,
             child: Align(

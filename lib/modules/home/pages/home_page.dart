@@ -143,7 +143,6 @@ class HomePage extends GetView<HomeController> {
                       const CommonHeight(
                         height: 30,
                       ),
-                      
                       PreviousNextButton(
                         isEnableBack: false,
                         back: () {},
@@ -181,7 +180,6 @@ class HomePage extends GetView<HomeController> {
           //     ),
           //   ),
           // ),
-        
         ],
       ),
     );

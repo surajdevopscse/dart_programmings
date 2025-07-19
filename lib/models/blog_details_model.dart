@@ -65,4 +65,4 @@ class BlogDetailsParagraph {
       link: json['link'] ?? '',
     );
   }
-} 
+}

@@ -45,9 +45,12 @@ class HomeController extends GetxController {
     super.onInit();
     try {
       final fetchedBlogs = await Webservice().fetchBlogs(page: 1, pageSize: 10);
-      blogs.assignAll(fetchedBlogs.take(6));
+      blogs.assignAll(fetchedBlogs);
+      print('Fetched ${blogs.length} blogs successfully');
     } catch (e) {
-      // Optionally handle error or fallback to static data
+      print('Error fetching blogs: $e');
+      // Add fallback data if API fails
+      blogs.assignAll(_getFallbackBlogs());
     }
   }
 
@@ -103,6 +106,56 @@ class HomeController extends GetxController {
   void scrollToTop() {
     scrollController.animateTo(0,
         duration: const Duration(seconds: 1), curve: Curves.linear);
+  }
+
+  List<BlogPost> _getFallbackBlogs() {
+    return [
+      BlogPost(
+        id: '1',
+        title: 'Getting Started with Dart Programming',
+        subtitle: 'Learn the basics of Dart programming language',
+        author: 'Dart Team',
+        authorAvatar:
+            'https://dart.dev/assets/shared/dart/logo+text/vertical/default.svg',
+        date: '2024-01-15T10:00:00Z',
+        readTime: '5',
+        coverImage:
+            'https://dart.dev/assets/shared/dart/logo+text/vertical/default.svg',
+        tags: ['Dart', 'Programming', 'Beginner'],
+        content:
+            'Dart is a client-optimized language for developing fast apps on any platform.',
+      ),
+      BlogPost(
+        id: '2',
+        title: 'Understanding Dart Variables',
+        subtitle: 'Master variable declaration and usage in Dart',
+        author: 'Dart Team',
+        authorAvatar:
+            'https://dart.dev/assets/shared/dart/logo+text/vertical/default.svg',
+        date: '2024-01-16T10:00:00Z',
+        readTime: '8',
+        coverImage:
+            'https://dart.dev/assets/shared/dart/logo+text/vertical/default.svg',
+        tags: ['Dart', 'Variables', 'Programming'],
+        content:
+            'Variables in Dart are used to store data that can be referenced and manipulated.',
+      ),
+      BlogPost(
+        id: '3',
+        title: 'Dart Control Flow and Loops',
+        subtitle: 'Learn conditional statements and loops in Dart',
+        author: 'Dart Team',
+        authorAvatar:
+            'https://dart.dev/assets/shared/dart/logo+text/vertical/default.svg',
+        date: '2024-01-17T10:00:00Z',
+        readTime: '10',
+        coverImage:
+            'https://dart.dev/assets/shared/dart/logo+text/vertical/default.svg',
+        tags: ['Dart', 'Control Flow', 'Loops'],
+        content:
+            'Control flow statements determine the order in which your code executes.',
+      ),
+    ];
   }
 
   @override

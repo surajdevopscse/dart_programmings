@@ -7,7 +7,7 @@ class AppConstant {
     return tabBarValue;
   }
 
-  static  getBullet() {
+  static getBullet() {
     return '• ';
   }
 

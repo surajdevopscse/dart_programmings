@@ -25,14 +25,16 @@ class _BlogListPageState extends State<BlogListPage> {
   }
 
   void _onScroll() {
-    if (_scrollController.position.pixels >= _scrollController.position.maxScrollExtent - 200) {
+    if (_scrollController.position.pixels >=
+        _scrollController.position.maxScrollExtent - 200) {
       _loadMore();
     }
   }
 
   void _loadMore() {
     final allBlogs = controller.blogs;
-    final nextPageBlogs = allBlogs.skip(blogsToShow.length).take(_perPage).toList();
+    final nextPageBlogs =
+        allBlogs.skip(blogsToShow.length).take(_perPage).toList();
     if (nextPageBlogs.isNotEmpty) {
       setState(() {
         blogsToShow.addAll(nextPageBlogs);
@@ -96,4 +98,4 @@ class _BlogListPageState extends State<BlogListPage> {
       ),
     );
   }
-} 
+}

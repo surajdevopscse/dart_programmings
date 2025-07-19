@@ -968,7 +968,8 @@ class DataTypes extends GetView<DataTypesController> {
                         ),
                       ),
                       const CodeWidget(
-                        code: "Set<String> fruits = {'apple', 'banana', 'orange'};\nfruits.add('apple'); // No effect, 'apple' already exists\nprint(fruits); // Output: {apple, banana, orange}",
+                        code:
+                            "Set<String> fruits = {'apple', 'banana', 'orange'};\nfruits.add('apple'); // No effect, 'apple' already exists\nprint(fruits); // Output: {apple, banana, orange}",
                       ),
                       BigText(
                         text: 'enum: ',
@@ -988,7 +989,8 @@ class DataTypes extends GetView<DataTypesController> {
                         ),
                       ),
                       const CodeWidget(
-                        code: "enum Status { pending, approved, rejected }\nStatus current = Status.approved;\nprint(current); // Output: Status.approved",
+                        code:
+                            "enum Status { pending, approved, rejected }\nStatus current = Status.approved;\nprint(current); // Output: Status.approved",
                       ),
                       BigText(
                         text: 'dynamic: ',
@@ -1008,7 +1010,8 @@ class DataTypes extends GetView<DataTypesController> {
                         ),
                       ),
                       const CodeWidget(
-                        code: "dynamic value = 10;\nvalue = 'Now I am a string';\nprint(value); // Output: Now I am a string",
+                        code:
+                            "dynamic value = 10;\nvalue = 'Now I am a string';\nprint(value); // Output: Now I am a string",
                       ),
                       BigText(
                         text: 'var: ',
@@ -1028,7 +1031,8 @@ class DataTypes extends GetView<DataTypesController> {
                         ),
                       ),
                       const CodeWidget(
-                        code: "var name = 'Alice'; // Inferred as String\n// name = 42; // Error: can't assign int to String",
+                        code:
+                            "var name = 'Alice'; // Inferred as String\n// name = 42; // Error: can't assign int to String",
                       ),
                       BigText(
                         text: 'final and const: ',
@@ -1048,7 +1052,8 @@ class DataTypes extends GetView<DataTypesController> {
                         ),
                       ),
                       const CodeWidget(
-                        code: "final today = DateTime.now();\nconst pi = 3.14159;",
+                        code:
+                            "final today = DateTime.now();\nconst pi = 3.14159;",
                       ),
                       BigText(
                         text: 'Other Dart Types: ',
@@ -1067,7 +1072,6 @@ class DataTypes extends GetView<DataTypesController> {
                           fontWeight: FontWeight.normal,
                         ),
                       ),
-                     
                       const CommonHeight(
                         height: 35,
                       ),
@@ -1088,10 +1092,10 @@ class DataTypes extends GetView<DataTypesController> {
                           fontWeight: FontWeight.normal,
                         ),
                       ),
- const CommonHeight(
+                      const CommonHeight(
                         height: 70,
                       ),
-                       PreviousNextButton(
+                      PreviousNextButton(
                         back: () {
                           AppPages.router
                               .goNamed(SideNavBarChildEnum.variables.title);

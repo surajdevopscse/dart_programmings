@@ -68,7 +68,8 @@ class DioClient {
     );
   }
 
-  Map<String, dynamic> _buildHeaders(Map<String, dynamic>? headers, String? token) {
+  Map<String, dynamic> _buildHeaders(
+      Map<String, dynamic>? headers, String? token) {
     final Map<String, dynamic> result = {};
     if (headers != null) {
       result.addAll(headers);
@@ -78,4 +79,4 @@ class DioClient {
     }
     return result;
   }
-} 
+}

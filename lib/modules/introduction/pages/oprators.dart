@@ -69,18 +69,21 @@ class OperatorsPage extends GetView<OpratorsController> {
                       const CommonHeight(height: 10),
                       SmallText(
                         text: controller.beforeLearning,
-                        style: AppStyle.globalSmallTextStyle.copyWith(fontSize: 18),
+                        style: AppStyle.globalSmallTextStyle
+                            .copyWith(fontSize: 18),
                         textAlign: TextAlign.start,
                       ),
                       const CommonHeight(height: 10),
                       SmallText(
                         text: controller.operands,
-                        style: AppStyle.globalSmallTextStyle.copyWith(fontSize: 18),
+                        style: AppStyle.globalSmallTextStyle
+                            .copyWith(fontSize: 18),
                         textAlign: TextAlign.start,
                       ),
                       SmallText(
                         text: controller.operatorText,
-                        style: AppStyle.globalSmallTextStyle.copyWith(fontSize: 18),
+                        style: AppStyle.globalSmallTextStyle
+                            .copyWith(fontSize: 18),
                         textAlign: TextAlign.start,
                       ),
                       const CommonHeight(height: 20),
@@ -94,17 +97,20 @@ class OperatorsPage extends GetView<OpratorsController> {
                       const CommonHeight(height: 10),
                       SmallText(
                         text: controller.typesList,
-                        style: AppStyle.globalSmallTextStyle.copyWith(fontSize: 18),
+                        style: AppStyle.globalSmallTextStyle
+                            .copyWith(fontSize: 18),
                         textAlign: TextAlign.start,
                       ),
                       const CommonHeight(height: 20),
                       BigText(
                         text: controller.arithmeticTitle,
-                        style: AppStyle.globalBigTextStyle.copyWith(fontSize: 22, fontWeight: FontWeight.bold),
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                            fontSize: 22, fontWeight: FontWeight.bold),
                       ),
                       SmallText(
                         text: controller.arithmeticDesc,
-                        style: AppStyle.globalSmallTextStyle.copyWith(fontSize: 18),
+                        style: AppStyle.globalSmallTextStyle
+                            .copyWith(fontSize: 18),
                         textAlign: TextAlign.start,
                       ),
                       const CommonHeight(height: 10),
@@ -114,11 +120,13 @@ class OperatorsPage extends GetView<OpratorsController> {
                       const CommonHeight(height: 20),
                       BigText(
                         text: controller.assignmentTitle,
-                        style: AppStyle.globalBigTextStyle.copyWith(fontSize: 22, fontWeight: FontWeight.bold),
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                            fontSize: 22, fontWeight: FontWeight.bold),
                       ),
                       SmallText(
                         text: controller.assignmentDesc,
-                        style: AppStyle.globalSmallTextStyle.copyWith(fontSize: 18),
+                        style: AppStyle.globalSmallTextStyle
+                            .copyWith(fontSize: 18),
                         textAlign: TextAlign.start,
                       ),
                       const CommonHeight(height: 10),
@@ -128,11 +136,13 @@ class OperatorsPage extends GetView<OpratorsController> {
                       const CommonHeight(height: 20),
                       BigText(
                         text: controller.relationalTitle,
-                        style: AppStyle.globalBigTextStyle.copyWith(fontSize: 22, fontWeight: FontWeight.bold),
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                            fontSize: 22, fontWeight: FontWeight.bold),
                       ),
                       SmallText(
                         text: controller.relationalDesc,
-                        style: AppStyle.globalSmallTextStyle.copyWith(fontSize: 18),
+                        style: AppStyle.globalSmallTextStyle
+                            .copyWith(fontSize: 18),
                         textAlign: TextAlign.start,
                       ),
                       const CommonHeight(height: 10),
@@ -142,11 +152,13 @@ class OperatorsPage extends GetView<OpratorsController> {
                       const CommonHeight(height: 20),
                       BigText(
                         text: controller.logicalTitle,
-                        style: AppStyle.globalBigTextStyle.copyWith(fontSize: 22, fontWeight: FontWeight.bold),
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                            fontSize: 22, fontWeight: FontWeight.bold),
                       ),
                       SmallText(
                         text: controller.logicalDesc,
-                        style: AppStyle.globalSmallTextStyle.copyWith(fontSize: 18),
+                        style: AppStyle.globalSmallTextStyle
+                            .copyWith(fontSize: 18),
                         textAlign: TextAlign.start,
                       ),
                       const CommonHeight(height: 10),
@@ -156,11 +168,13 @@ class OperatorsPage extends GetView<OpratorsController> {
                       const CommonHeight(height: 20),
                       BigText(
                         text: controller.typeTestTitle,
-                        style: AppStyle.globalBigTextStyle.copyWith(fontSize: 22, fontWeight: FontWeight.bold),
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                            fontSize: 22, fontWeight: FontWeight.bold),
                       ),
                       SmallText(
                         text: controller.typeTestDesc,
-                        style: AppStyle.globalSmallTextStyle.copyWith(fontSize: 18),
+                        style: AppStyle.globalSmallTextStyle
+                            .copyWith(fontSize: 18),
                         textAlign: TextAlign.start,
                       ),
                       const CommonHeight(height: 10),
@@ -170,11 +184,13 @@ class OperatorsPage extends GetView<OpratorsController> {
                       const CommonHeight(height: 20),
                       BigText(
                         text: controller.bitwiseTitle,
-                        style: AppStyle.globalBigTextStyle.copyWith(fontSize: 22, fontWeight: FontWeight.bold),
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                            fontSize: 22, fontWeight: FontWeight.bold),
                       ),
                       SmallText(
                         text: controller.bitwiseDesc,
-                        style: AppStyle.globalSmallTextStyle.copyWith(fontSize: 18),
+                        style: AppStyle.globalSmallTextStyle
+                            .copyWith(fontSize: 18),
                         textAlign: TextAlign.start,
                       ),
                       const CommonHeight(height: 10),
@@ -184,11 +200,13 @@ class OperatorsPage extends GetView<OpratorsController> {
                       const CommonHeight(height: 20),
                       BigText(
                         text: controller.conditionalTitle,
-                        style: AppStyle.globalBigTextStyle.copyWith(fontSize: 22, fontWeight: FontWeight.bold),
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                            fontSize: 22, fontWeight: FontWeight.bold),
                       ),
                       SmallText(
                         text: controller.conditionalDesc,
-                        style: AppStyle.globalSmallTextStyle.copyWith(fontSize: 18),
+                        style: AppStyle.globalSmallTextStyle
+                            .copyWith(fontSize: 18),
                         textAlign: TextAlign.start,
                       ),
                       const CommonHeight(height: 10),
@@ -198,11 +216,13 @@ class OperatorsPage extends GetView<OpratorsController> {
                       const CommonHeight(height: 30),
                       BigText(
                         text: controller.summaryTitle,
-                        style: AppStyle.globalBigTextStyle.copyWith(fontSize: 24, fontWeight: FontWeight.bold),
+                        style: AppStyle.globalBigTextStyle.copyWith(
+                            fontSize: 24, fontWeight: FontWeight.bold),
                       ),
                       SmallText(
                         text: controller.summaryDesc,
-                        style: AppStyle.globalSmallTextStyle.copyWith(fontSize: 18),
+                        style: AppStyle.globalSmallTextStyle
+                            .copyWith(fontSize: 18),
                         textAlign: TextAlign.start,
                       ),
                       const CommonHeight(height: 30),
@@ -219,7 +239,7 @@ class OperatorsPage extends GetView<OpratorsController> {
               ),
             ],
           ),
-           Positioned(
+          Positioned(
             right: 0,
             bottom: AS.deviceScreenType.isDesktop ? 40.h : 60.h,
             child: Align(
@@ -239,7 +259,6 @@ class OperatorsPage extends GetView<OpratorsController> {
               ),
             ),
           ),
-        
         ],
       ),
     );

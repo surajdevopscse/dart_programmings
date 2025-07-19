@@ -1,17 +1,19 @@
+import 'package:dart_programing/app/routes/app_pages.dart';
 import 'package:dart_programing/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../modules/home/controllers/home_controller.dart';
-import 'blog_card.dart';
-import 'package:dart_programing/app/routes/app_pages.dart';
+import 'package:dart_programing/app/common_widgets/blog_card.dart';
+import '../controllers/shuffled_blog_controller.dart';
 
-class GlobalBlogCardsSection extends GetView<HomeController> {
-  const GlobalBlogCardsSection({super.key});
+class ShuffledBlogListPage extends StatelessWidget {
+  const ShuffledBlogListPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final ShuffledBlogController controller =
+        Get.find<ShuffledBlogController>();
     return Obx(() {
-      final blogs = controller.blogs.take(6).toList();
+      final blogs = controller.shuffledBlogs.toList();
       return Container(
         color: C.primary50,
         padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 24),
@@ -19,7 +21,7 @@ class GlobalBlogCardsSection extends GetView<HomeController> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              'Latest Blogs',
+              'Suggested Blogs',
               style: TextStyle(
                 fontSize: 32,
                 fontWeight: FontWeight.w700,

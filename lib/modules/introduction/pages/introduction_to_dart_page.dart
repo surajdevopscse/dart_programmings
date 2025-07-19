@@ -282,11 +282,12 @@ class IntroductionToDartPage extends GetView<IntroductionController> {
                       ),
                       PreviousNextButton(
                         back: () {
-                          AppPages.router.goNamed(SideNavBarParentEnum.home.title);
-                          
+                          AppPages.router
+                              .goNamed(SideNavBarParentEnum.home.title);
                         },
                         next: () {
-                          AppPages.router.goNamed(SideNavBarChildEnum.installDart.title);
+                          AppPages.router
+                              .goNamed(SideNavBarChildEnum.installDart.title);
                         },
                       ),
                       const CommonHeight(

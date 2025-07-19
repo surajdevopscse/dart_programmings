@@ -52,7 +52,8 @@ You entered: 42''';
     'Use int.tryParse or double.tryParse to safely convert input.',
     'For more complex input, consider writing helper functions.',
   ];
-  final String exampleAddNumbers = 'Example: Adding Two Numbers from User Input';
+  final String exampleAddNumbers =
+      'Example: Adding Two Numbers from User Input';
   final String codeAddNumbers = '''import 'dart:io';
 
 void main() {
@@ -75,9 +76,7 @@ Sum: 30''';
   final String summaryDesc =
       'User input makes your Dart programs interactive and dynamic. Remember to always validate and parse input properly to avoid errors.';
 
-
-
-bool showBackToTopButton = false;
+  bool showBackToTopButton = false;
   late ScrollController scrollController;
   @override
   void onInit() async {

@@ -4,6 +4,10 @@ sealed class AppPath {
   //Home
   static const HOME = '/';
 
+  //Blog
+  static const BLOG_LIST = '/blogs';
+  static const BLOG_DETAILS = '/blogs/:id';
+
   //Introduction
   static const INTRODUCION = '/introduction-to-dart';
   static const INSTALL_DART = 'install';

@@ -7,16 +7,22 @@ import 'package:get/get.dart';
 
 class OpratorsController extends GetxController {
   final String title = 'OPERATORS IN DART';
-  final String intro = 'Operators are used to perform mathematical and logical operations on variables. Each operation in Dart uses a symbol called the operator to denote the type of operation it performs.';
-  final String beforeLearning = 'Before learning operators in Dart, you must understand the following:';
-  final String operands = 'Operands: The data on which operations are performed. For example, in 5 + 3, 5 and 3 are operands.';
-  final String operatorText = 'Operator: The symbol that tells what operation to perform. In 5 + 3, "+" is the operator.';
+  final String intro =
+      'Operators are used to perform mathematical and logical operations on variables. Each operation in Dart uses a symbol called the operator to denote the type of operation it performs.';
+  final String beforeLearning =
+      'Before learning operators in Dart, you must understand the following:';
+  final String operands =
+      'Operands: The data on which operations are performed. For example, in 5 + 3, 5 and 3 are operands.';
+  final String operatorText =
+      'Operator: The symbol that tells what operation to perform. In 5 + 3, "+" is the operator.';
   final String typesOfOperators = 'Types of Operators in Dart:';
-  final String typesList = '1. Arithmetic Operators\n2. Assignment Operators\n3. Relational Operators\n4. Logical Operators\n5. Type Test Operators\n6. Bitwise Operators\n7. Conditional Operators';
+  final String typesList =
+      '1. Arithmetic Operators\n2. Assignment Operators\n3. Relational Operators\n4. Logical Operators\n5. Type Test Operators\n6. Bitwise Operators\n7. Conditional Operators';
 
   // Arithmetic Operators
   final String arithmeticTitle = '1. Arithmetic Operators';
-  final String arithmeticDesc = 'These are used to perform mathematical operations like addition, subtraction, multiplication, etc.';
+  final String arithmeticDesc =
+      'These are used to perform mathematical operations like addition, subtraction, multiplication, etc.';
   final String arithmeticExample = '''
 void main() {
   int a = 10;
@@ -32,7 +38,8 @@ void main() {
 
   // Assignment Operators
   final String assignmentTitle = '2. Assignment Operators';
-  final String assignmentDesc = 'Used to assign values to variables. Example: =, +=, -=, *=, /=, %=';
+  final String assignmentDesc =
+      'Used to assign values to variables. Example: =, +=, -=, *=, /=, %=';
   final String assignmentExample = '''
 void main() {
   int a = 5;
@@ -46,7 +53,8 @@ void main() {
 
   // Relational Operators
   final String relationalTitle = '3. Relational Operators';
-  final String relationalDesc = 'Used to compare two values. Example: ==, !=, >, <, >=, <=';
+  final String relationalDesc =
+      'Used to compare two values. Example: ==, !=, >, <, >=, <=';
   final String relationalExample = '''
 void main() {
   int x = 10;
@@ -62,7 +70,8 @@ void main() {
 
   // Logical Operators
   final String logicalTitle = '4. Logical Operators';
-  final String logicalDesc = 'Used to combine two or more conditions. Example: && (AND), || (OR), ! (NOT)';
+  final String logicalDesc =
+      'Used to combine two or more conditions. Example: && (AND), || (OR), ! (NOT)';
   final String logicalExample = '''
 void main() {
   bool a = true;
@@ -75,7 +84,8 @@ void main() {
 
   // Type Test Operators
   final String typeTestTitle = '5. Type Test Operators';
-  final String typeTestDesc = 'Used to check the type of an object. Example: is, is!';
+  final String typeTestDesc =
+      'Used to check the type of an object. Example: is, is!';
   final String typeTestExample = '''
 void main() {
   var name = 'Dart';
@@ -86,7 +96,8 @@ void main() {
 
   // Bitwise Operators
   final String bitwiseTitle = '6. Bitwise Operators';
-  final String bitwiseDesc = 'Used to perform bit-level operations. Example: &, |, ^, ~, <<, >>';
+  final String bitwiseDesc =
+      'Used to perform bit-level operations. Example: &, |, ^, ~, <<, >>';
   final String bitwiseExample = '''
 void main() {
   int a = 5; // 0101
@@ -102,7 +113,8 @@ void main() {
 
   // Conditional Operators
   final String conditionalTitle = '7. Conditional Operators';
-  final String conditionalDesc = 'Used to make decisions in code. Example: condition ? expr1 : expr2, expr1 ?? expr2';
+  final String conditionalDesc =
+      'Used to make decisions in code. Example: condition ? expr1 : expr2, expr1 ?? expr2';
   final String conditionalExample = '''
 void main() {
   int? a;
@@ -117,9 +129,8 @@ void main() {
 
   // Summary
   final String summaryTitle = 'Summary';
-  final String summaryDesc = 'Operators in Dart make it easy to perform operations on variables and values. Understanding them is essential for writing effective Dart code.';
-
-
+  final String summaryDesc =
+      'Operators in Dart make it easy to perform operations on variables and values. Understanding them is essential for writing effective Dart code.';
 
   bool showBackToTopButton = false;
   late ScrollController scrollController;

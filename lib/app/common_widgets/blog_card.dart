@@ -30,7 +30,8 @@ class BlogCard extends StatefulWidget {
   State<BlogCard> createState() => _BlogCardState();
 }
 
-class _BlogCardState extends State<BlogCard> with SingleTickerProviderStateMixin {
+class _BlogCardState extends State<BlogCard>
+    with SingleTickerProviderStateMixin {
   bool _hovering = false;
   bool _liked = false;
   late AnimationController _controller;
@@ -50,7 +51,6 @@ class _BlogCardState extends State<BlogCard> with SingleTickerProviderStateMixin
     _controller.dispose();
     super.dispose();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +73,8 @@ class _BlogCardState extends State<BlogCard> with SingleTickerProviderStateMixin
           child: Card(
             margin: EdgeInsets.zero,
             elevation: 0,
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
             child: InkWell(
               borderRadius: BorderRadius.circular(8),
               onTap: widget.onTap,
@@ -82,11 +83,13 @@ class _BlogCardState extends State<BlogCard> with SingleTickerProviderStateMixin
                   // Left: Image or SVG (50%)
                   Expanded(
                     flex: 1,
-                    child: (widget.coverImage != null && widget.coverImage!.isNotEmpty)
+                    child: (widget.coverImage != null &&
+                            widget.coverImage!.isNotEmpty)
                         ? Hero(
                             tag: 'cover-${widget.id}',
                             child: ClipRRect(
-                              borderRadius: const BorderRadius.horizontal(left: Radius.circular(8)),
+                              borderRadius: const BorderRadius.horizontal(
+                                  left: Radius.circular(8)),
                               child: Image.network(
                                 widget.coverImage!,
                                 width: double.infinity,
@@ -98,14 +101,16 @@ class _BlogCardState extends State<BlogCard> with SingleTickerProviderStateMixin
                                     width: double.infinity,
                                     height: double.infinity,
                                     color: Colors.grey[200],
-                                    child: const Center(child: CircularProgressIndicator()),
+                                    child: const Center(
+                                        child: CircularProgressIndicator()),
                                   );
                                 },
                               ),
                             ),
                           )
                         : ClipRRect(
-                            borderRadius: const BorderRadius.horizontal(left: Radius.circular(8)),
+                            borderRadius: const BorderRadius.horizontal(
+                                left: Radius.circular(8)),
                             child: SvgPicture.asset(
                               'assets/images/home.svg',
                               width: double.infinity,
@@ -123,7 +128,6 @@ class _BlogCardState extends State<BlogCard> with SingleTickerProviderStateMixin
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                        
                           Text(
                             widget.title,
                             style: const TextStyle(
@@ -145,45 +149,59 @@ class _BlogCardState extends State<BlogCard> with SingleTickerProviderStateMixin
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                           ),
-                           const SizedBox(height: 16),
-                            Row(
+                          const SizedBox(height: 16),
+                          Row(
                             children: [
                               if (widget.authorAvatar != null)
                                 CircleAvatar(
-                                  backgroundImage: NetworkImage(widget.authorAvatar!),
+                                  backgroundImage:
+                                      NetworkImage(widget.authorAvatar!),
                                   radius: 12,
                                 )
                               else
                                 CircleAvatar(
                                   radius: 12,
-                                  child: Text(widget.author.isNotEmpty ? widget.author[0] : '?'),
+                                  child: Text(widget.author.isNotEmpty
+                                      ? widget.author[0]
+                                      : '?'),
                                 ),
                               const SizedBox(width: 8),
                               Text(
                                 widget.author,
-                                style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 12),
+                                style: const TextStyle(
+                                    fontWeight: FontWeight.w600, fontSize: 12),
                               ),
                             ],
                           ),
-                         
                           const Spacer(),
                           Row(
                             children: [
-                              Icon(Icons.star, size: 12, color: Colors.amber[700]),
+                              Icon(Icons.star,
+                                  size: 12, color: Colors.amber[700]),
                               const SizedBox(width: 2),
-                              Text(formattedDate, style: const TextStyle(fontSize: 10, color: Colors.grey)),
+                              Text(formattedDate,
+                                  style: const TextStyle(
+                                      fontSize: 10, color: Colors.grey)),
                               const SizedBox(width: 8),
-                              Icon(Icons.remove_red_eye, size: 12, color: Colors.grey[600]),
+                              Icon(Icons.remove_red_eye,
+                                  size: 12, color: Colors.grey[600]),
                               const SizedBox(width: 2),
-                              Text('833', style: TextStyle(fontSize: 10, color: Colors.grey[600])),
+                              Text('833',
+                                  style: TextStyle(
+                                      fontSize: 10, color: Colors.grey[600])),
                               const SizedBox(width: 8),
-                              Icon(Icons.comment_outlined, size: 12, color: Colors.grey[600]),
+                              Icon(Icons.comment_outlined,
+                                  size: 12, color: Colors.grey[600]),
                               const SizedBox(width: 2),
-                              Text('12', style: TextStyle(fontSize: 10, color: Colors.grey[600])),
+                              Text('12',
+                                  style: TextStyle(
+                                      fontSize: 10, color: Colors.grey[600])),
                               const Spacer(),
-                              Icon(Icons.bookmark_border, size: 14, color: Colors.grey[600]),
+                              Icon(Icons.bookmark_border,
+                                  size: 14, color: Colors.grey[600]),
                               const SizedBox(width: 4),
-                              Icon(Icons.more_horiz, size: 14, color: Colors.grey[600]),
+                              Icon(Icons.more_horiz,
+                                  size: 14, color: Colors.grey[600]),
                             ],
                           ),
                         ],
@@ -198,4 +216,4 @@ class _BlogCardState extends State<BlogCard> with SingleTickerProviderStateMixin
       ),
     );
   }
-} 
+}

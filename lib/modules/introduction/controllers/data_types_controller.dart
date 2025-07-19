@@ -20,7 +20,6 @@ class DataTypesController extends GetxController {
     'Null',
   ];
 
-
   List<List<String>> tableData = [
     ['Data Type', 'Keyword', 'Description.'],
     ['Number', 'int, double, num', 'It represents numeric values.'],

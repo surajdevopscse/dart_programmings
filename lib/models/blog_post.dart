@@ -37,7 +37,9 @@ class BlogPost {
       coverImage: json['coverImage'],
       tags: (json['tags'] as List?)?.map((e) => e.toString()).toList() ?? [],
       content: json['content'] ?? '',
-      itemParagraphList: (json['itemParagraphList'] as List?)?.map((e) => Map<String, dynamic>.from(e)).toList(),
+      itemParagraphList: (json['itemParagraphList'] as List?)
+          ?.map((e) => Map<String, dynamic>.from(e))
+          .toList(),
     );
   }
 
@@ -56,4 +58,4 @@ class BlogPost {
       'itemParagraphList': itemParagraphList,
     };
   }
-} 
+}

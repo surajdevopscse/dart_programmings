@@ -1,3 +1,5 @@
+import 'package:dart_programing/modules/blog/controllers/blog_controller.dart';
+import 'package:dart_programing/modules/blog/controllers/shuffled_blog_controller.dart';
 import 'package:dart_programing/modules/home/pages/dart_introduction.dart';
 import 'package:flutter/material.dart';
 import 'package:dart_programing/app/common_widgets/empty_screen.dart';
@@ -41,7 +43,8 @@ class AppPages {
       builder: (context, state, child) {
         final width = MediaQuery.of(context).size.width.toInt();
         final tempSideMenuWidth = width * (280 / 1728);
-        final sideMenuWidth = tempSideMenuWidth < 150 ? 150 : tempSideMenuWidth.toInt();
+        final sideMenuWidth =
+            tempSideMenuWidth < 150 ? 150 : tempSideMenuWidth.toInt();
         return DartIntroduction(
           width: width,
           sideMenuWidth: sideMenuWidth,
@@ -236,22 +239,24 @@ class AppPages {
         //   path: '/blog',
         //   builder: (context, state) => BlogListPage(),
         // ),
-        
       ],
     ),
     GoRoute(
-          path: '/blogs',
-          builder: (context, state) {
-            return const BlogListPage();
-          },
-        ),
-        GoRoute(
-          path: '/blogs/:id',
-          name: 'blogDetails',
-          builder: (context, state) {
-            final id = state.pathParameters['id']!;
-            return BlogDetailsApiPage(blogId: id);
-          },
-        ),
+      path: '/blogs',
+      builder: (context, state) {
+        Get.put(HomeController());
+        return const BlogListPage();
+      },
+    ),
+    GoRoute(
+      path: '/blogs/:id',
+      name: 'blogDetails',
+      builder: (context, state) {
+        Get.put(BlogController());
+        Get.put(ShuffledBlogController());
+        final id = state.pathParameters['id']!;
+        return BlogDetailsApiPage(blogId: id);
+      },
+    ),
   ];
 }
