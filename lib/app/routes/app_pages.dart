@@ -27,7 +27,6 @@ import 'package:dart_programing/modules/blog/pages/blog_details_page.dart';
 import 'package:dart_programing/modules/blog/pages/blog_list_page.dart';
 import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
-import 'package:dart_programing/main.dart';
 
 class AppPages {
   AppPages._();

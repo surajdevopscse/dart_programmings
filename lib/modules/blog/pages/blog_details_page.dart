@@ -4,8 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import '../controllers/blog_controller.dart';
 import 'package:dart_programing/app/responsive.dart';
-import '../controllers/shuffled_blog_controller.dart';
-import 'package:dart_programing/app/common_widgets/blog_card.dart';
+import 'package:dart_programing/utils/extention.dart';
 
 class BlogDetailsApiPage extends GetView<BlogController> {
   final String blogId;
@@ -41,85 +40,123 @@ class BlogDetailsApiPage extends GetView<BlogController> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      if (blog.coverImage.isNotEmpty)
-                        Container(
-                          width: double.infinity,
-                          height: 180,
-                          margin: const EdgeInsets.only(bottom: 16),
-                          color: Colors.grey[300],
-                          child:
-                              Center(child: Text('Image: ${blog.coverImage}')),
-                        ),
-                      Text(
-                        blog.title,
-                        style: const TextStyle(
-                            fontSize: 24, fontWeight: FontWeight.bold),
-                      ),
-                      if (blog.subtitle.isNotEmpty)
-                        Padding(
-                          padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
-                          child: Text(
-                            blog.subtitle,
-                            style: const TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.w500),
-                          ),
-                        ),
-                      Row(
-                        children: [
-                          if (blog.authorAvatar.isNotEmpty)
-                            CircleAvatar(
-                              backgroundImage: NetworkImage(blog.authorAvatar),
+                      if (blog.coverImage != null &&
+                          blog.coverImage!.isNotEmpty)
+                        Hero(
+                            tag: 'cover-${blog.coverImage}',
+                            child: ClipRRect(
+                              borderRadius: const BorderRadius.horizontal(
+                                left: Radius.circular(8),
+                              ),
+                              child: Image.network(
+                                blog.coverImage ??
+                                    '', // Provide an empty string if null
+                                width: double.infinity,
+                                height: 200,
+                                fit: BoxFit.cover,
+                                loadingBuilder: (context, child, progress) {
+                                  if (progress == null) return child;
+                                  return Container(
+                                    width: double.infinity,
+                                    height: 200,
+                                    color: Colors.grey[200],
+                                    child: const Center(
+                                      child: CircularProgressIndicator(),
+                                    ),
+                                  );
+                                },
+                                errorBuilder: (context, error, stackTrace) {
+                                  return Container(
+                                    width: double.infinity,
+                                    height: 200,
+                                    color: Colors.grey[200],
+                                    child: const Center(
+                                      child: Icon(Icons.image,
+                                          size: 48, color: Colors.grey),
+                                    ),
+                                  );
+                                },
+                              ),
                             ),
-                          if (blog.authorAvatar.isNotEmpty)
-                            const SizedBox(width: 8),
-                          Text(blog.author,
-                              style:
-                                  const TextStyle(fontWeight: FontWeight.bold)),
-                          const SizedBox(width: 16),
-                          Text(blog.date.split('T').first),
-                          const SizedBox(width: 16),
-                          Text('Read: ${blog.readTime} min'),
-                        ],
-                      ),
+                          ),
+                        Text(
+                          blog.title ?? '',
+                          style: const TextStyle(
+                              fontSize: 24, fontWeight: FontWeight.bold),
+                        ),
+                        if (blog.subtitle != null && blog.subtitle!.isNotEmpty)
+                          Padding(
+                            padding:
+                                const EdgeInsets.only(top: 8.0, bottom: 8.0),
+                            child: Text(
+                              blog.subtitle ?? '',
+                              style: const TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.w500),
+                            ),
+                          ),
+                        Row(
+                          children: [
+                            if (blog.authorAvatar != null &&
+                                blog.authorAvatar!.isNotEmpty)
+                              CircleAvatar(
+                                backgroundImage:
+                                    NetworkImage(blog.authorAvatar ?? ''),
+                              ),
+                            if (blog.authorAvatar != null &&
+                                blog.authorAvatar!.isNotEmpty)
+                              const SizedBox(width: 8),
+                            Text(blog.author ?? '',
+                                style: const TextStyle(
+                                    fontWeight: FontWeight.bold)),
+                            const SizedBox(width: 16),
+                            Text(blog.date != null
+                                ? blog.date!.toFormattedString()
+                                : ''),
+                            const SizedBox(width: 16),
+                            Text('Read: ${blog.readTime ?? ''} min'),
+                          ],
+                        ),
                       const SizedBox(height: 20),
-                      ...blog.itemParagraphList.map<Widget>((item) {
+                      ...(blog.paragraphs ?? []).map<Widget>((item) {
                         return Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            if (item.imageUrl.isNotEmpty)
+                            if (item.image != null && item.image!.isNotEmpty)
                               Container(
                                 width: double.infinity,
                                 height: 120,
                                 margin: const EdgeInsets.only(bottom: 8),
                                 color: Colors.grey[200],
                                 child: Center(
-                                    child: Text('Image: ${item.imageUrl}')),
+                                    child: Text('Image:  [${item.image}]')),
                               ),
-                            if (item.title.isNotEmpty)
+                            if (item.title != null && item.title!.isNotEmpty)
                               Padding(
                                 padding: const EdgeInsets.only(
                                     top: 12.0, bottom: 4.0),
                                 child: Text(
-                                  item.title,
+                                  item.title!,
                                   style: const TextStyle(
                                       fontSize: 18,
                                       fontWeight: FontWeight.bold),
                                 ),
                               ),
-                            if (item.content.isNotEmpty)
+                            if (item.content != null &&
+                                item.content!.isNotEmpty)
                               Padding(
                                 padding: const EdgeInsets.only(bottom: 4.0),
-                                child: Text(item.content),
+                                child: Text(item.content!),
                               ),
-                            if (item.note.isNotEmpty)
+                            if (item.note != null && item.note!.isNotEmpty)
                               Padding(
                                 padding: const EdgeInsets.only(bottom: 4.0),
-                                child: Text('Note: ${item.note}',
+                                child: Text('Note:  [${item.note}]',
                                     style: const TextStyle(
                                         fontStyle: FontStyle.italic,
                                         color: Colors.blueGrey)),
                               ),
-                            if (item.codeExample.isNotEmpty)
+                            if (item.codeExample != null &&
+                                item.codeExample!.isNotEmpty)
                               Container(
                                 width: double.infinity,
                                 margin:
@@ -132,7 +169,7 @@ class BlogDetailsApiPage extends GetView<BlogController> {
                                 child: SingleChildScrollView(
                                   scrollDirection: Axis.horizontal,
                                   child: SelectableText(
-                                    item.codeExample,
+                                    item.codeExample!,
                                     style: const TextStyle(
                                         fontFamily: 'monospace', fontSize: 14),
                                   ),
@@ -165,79 +202,114 @@ class BlogDetailsApiPage extends GetView<BlogController> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        if (blog.coverImage.isNotEmpty)
-                          Container(
-                            width: double.infinity,
-                            height: 180,
-                            margin: const EdgeInsets.only(bottom: 16),
-                            color: Colors.grey[300],
-                            child: Center(
-                                child: Text('Image: ${blog.coverImage}')),
+                        if (blog.coverImage != null &&
+                            blog.coverImage!.isNotEmpty)
+                          Hero(
+                            tag: 'cover-${blog.coverImage}',
+                            child: ClipRRect(
+                              borderRadius: const BorderRadius.horizontal(
+                                left: Radius.circular(8),
+                              ),
+                              child: Image.network(
+                                blog.coverImage ??
+                                    '', // Provide an empty string if null
+                                width: double.infinity,
+                                height: 200,
+                                fit: BoxFit.cover,
+                                loadingBuilder: (context, child, progress) {
+                                  if (progress == null) return child;
+                                  return Container(
+                                    width: double.infinity,
+                                    height: 200,
+                                    color: Colors.grey[200],
+                                    child: const Center(
+                                      child: CircularProgressIndicator(),
+                                    ),
+                                  );
+                                },
+                                errorBuilder: (context, error, stackTrace) {
+                                  return Container(
+                                    width: double.infinity,
+                                    height: 200,
+                                    color: Colors.grey[200],
+                                    child: const Center(
+                                      child: Icon(Icons.image,
+                                          size: 48, color: Colors.grey),
+                                    ),
+                                  );
+                                },
+                              ),
+                            ),
                           ),
                         Text(
-                          blog.title,
+                          blog.title ?? '',
                           style: const TextStyle(
                               fontSize: 24, fontWeight: FontWeight.bold),
                         ),
-                        if (blog.subtitle.isNotEmpty)
+                        if (blog.subtitle != null && blog.subtitle!.isNotEmpty)
                           Padding(
                             padding:
                                 const EdgeInsets.only(top: 8.0, bottom: 8.0),
                             child: Text(
-                              blog.subtitle,
+                              blog.subtitle ?? '',
                               style: const TextStyle(
                                   fontSize: 16, fontWeight: FontWeight.w500),
                             ),
                           ),
                         Row(
                           children: [
-                            if (blog.authorAvatar.isNotEmpty)
+                            if (blog.authorAvatar != null &&
+                                blog.authorAvatar!.isNotEmpty)
                               CircleAvatar(
                                 backgroundImage:
-                                    NetworkImage(blog.authorAvatar),
+                                    NetworkImage(blog.authorAvatar ?? ''),
                               ),
-                            if (blog.authorAvatar.isNotEmpty)
+                            if (blog.authorAvatar != null &&
+                                blog.authorAvatar!.isNotEmpty)
                               const SizedBox(width: 8),
-                            Text(blog.author,
+                            Text(blog.author ?? '',
                                 style: const TextStyle(
                                     fontWeight: FontWeight.bold)),
                             const SizedBox(width: 16),
-                            Text(blog.date.split('T').first),
+                            Text(blog.date != null
+                                ? blog.date!.toFormattedString()
+                                : ''),
                             const SizedBox(width: 16),
-                            Text('Read: ${blog.readTime} min'),
+                            Text('Read: ${blog.readTime ?? ''} min'),
                           ],
                         ),
                         const SizedBox(height: 20),
-                        ...blog.itemParagraphList.map<Widget>((item) {
+                        ...(blog.paragraphs ?? []).map<Widget>((item) {
                           return Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              if (item.imageUrl.isNotEmpty)
+                              if (item.image != null && item.image!.isNotEmpty)
                                 Container(
                                   width: double.infinity,
                                   height: 120,
                                   margin: const EdgeInsets.only(bottom: 8),
                                   color: Colors.grey[200],
                                   child: Center(
-                                      child: Text('Image: ${item.imageUrl}')),
+                                      child: Text('Image: ${item.image}')),
                                 ),
-                              if (item.title.isNotEmpty)
+                              if (item.title != null && item.title!.isNotEmpty)
                                 Padding(
                                   padding: const EdgeInsets.only(
                                       top: 12.0, bottom: 4.0),
                                   child: Text(
-                                    item.title,
+                                    item.title!,
                                     style: const TextStyle(
                                         fontSize: 18,
                                         fontWeight: FontWeight.bold),
                                   ),
                                 ),
-                              if (item.content.isNotEmpty)
+                              if (item.content != null &&
+                                  item.content!.isNotEmpty)
                                 Padding(
                                   padding: const EdgeInsets.only(bottom: 4.0),
-                                  child: Text(item.content),
+                                  child: Text(item.content!),
                                 ),
-                              if (item.note.isNotEmpty)
+                              if (item.note != null && item.note!.isNotEmpty)
                                 Padding(
                                   padding: const EdgeInsets.only(bottom: 4.0),
                                   child: Text('Note: ${item.note}',
@@ -245,7 +317,8 @@ class BlogDetailsApiPage extends GetView<BlogController> {
                                           fontStyle: FontStyle.italic,
                                           color: Colors.blueGrey)),
                                 ),
-                              if (item.codeExample.isNotEmpty)
+                              if (item.codeExample != null &&
+                                  item.codeExample!.isNotEmpty)
                                 Container(
                                   width: double.infinity,
                                   margin:
@@ -258,7 +331,7 @@ class BlogDetailsApiPage extends GetView<BlogController> {
                                   child: SingleChildScrollView(
                                     scrollDirection: Axis.horizontal,
                                     child: SelectableText(
-                                      item.codeExample,
+                                      item.codeExample!,
                                       style: const TextStyle(
                                           fontFamily: 'monospace',
                                           fontSize: 14),
@@ -293,79 +366,114 @@ class BlogDetailsApiPage extends GetView<BlogController> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        if (blog.coverImage.isNotEmpty)
-                          Container(
-                            width: double.infinity,
-                            height: 180.h,
-                            margin: const EdgeInsets.only(bottom: 16),
-                            color: Colors.grey[300],
-                            child: Center(
-                                child: Text('Image: ${blog.coverImage}')),
+                        if (blog.coverImage != null &&
+                            blog.coverImage!.isNotEmpty)
+                          Hero(
+                            tag: 'cover-${blog.coverImage}',
+                            child: ClipRRect(
+                              borderRadius: const BorderRadius.horizontal(
+                                left: Radius.circular(8),
+                              ),
+                              child: Image.network(
+                                blog.coverImage ??
+                                    '', // Provide an empty string if null
+                                width: double.infinity,
+                                height: 200,
+                                fit: BoxFit.cover,
+                                loadingBuilder: (context, child, progress) {
+                                  if (progress == null) return child;
+                                  return Container(
+                                    width: double.infinity,
+                                    height: 200,
+                                    color: Colors.grey[200],
+                                    child: const Center(
+                                      child: CircularProgressIndicator(),
+                                    ),
+                                  );
+                                },
+                                errorBuilder: (context, error, stackTrace) {
+                                  return Container(
+                                    width: double.infinity,
+                                    height: 200,
+                                    color: Colors.grey[200],
+                                    child: const Center(
+                                      child: Icon(Icons.image,
+                                          size: 48, color: Colors.grey),
+                                    ),
+                                  );
+                                },
+                              ),
+                            ),
                           ),
                         Text(
-                          blog.title,
+                          blog.title ?? '',
                           style: const TextStyle(
                               fontSize: 24, fontWeight: FontWeight.bold),
                         ),
-                        if (blog.subtitle.isNotEmpty)
+                        if (blog.subtitle != null && blog.subtitle!.isNotEmpty)
                           Padding(
                             padding:
                                 const EdgeInsets.only(top: 8.0, bottom: 8.0),
                             child: Text(
-                              blog.subtitle,
+                              blog.subtitle ?? '',
                               style: const TextStyle(
                                   fontSize: 16, fontWeight: FontWeight.w500),
                             ),
                           ),
                         Row(
                           children: [
-                            if (blog.authorAvatar.isNotEmpty)
+                            if (blog.authorAvatar != null &&
+                                blog.authorAvatar!.isNotEmpty)
                               CircleAvatar(
                                 backgroundImage:
-                                    NetworkImage(blog.authorAvatar),
+                                    NetworkImage(blog.authorAvatar ?? ''),
                               ),
-                            if (blog.authorAvatar.isNotEmpty)
+                            if (blog.authorAvatar != null &&
+                                blog.authorAvatar!.isNotEmpty)
                               const SizedBox(width: 8),
-                            Text(blog.author,
+                            Text(blog.author ?? '',
                                 style: const TextStyle(
                                     fontWeight: FontWeight.bold)),
                             const SizedBox(width: 16),
-                            Text(blog.date.split('T').first),
+                            Text(blog.date != null
+                                ? blog.date!.toFormattedString()
+                                : ''),
                             const SizedBox(width: 16),
-                            Text('Read: ${blog.readTime} min'),
+                            Text('Read: ${blog.readTime ?? ''} min'),
                           ],
                         ),
                         const SizedBox(height: 20),
-                        ...blog.itemParagraphList.map<Widget>((item) {
+                        ...(blog.paragraphs ?? []).map<Widget>((item) {
                           return Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              if (item.imageUrl.isNotEmpty)
+                              if (item.image != null && item.image!.isNotEmpty)
                                 Container(
                                   width: double.infinity,
                                   height: 120,
                                   margin: const EdgeInsets.only(bottom: 8),
                                   color: Colors.grey[200],
                                   child: Center(
-                                      child: Text('Image: ${item.imageUrl}')),
+                                      child: Text('Image: ${item.image}')),
                                 ),
-                              if (item.title.isNotEmpty)
+                              if (item.title != null && item.title!.isNotEmpty)
                                 Padding(
                                   padding: const EdgeInsets.only(
                                       top: 12.0, bottom: 4.0),
                                   child: Text(
-                                    item.title,
+                                    item.title!,
                                     style: const TextStyle(
                                         fontSize: 18,
                                         fontWeight: FontWeight.bold),
                                   ),
                                 ),
-                              if (item.content.isNotEmpty)
+                              if (item.content != null &&
+                                  item.content!.isNotEmpty)
                                 Padding(
                                   padding: const EdgeInsets.only(bottom: 4.0),
-                                  child: Text(item.content),
+                                  child: Text(item.content!),
                                 ),
-                              if (item.note.isNotEmpty)
+                              if (item.note != null && item.note!.isNotEmpty)
                                 Padding(
                                   padding: const EdgeInsets.only(bottom: 4.0),
                                   child: Text('Note: ${item.note}',
@@ -373,7 +481,8 @@ class BlogDetailsApiPage extends GetView<BlogController> {
                                           fontStyle: FontStyle.italic,
                                           color: Colors.blueGrey)),
                                 ),
-                              if (item.codeExample.isNotEmpty)
+                              if (item.codeExample != null &&
+                                  item.codeExample!.isNotEmpty)
                                 Container(
                                   width: double.infinity,
                                   margin:
@@ -386,7 +495,7 @@ class BlogDetailsApiPage extends GetView<BlogController> {
                                   child: SingleChildScrollView(
                                     scrollDirection: Axis.horizontal,
                                     child: SelectableText(
-                                      item.codeExample,
+                                      item.codeExample!,
                                       style: const TextStyle(
                                           fontFamily: 'monospace',
                                           fontSize: 14),

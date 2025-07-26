@@ -1,3 +1,4 @@
+import 'package:dart_programing/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:dart_programing/app/common_widgets/blog_card.dart';
@@ -88,8 +89,7 @@ class _BlogListPageState extends State<BlogListPage> {
                 readTime: blog.readTime,
                 coverImage: blog.coverImage,
                 onTap: () {
-                  // Navigate to blog details
-                  // You may want to use AppPages.router.go('/blog/ {blog.id}');
+                  AppPages.router.go("/blogs/${blog.id}");
                 },
               ),
             );

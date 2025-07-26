@@ -1,6 +1,6 @@
+import 'package:dart_programing/utils/extention.dart';
 import 'package:flutter/material.dart';
 import 'package:svg_flutter/svg_flutter.dart';
-import 'package:intl/intl.dart';
 
 class BlogCard extends StatefulWidget {
   final String id;
@@ -33,7 +33,6 @@ class BlogCard extends StatefulWidget {
 class _BlogCardState extends State<BlogCard>
     with SingleTickerProviderStateMixin {
   bool _hovering = false;
-  bool _liked = false;
   late AnimationController _controller;
 
   @override
@@ -54,14 +53,6 @@ class _BlogCardState extends State<BlogCard>
 
   @override
   Widget build(BuildContext context) {
-    // Date formatting
-    String formattedDate;
-    try {
-      final dt = DateTime.parse(widget.date);
-      formattedDate = DateFormat('dd MMM yyyy').format(dt);
-    } catch (e) {
-      formattedDate = widget.date;
-    }
     return FadeTransition(
       opacity: _controller.drive(CurveTween(curve: Curves.easeIn)),
       child: MouseRegion(
@@ -89,7 +80,8 @@ class _BlogCardState extends State<BlogCard>
                             tag: 'cover-${widget.id}',
                             child: ClipRRect(
                               borderRadius: const BorderRadius.horizontal(
-                                  left: Radius.circular(8)),
+                                left: Radius.circular(8),
+                              ),
                               child: Image.network(
                                 widget.coverImage!,
                                 width: double.infinity,
@@ -102,7 +94,8 @@ class _BlogCardState extends State<BlogCard>
                                     height: double.infinity,
                                     color: Colors.grey[200],
                                     child: const Center(
-                                        child: CircularProgressIndicator()),
+                                      child: CircularProgressIndicator(),
+                                    ),
                                   );
                                 },
                               ),
@@ -179,7 +172,7 @@ class _BlogCardState extends State<BlogCard>
                               Icon(Icons.star,
                                   size: 12, color: Colors.amber[700]),
                               const SizedBox(width: 2),
-                              Text(formattedDate,
+                              Text(widget.date.toFormattedDate(),
                                   style: const TextStyle(
                                       fontSize: 10, color: Colors.grey)),
                               const SizedBox(width: 8),
