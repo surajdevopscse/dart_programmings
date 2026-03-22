@@ -97,6 +97,66 @@ abstract class StringKeys {
   static String get streamInDart => 'Stream'.tr;
   static String get isolate => 'Isolate'.tr;
 
+  // Flutter Tutorials
+  static String get flutterTutorials => 'Flutter Tutorials'.tr;
+  static String get flutterIntro => 'Introduction to Flutter'.tr;
+  static String get flutterSetup => 'Flutter Setup'.tr;
+  static String get flutterWidgets => 'Flutter Widgets'.tr;
+  static String get flutterStateless => 'Stateless Widget'.tr;
+  static String get flutterStateful => 'Stateful Widget'.tr;
+  static String get flutterLayouts => 'Flutter Layouts'.tr;
+  static String get flutterRowColumn => 'Row & Column'.tr;
+  static String get flutterStack => 'Stack Widget'.tr;
+  static String get flutterListView => 'ListView'.tr;
+  static String get flutterGridView => 'GridView'.tr;
+  static String get flutterNavigation => 'Navigation'.tr;
+  static String get flutterGoRouter => 'Go Router'.tr;
+  static String get flutterStateMgmt => 'State Management'.tr;
+  static String get flutterProvider => 'Provider'.tr;
+  static String get flutterRiverpod => 'Riverpod'.tr;
+  static String get flutterGetX => 'GetX'.tr;
+  static String get flutterBloc => 'BLoC'.tr;
+  static String get flutterNetworking => 'Networking'.tr;
+  static String get flutterHttp => 'HTTP Package'.tr;
+  static String get flutterDio => 'Dio Package'.tr;
+  static String get flutterLocalStorage => 'Local Storage'.tr;
+  static String get flutterSharedPref => 'Shared Preferences'.tr;
+  static String get flutterHive => 'Hive'.tr;
+  static String get flutterSqlite => 'SQLite'.tr;
+  static String get flutterFirebase => 'Firebase'.tr;
+  static String get flutterAnimations => 'Animations'.tr;
+  static String get flutterImplicitAnim => 'Implicit Animations'.tr;
+  static String get flutterExplicitAnim => 'Explicit Animations'.tr;
+  static String get flutterHeroAnim => 'Hero Animation'.tr;
+  static String get flutterTesting => 'Testing'.tr;
+  static String get flutterUnitTest => 'Unit Testing'.tr;
+  static String get flutterWidgetTest => 'Widget Testing'.tr;
+  static String get flutterPublishing => 'Publishing'.tr;
+  static String get flutterWebDesktop => 'Web & Desktop'.tr;
+
+  // Interview Prep
+  static String get interviewPrep => 'Interview Prep'.tr;
+  static String get interviewHome => 'Interview Home'.tr;
+  static String get dartInterviewQA => 'Dart Q&A'.tr;
+  static String get flutterInterviewQA => 'Flutter Q&A'.tr;
+  static String get mockInterview => 'Mock Interview'.tr;
+
+  // Best Guide
+  static String get bestGuide => 'Best Guide'.tr;
+  static String get bestGuideHome => 'Guide Home'.tr;
+  static String get projectStructure => 'Project Structure'.tr;
+  static String get cleanArchitecture => 'Clean Architecture'.tr;
+  static String get performanceTips => 'Performance Tips'.tr;
+  static String get responsiveDesign => 'Responsive Design'.tr;
+  static String get codeStyle => 'Code Style'.tr;
+  static String get commonMistakes => 'Common Mistakes'.tr;
+  static String get usefulPackages => 'Useful Packages'.tr;
+  static String get testingGuide => 'Testing Guide'.tr;
+
+  // Progress & Bookmarks
+  static String get bookmarks => 'Bookmarks'.tr;
+  static String get progress => 'Progress'.tr;
+
   static String get hello => 'hello'.tr;
   static String get employees => 'Employees'.tr;
   static String get lead => 'Lead'.tr;

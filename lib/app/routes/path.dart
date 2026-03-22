@@ -94,4 +94,64 @@ sealed class AppPath {
   static const ASYNCANDAWAIT = '/async_await';
   static const STREAM = '/stream';
   static const ISOLATE = '/isolate';
+
+  // Flutter Tutorials
+  static const FLUTTER_INTRO         = '/flutter-introduction';
+  static const FLUTTER_SETUP         = 'flutter-setup';
+  static const FLUTTER_WIDGETS       = 'flutter-widgets';
+  static const FLUTTER_STATELESS     = 'stateless-widget';
+  static const FLUTTER_STATEFUL      = 'stateful-widget';
+  static const FLUTTER_LAYOUTS       = 'flutter-layouts';
+  static const FLUTTER_ROW_COLUMN    = 'row-column';
+  static const FLUTTER_STACK         = 'stack-widget';
+  static const FLUTTER_LISTVIEW      = 'listview';
+  static const FLUTTER_GRIDVIEW      = 'gridview';
+  static const FLUTTER_NAVIGATION    = 'navigation';
+  static const FLUTTER_GOROUTER      = 'go-router';
+  static const FLUTTER_STATE_MGMT   = 'state-management';
+  static const FLUTTER_PROVIDER      = 'provider';
+  static const FLUTTER_RIVERPOD      = 'riverpod';
+  static const FLUTTER_GETX          = 'getx';
+  static const FLUTTER_BLOC          = 'bloc';
+  static const FLUTTER_NETWORKING    = 'networking';
+  static const FLUTTER_HTTP          = 'http-package';
+  static const FLUTTER_DIO           = 'dio-package';
+  static const FLUTTER_LOCAL_STORAGE = 'local-storage';
+  static const FLUTTER_SHARED_PREF   = 'shared-preferences';
+  static const FLUTTER_HIVE          = 'hive';
+  static const FLUTTER_SQLITE        = 'sqlite';
+  static const FLUTTER_FIREBASE      = 'firebase-intro';
+  static const FLUTTER_ANIMATIONS    = 'animations';
+  static const FLUTTER_IMPLICIT_ANIM = 'implicit-animations';
+  static const FLUTTER_EXPLICIT_ANIM = 'explicit-animations';
+  static const FLUTTER_HERO_ANIM     = 'hero-animation';
+  static const FLUTTER_TESTING       = 'testing';
+  static const FLUTTER_UNIT_TEST     = 'unit-testing';
+  static const FLUTTER_WIDGET_TEST   = 'widget-testing';
+  static const FLUTTER_PUBLISHING    = 'publishing';
+  static const FLUTTER_WEB_DESKTOP   = 'web-and-desktop';
+
+  // Interview Prep
+  static const INTERVIEW_HOME        = '/interview-prep';
+  static const INTERVIEW_DART_QA     = 'dart-interview-qa';
+  static const INTERVIEW_FLUTTER_QA  = 'flutter-interview-qa';
+  static const INTERVIEW_MOCK        = 'mock-interview';
+
+  // Best Guide
+  static const BEST_GUIDE_HOME       = '/best-guide';
+  static const BEST_GUIDE_STRUCTURE  = 'project-structure';
+  static const BEST_GUIDE_CLEAN_ARCH = 'clean-architecture';
+  static const BEST_GUIDE_PERFORMANCE= 'performance-tips';
+  static const BEST_GUIDE_RESPONSIVE = 'responsive-design';
+  static const BEST_GUIDE_CODE_STYLE = 'code-style';
+  static const BEST_GUIDE_MISTAKES   = 'common-mistakes';
+  static const BEST_GUIDE_PACKAGES   = 'useful-packages';
+  static const BEST_GUIDE_TESTING    = 'testing-guide';
+
+  // Search
+  static const SEARCH                = '/search';
+
+  // Progress & Bookmarks
+  static const BOOKMARKS             = '/bookmarks';
+  static const PROGRESS              = '/progress';
 }

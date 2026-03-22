@@ -58,7 +58,7 @@ class DartIntroduction extends StatelessWidget {
                 ),
               ),
             ),
-            const SliverToBoxAdapter(child: GlobalBlogCardsSection()),
+            // const SliverToBoxAdapter(child: GlobalBlogCardsSection()),
             const SliverToBoxAdapter(child: AppFooter()),
           ],
         ),

@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 class SmallText extends StatelessWidget {
   final String text;
   final TextAlign textAlign;
-  final TextStyle style;
+  final TextStyle? style;
   const SmallText({
     super.key,
     required this.text,
-    required this.style,
+    this.style,
     this.textAlign = TextAlign.center,
   });
 
@@ -17,7 +17,7 @@ class SmallText extends StatelessWidget {
     return AutoSizeText(
       textAlign: textAlign,
       text,
-      style: style,
+      style: style ?? const TextStyle(fontSize: 14),
     );
   }
 }

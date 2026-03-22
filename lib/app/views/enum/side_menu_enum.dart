@@ -133,6 +133,92 @@ enum SideNavBarParentEnum {
     ],
     parentPath: AppPath.ASYNCPROGRAMMING,
   ),
+
+  // Flutter Tutorials
+  flutterTutorials(
+    children: [
+      SideNavBarChildEnum.flutterIntro,
+      SideNavBarChildEnum.flutterSetup,
+      SideNavBarChildEnum.flutterWidgets,
+      SideNavBarChildEnum.flutterStateless,
+      SideNavBarChildEnum.flutterStateful,
+      SideNavBarChildEnum.flutterLayouts,
+      SideNavBarChildEnum.flutterRowColumn,
+      SideNavBarChildEnum.flutterStack,
+      SideNavBarChildEnum.flutterListView,
+      SideNavBarChildEnum.flutterGridView,
+      SideNavBarChildEnum.flutterNavigation,
+      SideNavBarChildEnum.flutterGoRouter,
+      SideNavBarChildEnum.flutterStateMgmt,
+      SideNavBarChildEnum.flutterProvider,
+      SideNavBarChildEnum.flutterRiverpod,
+      SideNavBarChildEnum.flutterGetX,
+      SideNavBarChildEnum.flutterBloc,
+      SideNavBarChildEnum.flutterNetworking,
+      SideNavBarChildEnum.flutterHttp,
+      SideNavBarChildEnum.flutterDio,
+      SideNavBarChildEnum.flutterLocalStorage,
+      SideNavBarChildEnum.flutterSharedPref,
+      SideNavBarChildEnum.flutterHive,
+      SideNavBarChildEnum.flutterSqlite,
+      SideNavBarChildEnum.flutterFirebase,
+      SideNavBarChildEnum.flutterAnimations,
+      SideNavBarChildEnum.flutterImplicitAnim,
+      SideNavBarChildEnum.flutterExplicitAnim,
+      SideNavBarChildEnum.flutterHeroAnim,
+      SideNavBarChildEnum.flutterTesting,
+      SideNavBarChildEnum.flutterUnitTest,
+      SideNavBarChildEnum.flutterWidgetTest,
+      SideNavBarChildEnum.flutterPublishing,
+      SideNavBarChildEnum.flutterWebDesktop,
+    ],
+    parentPath: AppPath.FLUTTER_INTRO,
+  ),
+
+  // Interview Prep
+  interviewPrep(
+    children: [
+      SideNavBarChildEnum.interviewHome,
+      SideNavBarChildEnum.dartInterviewQA,
+      SideNavBarChildEnum.flutterInterviewQA,
+      SideNavBarChildEnum.mockInterview,
+    ],
+    parentPath: AppPath.INTERVIEW_HOME,
+  ),
+
+  // Best Guide
+  bestGuide(
+    children: [
+      SideNavBarChildEnum.bestGuideHome,
+      SideNavBarChildEnum.projectStructure,
+      SideNavBarChildEnum.cleanArchitecture,
+      SideNavBarChildEnum.performanceTips,
+      SideNavBarChildEnum.responsiveDesign,
+      SideNavBarChildEnum.codeStyle,
+      SideNavBarChildEnum.commonMistakes,
+      SideNavBarChildEnum.usefulPackages,
+      SideNavBarChildEnum.testingGuide,
+    ],
+    parentPath: AppPath.BEST_GUIDE_HOME,
+  ),
+
+  // Search
+  search(
+    children: [],
+    parentPath: AppPath.SEARCH,
+  ),
+
+  // Bookmarks
+  bookmarks(
+    children: [],
+    parentPath: AppPath.BOOKMARKS,
+  ),
+
+  // Progress
+  progress(
+    children: [],
+    parentPath: AppPath.PROGRESS,
+  ),
   ;
 
   final List<SideNavBarChildEnum> children;
@@ -161,6 +247,18 @@ enum SideNavBarParentEnum {
         return SK.nullSafety;
       case SideNavBarParentEnum.asyncProgram:
         return SK.asyncProgramming;
+      case SideNavBarParentEnum.flutterTutorials:
+        return SK.flutterTutorials;
+      case SideNavBarParentEnum.interviewPrep:
+        return SK.interviewPrep;
+      case SideNavBarParentEnum.bestGuide:
+        return SK.bestGuide;
+      case SideNavBarParentEnum.search:
+        return SK.search;
+      case SideNavBarParentEnum.bookmarks:
+        return SK.bookmarks;
+      case SideNavBarParentEnum.progress:
+        return SK.progress;
     }
   }
 
@@ -183,6 +281,18 @@ enum SideNavBarParentEnum {
       case SideNavBarParentEnum.nullSafety:
         return (I.codeActive, I.codeInactive);
       case SideNavBarParentEnum.asyncProgram:
+        return (I.codeActive, I.codeInactive);
+      case SideNavBarParentEnum.flutterTutorials:
+        return (I.codeActive, I.codeInactive);
+      case SideNavBarParentEnum.interviewPrep:
+        return (I.codeActive, I.codeInactive);
+      case SideNavBarParentEnum.bestGuide:
+        return (I.codeActive, I.codeInactive);
+      case SideNavBarParentEnum.search:
+        return (I.codeActive, I.codeInactive);
+      case SideNavBarParentEnum.bookmarks:
+        return (I.codeActive, I.codeInactive);
+      case SideNavBarParentEnum.progress:
         return (I.codeActive, I.codeInactive);
     }
   }
@@ -421,6 +531,64 @@ enum SideNavBarChildEnum {
   isolate(
     childPath: AppPath.ISOLATE,
   ),
+
+  // Flutter Tutorials
+  flutterIntro(childPath: AppPath.FLUTTER_INTRO),
+  flutterSetup(childPath: AppPath.FLUTTER_SETUP),
+  flutterWidgets(childPath: AppPath.FLUTTER_WIDGETS),
+  flutterStateless(childPath: AppPath.FLUTTER_STATELESS),
+  flutterStateful(childPath: AppPath.FLUTTER_STATEFUL),
+  flutterLayouts(childPath: AppPath.FLUTTER_LAYOUTS),
+  flutterRowColumn(childPath: AppPath.FLUTTER_ROW_COLUMN),
+  flutterStack(childPath: AppPath.FLUTTER_STACK),
+  flutterListView(childPath: AppPath.FLUTTER_LISTVIEW),
+  flutterGridView(childPath: AppPath.FLUTTER_GRIDVIEW),
+  flutterNavigation(childPath: AppPath.FLUTTER_NAVIGATION),
+  flutterGoRouter(childPath: AppPath.FLUTTER_GOROUTER),
+  flutterStateMgmt(childPath: AppPath.FLUTTER_STATE_MGMT),
+  flutterProvider(childPath: AppPath.FLUTTER_PROVIDER),
+  flutterRiverpod(childPath: AppPath.FLUTTER_RIVERPOD),
+  flutterGetX(childPath: AppPath.FLUTTER_GETX),
+  flutterBloc(childPath: AppPath.FLUTTER_BLOC),
+  flutterNetworking(childPath: AppPath.FLUTTER_NETWORKING),
+  flutterHttp(childPath: AppPath.FLUTTER_HTTP),
+  flutterDio(childPath: AppPath.FLUTTER_DIO),
+  flutterLocalStorage(childPath: AppPath.FLUTTER_LOCAL_STORAGE),
+  flutterSharedPref(childPath: AppPath.FLUTTER_SHARED_PREF),
+  flutterHive(childPath: AppPath.FLUTTER_HIVE),
+  flutterSqlite(childPath: AppPath.FLUTTER_SQLITE),
+  flutterFirebase(childPath: AppPath.FLUTTER_FIREBASE),
+  flutterAnimations(childPath: AppPath.FLUTTER_ANIMATIONS),
+  flutterImplicitAnim(childPath: AppPath.FLUTTER_IMPLICIT_ANIM),
+  flutterExplicitAnim(childPath: AppPath.FLUTTER_EXPLICIT_ANIM),
+  flutterHeroAnim(childPath: AppPath.FLUTTER_HERO_ANIM),
+  flutterTesting(childPath: AppPath.FLUTTER_TESTING),
+  flutterUnitTest(childPath: AppPath.FLUTTER_UNIT_TEST),
+  flutterWidgetTest(childPath: AppPath.FLUTTER_WIDGET_TEST),
+  flutterPublishing(childPath: AppPath.FLUTTER_PUBLISHING),
+  flutterWebDesktop(childPath: AppPath.FLUTTER_WEB_DESKTOP),
+
+  // Interview Prep
+  interviewHome(childPath: AppPath.INTERVIEW_HOME),
+  dartInterviewQA(childPath: AppPath.INTERVIEW_DART_QA),
+  flutterInterviewQA(childPath: AppPath.INTERVIEW_FLUTTER_QA),
+  mockInterview(childPath: AppPath.INTERVIEW_MOCK),
+
+  // Best Guide
+  bestGuideHome(childPath: AppPath.BEST_GUIDE_HOME),
+  projectStructure(childPath: AppPath.BEST_GUIDE_STRUCTURE),
+  cleanArchitecture(childPath: AppPath.BEST_GUIDE_CLEAN_ARCH),
+  performanceTips(childPath: AppPath.BEST_GUIDE_PERFORMANCE),
+  responsiveDesign(childPath: AppPath.BEST_GUIDE_RESPONSIVE),
+  codeStyle(childPath: AppPath.BEST_GUIDE_CODE_STYLE),
+  commonMistakes(childPath: AppPath.BEST_GUIDE_MISTAKES),
+  usefulPackages(childPath: AppPath.BEST_GUIDE_PACKAGES),
+  testingGuide(childPath: AppPath.BEST_GUIDE_TESTING),
+
+  // Search / Bookmarks / Progress
+  searchPage(childPath: AppPath.SEARCH),
+  bookmarksPage(childPath: AppPath.BOOKMARKS),
+  progressPage(childPath: AppPath.PROGRESS),
   ;
 
   final String? childPath;
@@ -590,6 +758,114 @@ enum SideNavBarChildEnum {
         return SK.streamInDart;
       case SideNavBarChildEnum.isolate:
         return SK.isolate;
+
+      // Flutter Tutorials
+      case SideNavBarChildEnum.flutterIntro:
+        return SK.flutterIntro;
+      case SideNavBarChildEnum.flutterSetup:
+        return SK.flutterSetup;
+      case SideNavBarChildEnum.flutterWidgets:
+        return SK.flutterWidgets;
+      case SideNavBarChildEnum.flutterStateless:
+        return SK.flutterStateless;
+      case SideNavBarChildEnum.flutterStateful:
+        return SK.flutterStateful;
+      case SideNavBarChildEnum.flutterLayouts:
+        return SK.flutterLayouts;
+      case SideNavBarChildEnum.flutterRowColumn:
+        return SK.flutterRowColumn;
+      case SideNavBarChildEnum.flutterStack:
+        return SK.flutterStack;
+      case SideNavBarChildEnum.flutterListView:
+        return SK.flutterListView;
+      case SideNavBarChildEnum.flutterGridView:
+        return SK.flutterGridView;
+      case SideNavBarChildEnum.flutterNavigation:
+        return SK.flutterNavigation;
+      case SideNavBarChildEnum.flutterGoRouter:
+        return SK.flutterGoRouter;
+      case SideNavBarChildEnum.flutterStateMgmt:
+        return SK.flutterStateMgmt;
+      case SideNavBarChildEnum.flutterProvider:
+        return SK.flutterProvider;
+      case SideNavBarChildEnum.flutterRiverpod:
+        return SK.flutterRiverpod;
+      case SideNavBarChildEnum.flutterGetX:
+        return SK.flutterGetX;
+      case SideNavBarChildEnum.flutterBloc:
+        return SK.flutterBloc;
+      case SideNavBarChildEnum.flutterNetworking:
+        return SK.flutterNetworking;
+      case SideNavBarChildEnum.flutterHttp:
+        return SK.flutterHttp;
+      case SideNavBarChildEnum.flutterDio:
+        return SK.flutterDio;
+      case SideNavBarChildEnum.flutterLocalStorage:
+        return SK.flutterLocalStorage;
+      case SideNavBarChildEnum.flutterSharedPref:
+        return SK.flutterSharedPref;
+      case SideNavBarChildEnum.flutterHive:
+        return SK.flutterHive;
+      case SideNavBarChildEnum.flutterSqlite:
+        return SK.flutterSqlite;
+      case SideNavBarChildEnum.flutterFirebase:
+        return SK.flutterFirebase;
+      case SideNavBarChildEnum.flutterAnimations:
+        return SK.flutterAnimations;
+      case SideNavBarChildEnum.flutterImplicitAnim:
+        return SK.flutterImplicitAnim;
+      case SideNavBarChildEnum.flutterExplicitAnim:
+        return SK.flutterExplicitAnim;
+      case SideNavBarChildEnum.flutterHeroAnim:
+        return SK.flutterHeroAnim;
+      case SideNavBarChildEnum.flutterTesting:
+        return SK.flutterTesting;
+      case SideNavBarChildEnum.flutterUnitTest:
+        return SK.flutterUnitTest;
+      case SideNavBarChildEnum.flutterWidgetTest:
+        return SK.flutterWidgetTest;
+      case SideNavBarChildEnum.flutterPublishing:
+        return SK.flutterPublishing;
+      case SideNavBarChildEnum.flutterWebDesktop:
+        return SK.flutterWebDesktop;
+
+      // Interview Prep
+      case SideNavBarChildEnum.interviewHome:
+        return SK.interviewHome;
+      case SideNavBarChildEnum.dartInterviewQA:
+        return SK.dartInterviewQA;
+      case SideNavBarChildEnum.flutterInterviewQA:
+        return SK.flutterInterviewQA;
+      case SideNavBarChildEnum.mockInterview:
+        return SK.mockInterview;
+
+      // Best Guide
+      case SideNavBarChildEnum.bestGuideHome:
+        return SK.bestGuideHome;
+      case SideNavBarChildEnum.projectStructure:
+        return SK.projectStructure;
+      case SideNavBarChildEnum.cleanArchitecture:
+        return SK.cleanArchitecture;
+      case SideNavBarChildEnum.performanceTips:
+        return SK.performanceTips;
+      case SideNavBarChildEnum.responsiveDesign:
+        return SK.responsiveDesign;
+      case SideNavBarChildEnum.codeStyle:
+        return SK.codeStyle;
+      case SideNavBarChildEnum.commonMistakes:
+        return SK.commonMistakes;
+      case SideNavBarChildEnum.usefulPackages:
+        return SK.usefulPackages;
+      case SideNavBarChildEnum.testingGuide:
+        return SK.testingGuide;
+
+      // Search / Bookmarks / Progress
+      case SideNavBarChildEnum.searchPage:
+        return SK.search;
+      case SideNavBarChildEnum.bookmarksPage:
+        return SK.bookmarks;
+      case SideNavBarChildEnum.progressPage:
+        return SK.progress;
     }
   }
 }

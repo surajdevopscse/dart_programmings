@@ -1,6 +1,9 @@
 import 'package:dart_programing/app/app_services.dart';
 import 'package:dart_programing/app/device_screen_type.dart';
 import 'package:dart_programing/app/routes/app_pages.dart';
+import 'package:dart_programing/services/bookmarks/bookmark_service.dart';
+import 'package:dart_programing/services/progress/progress_service.dart';
+import 'package:dart_programing/services/shared_preference_service/shared_preference_service.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -14,6 +17,9 @@ import 'modules/home/controllers/app_bar_controller.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Get.putAsync(() => SharedPreferenceService().init());
+  Get.put(ProgressService(), permanent: true);
+  Get.put(BookmarkService(), permanent: true);
   Get.put(AppBarController());
   setPathUrlStrategy();
   runApp(const MyApp());

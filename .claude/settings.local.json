@@ -1,0 +1,40 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p /c/WorkSpace/dart_programmings/lib/modules/control_flow_and_loops/controllers)",
+      "Bash(mkdir -p /c/WorkSpace/dart_programmings/lib/modules/control_flow_and_loops/pages)",
+      "Bash(mkdir -p /c/WorkSpace/dart_programmings/lib/modules/functions/controllers)",
+      "Bash(mkdir -p /c/WorkSpace/dart_programmings/lib/modules/functions/pages)",
+      "Bash(mkdir -p /c/WorkSpace/dart_programmings/lib/modules/collections/controllers)",
+      "Bash(python3:*)",
+      "Read(//usr/**)",
+      "Read(//mingw64/**)",
+      "Read(//usr/local/**)",
+      "Bash(grep -l \"class.*Controller\" /c/WorkSpace/dart_programmings/lib/modules/oops/controllers/*.dart)",
+      "Bash(xargs grep:*)",
+      "Bash(grep '^class ' /c/WorkSpace/dart_programmings/lib/modules/oops/pages/*.dart)",
+      "Bash(grep \"^class \" /c/WorkSpace/dart_programmings/lib/modules/functions/controllers/*.dart)",
+      "Bash(grep \"^class \" /c/WorkSpace/dart_programmings/lib/modules/collections/controllers/*.dart)",
+      "Bash(grep \"^class \" /c/WorkSpace/dart_programmings/lib/modules/file_handling/controllers/*.dart)",
+      "Bash(grep \"^class \" /c/WorkSpace/dart_programmings/lib/modules/control_flow_and_loops/controllers/*.dart)",
+      "Bash(grep \"^class \" /c/WorkSpace/dart_programmings/lib/modules/functions/pages/*.dart)",
+      "Bash(grep \"^class \" /c/WorkSpace/dart_programmings/lib/modules/collections/pages/*.dart)",
+      "Bash(grep \"^class \" /c/WorkSpace/dart_programmings/lib/modules/file_handling/pages/*.dart)",
+      "Bash(grep \"^class \" /c/WorkSpace/dart_programmings/lib/modules/control_flow_and_loops/pages/*.dart)",
+      "Bash(flutter analyze:*)",
+      "Bash(for f:*)",
+      "Bash(do)",
+      "Bash(sed -i '/^[[:space:]]*isOutput: true/d' \"$f\")",
+      "Bash(done)",
+      "Bash(/tmp/create_pages.py:*)",
+      "Bash(python3 -c \"print\\(''hello''\\)\")",
+      "Bash(ls /usr/bin/python*)",
+      "Bash(/tmp/genscript.js:*)",
+      "Bash(node /tmp/genscript.js)",
+      "Bash(node:*)",
+      "Bash(grep:*)",
+      "Bash(python -c \":*)",
+      "Bash(powershell -Command \"Get-Content ''C:/WorkSpace/dart_programmings/lib/modules/best_guide/pages/mistakes_page.dart'' | Select-Object -Index 22, 24, 52\")"
+    ]
+  }
+}
