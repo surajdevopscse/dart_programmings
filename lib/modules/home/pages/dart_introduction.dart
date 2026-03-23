@@ -1,6 +1,7 @@
 import 'package:dart_programing/app/app_services.dart';
+import 'package:dart_programing/app/common_widgets/banner_ad_widget.dart';
 import 'package:dart_programing/app/common_widgets/footer.dart';
-import 'package:dart_programing/app/common_widgets/global_blog_cards_section.dart';
+import 'package:dart_programing/app/common_widgets/web_ad_widget.dart';
 import 'package:dart_programing/app/responsive.dart';
 import 'package:dart_programing/app/views/side_menu/side_menu_view.dart';
 import 'package:dart_programing/modules/home/widgets/app_bar.dart';
@@ -58,7 +59,11 @@ class DartIntroduction extends StatelessWidget {
                 ),
               ),
             ),
-            // const SliverToBoxAdapter(child: GlobalBlogCardsSection()),
+            // Mobile / tablet: AdMob banner (stub on web/desktop).
+            // Web: AdSense slot (stub on mobile/desktop).
+            // Desktop: both are stubs → no ads rendered.
+            const SliverToBoxAdapter(child: BannerAdWidget()),
+            // const SliverToBoxAdapter(child: WebAdWidget()),
             const SliverToBoxAdapter(child: AppFooter()),
           ],
         ),

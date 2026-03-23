@@ -40,63 +40,69 @@ class SideMenuView extends GetView<SideMenuController> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      CustomExpansionPanelList(
-                        dividerColor: Colors.white,
-                        headerMargin: const EdgeInsets.all(8),
-                        expandedHeaderMargin: const EdgeInsets.all(8),
-                        materialGapSize: 0,
-                        children: SideNavBarParentEnum.values.map(
-                          (parent) {
-                            final isSelected =
-                                controller.selectedParent == parent;
-                            return CustomExpansionPanel(
-                              canTapOnHeader: true,
-                              isExpanded: (isSelected && controller.isExpande),
-                              headerBuilder: (context, isExpanded) {
-                                return NavParentTile(
-                                  title: parent.title,
-                                  image: isSelected
-                                      ? parent.image.$1
-                                      : parent.image.$2,
-                                  isSelected: isSelected,
-                                );
-                              },
-                              body: Column(
-                                children: parent.children.map((child) {
-                                  return Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 8),
-                                    child: NavTileChild(
-                                      onTap: () {
-                                        controller.navigate(
-                                            parent: parent, child: child);
-                                        if (AS.deviceScreenType.isMobile) {
-                                          Navigator.pop(context);
-                                        }
-                                      },
-                                      isSelected:
-                                          controller.selectedChild == child,
-                                      title: child.title,
-                                    ),
+                      Builder(builder: (context) {
+                        final visibleParents = SideNavBarParentEnum.values
+                            .where((e) =>
+                                e != SideNavBarParentEnum.search &&
+                                e != SideNavBarParentEnum.bookmarks)
+                            .toList();
+                        return CustomExpansionPanelList(
+                          dividerColor: Colors.white,
+                          headerMargin: const EdgeInsets.all(8),
+                          expandedHeaderMargin: const EdgeInsets.all(8),
+                          materialGapSize: 0,
+                          children: visibleParents.map(
+                            (parent) {
+                              final isSelected =
+                                  controller.selectedParent == parent;
+                              return CustomExpansionPanel(
+                                canTapOnHeader: true,
+                                isExpanded:
+                                    (isSelected && controller.isExpande),
+                                headerBuilder: (context, isExpanded) {
+                                  return NavParentTile(
+                                    title: parent.title,
+                                    image: isSelected
+                                        ? parent.image.$1
+                                        : parent.image.$2,
+                                    isSelected: isSelected,
                                   );
-                                }).toList(),
-                              ),
-                            );
+                                },
+                                body: Column(
+                                  children: parent.children.map((child) {
+                                    return Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 8),
+                                      child: NavTileChild(
+                                        onTap: () {
+                                          controller.navigate(
+                                              parent: parent, child: child);
+                                          if (AS.deviceScreenType.isMobile) {
+                                            Navigator.pop(context);
+                                          }
+                                        },
+                                        isSelected:
+                                            controller.selectedChild == child,
+                                        title: child.title,
+                                      ),
+                                    );
+                                  }).toList(),
+                                ),
+                              );
+                            },
+                          ).toList(),
+                          expansionCallback: (panelIndex, isExpanded) {
+                            final parent = visibleParents[panelIndex];
+                            if (controller.selectedParent != parent) {
+                              controller.isExpande = isExpanded;
+                              controller.navigate(parent: parent);
+                            } else {
+                              controller.isExpande = isExpanded;
+                              controller.update();
+                            }
                           },
-                        ).toList(),
-                        expansionCallback: (panelIndex, isExpanded) {
-                          final parent = SideNavBarParentEnum.values.firstWhere(
-                              (element) => element.index == panelIndex);
-
-                          if (controller.selectedParent != parent) {
-                            controller.isExpande = isExpanded;
-                            controller.navigate(parent: parent);
-                          } else {
-                            controller.isExpande = isExpanded;
-                            controller.update();
-                          }
-                        },
-                      ),
+                        );
+                      }),
                     ],
                   ),
                 ),

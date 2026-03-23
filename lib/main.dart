@@ -1,6 +1,7 @@
 import 'package:dart_programing/app/app_services.dart';
 import 'package:dart_programing/app/device_screen_type.dart';
 import 'package:dart_programing/app/routes/app_pages.dart';
+import 'package:dart_programing/services/ads/ad_service.dart';
 import 'package:dart_programing/services/bookmarks/bookmark_service.dart';
 import 'package:dart_programing/services/progress/progress_service.dart';
 import 'package:dart_programing/services/shared_preference_service/shared_preference_service.dart';
@@ -21,6 +22,9 @@ Future<void> main() async {
   Get.put(ProgressService(), permanent: true);
   Get.put(BookmarkService(), permanent: true);
   Get.put(AppBarController());
+  // AdService uses a conditional export: real AdMob on Android/iOS,
+  // a no-op stub on web and desktop.
+  Get.put(AdService(), permanent: true);
   setPathUrlStrategy();
   runApp(const MyApp());
 }

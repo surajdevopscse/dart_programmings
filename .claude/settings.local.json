@@ -34,7 +34,14 @@
       "Bash(node:*)",
       "Bash(grep:*)",
       "Bash(python -c \":*)",
-      "Bash(powershell -Command \"Get-Content ''C:/WorkSpace/dart_programmings/lib/modules/best_guide/pages/mistakes_page.dart'' | Select-Object -Index 22, 24, 52\")"
+      "Bash(powershell -Command \"Get-Content ''C:/WorkSpace/dart_programmings/lib/modules/best_guide/pages/mistakes_page.dart'' | Select-Object -Index 22, 24, 52\")",
+      "Bash(flutter pub:*)",
+      "Read(//c/WorkSpace/dart_programmings/**)",
+      "Bash(echo \"$f: AppPath used\")",
+      "Bash(echo \"$f: AppPath NOT used\")",
+      "Bash(echo \"$f uses SK\")",
+      "Bash(echo \"$f no SK\")",
+      "Bash(find C:/WorkSpace/flutter_tutorial_app -name *.dart -o -name pubspec.yaml)"
     ]
   }
 }

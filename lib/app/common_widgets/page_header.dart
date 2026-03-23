@@ -1,4 +1,7 @@
 import 'package:dart_programing/app/common_widgets/big_text.dart';
+import 'package:dart_programing/app/routes/path.dart';
+import 'package:dart_programing/app/routes/app_pages.dart';
+import 'package:dart_programing/utils/constants/colors.dart';
 import 'package:dart_programing/utils/constants/common_text_style/app_style.dart';
 import 'package:flutter/material.dart';
 
@@ -19,6 +22,11 @@ class PageHeader extends StatelessWidget {
               style: AppStyle.globalBigTextStyle,
               text: headerName,
             ),
+          ),
+          IconButton(
+            tooltip: 'Search',
+            icon: Icon(Icons.search, color: AppColors.primary700),
+            onPressed: () => AppPages.router.go(AppPath.SEARCH),
           ),
         ],
       ),

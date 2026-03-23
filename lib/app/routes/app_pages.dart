@@ -23,6 +23,18 @@ import 'package:dart_programing/modules/introduction/pages/introduction_to_dart_
 import 'package:dart_programing/modules/introduction/pages/oprators.dart';
 import 'package:dart_programing/modules/introduction/pages/user_input.dart';
 import 'package:dart_programing/modules/introduction/pages/variables_page.dart';
+import 'package:dart_programing/modules/introduction/controllers/metadata_controller.dart';
+import 'package:dart_programing/modules/introduction/controllers/libraries_controller.dart';
+import 'package:dart_programing/modules/introduction/controllers/string_dart_controller.dart';
+import 'package:dart_programing/modules/introduction/controllers/keywords_controller.dart';
+import 'package:dart_programing/modules/introduction/controllers/final_vs_const_controller.dart';
+import 'package:dart_programing/modules/introduction/controllers/datetime_controller.dart';
+import 'package:dart_programing/modules/introduction/pages/metadata_page.dart';
+import 'package:dart_programing/modules/introduction/pages/libraries_page.dart';
+import 'package:dart_programing/modules/introduction/pages/string_dart_page.dart';
+import 'package:dart_programing/modules/introduction/pages/keywords_page.dart';
+import 'package:dart_programing/modules/introduction/pages/final_vs_const_page.dart';
+import 'package:dart_programing/modules/introduction/pages/datetime_page.dart';
 import 'package:dart_programing/modules/blog/pages/blog_details_page.dart';
 import 'package:dart_programing/modules/blog/pages/blog_list_page.dart';
 
@@ -408,68 +420,74 @@ class AppPages {
             ),
             GoRoute(
               onExit: (context, state) {
-                Get.delete<HomeController>();
+                Get.delete<MetadataController>();
                 return true;
               },
               name: SideNavBarChildEnum.metaData.title,
               path: SideNavBarChildEnum.metaData.childPath!,
               builder: (context, state) {
-                return const ComingSoonPage();
+                Get.put(MetadataController());
+                return const MetadataPage();
               },
             ),
             GoRoute(
               onExit: (context, state) {
-                Get.delete<HomeController>();
+                Get.delete<LibrariesController>();
                 return true;
               },
               name: SideNavBarChildEnum.libraries.title,
               path: SideNavBarChildEnum.libraries.childPath!,
               builder: (context, state) {
-                return const ComingSoonPage();
+                Get.put(LibrariesController());
+                return const LibrariesPage();
               },
             ),
             GoRoute(
               onExit: (context, state) {
-                Get.delete<HomeController>();
+                Get.delete<StringDartController>();
                 return true;
               },
               name: SideNavBarChildEnum.string.title,
               path: SideNavBarChildEnum.string.childPath!,
               builder: (context, state) {
-                return const ComingSoonPage();
+                Get.put(StringDartController());
+                return const StringDartPage();
               },
             ),
             GoRoute(
               onExit: (context, state) {
-                Get.delete<HomeController>();
+                Get.delete<KeywordsController>();
                 return true;
               },
               name: SideNavBarChildEnum.keywords.title,
               path: SideNavBarChildEnum.keywords.childPath!,
               builder: (context, state) {
-                return const ComingSoonPage();
+                Get.put(KeywordsController());
+                return const KeywordsPage();
               },
             ),
             GoRoute(
               onExit: (context, state) {
-                Get.delete<HomeController>();
+                Get.delete<FinalVsConstController>();
                 return true;
               },
               name: SideNavBarChildEnum.finalVSConst.title,
               path: SideNavBarChildEnum.finalVSConst.childPath!,
               builder: (context, state) {
-                return const ComingSoonPage();
+                Get.put(FinalVsConstController());
+                return const FinalVsConstPage();
               },
             ),
             GoRoute(
               onExit: (context, state) {
-                Get.delete<HomeController>();
+                Get.delete<DateTimeController>();
                 return true;
               },
               name: SideNavBarChildEnum.dateTimeInDart.title,
               path: SideNavBarChildEnum.dateTimeInDart.childPath!,
               builder: (context, state) {
-                return const ComingSoonPage();
+                Get.put(DateTimeController());
+                return const DateTimePage();
               },
             ),
           ],

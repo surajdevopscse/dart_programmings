@@ -1,3 +1,5 @@
+import 'package:dart_programing/app/routes/app_pages.dart';
+import 'package:dart_programing/app/routes/path.dart';
 import 'package:dart_programing/modules/home/controllers/app_bar_controller.dart';
 import 'package:dart_programing/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
@@ -13,9 +15,14 @@ class MyAppBar extends GetView<AppBarController>
     return GetBuilder<AppBarController>(builder: (_) {
       return AppBar(
         backgroundColor: C.primary50,
-        title: Text(
-          controller.appBarTitle,
-        ),
+        title: Text(controller.appBarTitle),
+        actions: [
+          IconButton(
+            tooltip: 'Search',
+            icon: Icon(Icons.search, color: AppColors.primary700),
+            onPressed: () => AppPages.router.go(AppPath.SEARCH),
+          ),
+        ],
       );
     });
   }

@@ -12,6 +12,7 @@ class DartQAController extends GetxController {
 
   var selectedLevel = Rx<QuestionLevel?>(null);
   var expandedIndex = RxInt(-1);
+  var visibleCount = RxInt(10);
 
   List<InterviewQuestion> allQuestions = [
     InterviewQuestion(id: 'd1', question: 'What is Dart and what are its key features?', answer: 'Dart is a client-optimized, object-oriented, class-based language developed by Google. Key features: strongly typed with type inference, null safety, AOT and JIT compilation, async/await built-in, rich standard library, garbage collected, and cross-platform (mobile, web, desktop, server).', level: QuestionLevel.beginner, category: 'Basics'),
@@ -47,9 +48,22 @@ class DartQAController extends GetxController {
   ];
 
   List<InterviewQuestion> get filteredQuestions {
-    if (selectedLevel.value == null) return allQuestions;
-    return allQuestions.where((q) => q.level == selectedLevel.value).toList();
+    final all = selectedLevel.value == null
+        ? allQuestions
+        : allQuestions.where((q) => q.level == selectedLevel.value).toList();
+    if (visibleCount.value >= all.length) return all;
+    return all.sublist(0, visibleCount.value);
   }
+
+  int get totalFilteredCount {
+    if (selectedLevel.value == null) return allQuestions.length;
+    return allQuestions.where((q) => q.level == selectedLevel.value).length;
+  }
+
+  bool get hasMore => visibleCount.value < totalFilteredCount;
+
+  void loadMore() => visibleCount.value =
+      (visibleCount.value + 10).clamp(0, totalFilteredCount);
 
   void toggleExpand(int index) {
     if (expandedIndex.value == index) {
@@ -62,6 +76,7 @@ class DartQAController extends GetxController {
   void filterByLevel(QuestionLevel? level) {
     selectedLevel.value = level;
     expandedIndex.value = -1;
+    visibleCount.value = 10;
   }
 
   @override

@@ -12,6 +12,7 @@ class FlutterQAController extends GetxController {
 
   var selectedLevel = Rx<QuestionLevel?>(null);
   var expandedIndex = RxInt(-1);
+  var visibleCount = RxInt(10);
 
   List<InterviewQuestion> allQuestions = [
     InterviewQuestion(id: 'f1', question: 'What is the difference between StatelessWidget and StatefulWidget?', answer: 'StatelessWidget is immutable — it builds once and only rebuilds when its parent passes new configuration. StatefulWidget has a mutable State object and can call setState() to trigger rebuilds. Use StatelessWidget for static content, StatefulWidget when the UI needs to change based on user interaction or data changes.', codeExample: '// StatelessWidget\nclass Label extends StatelessWidget {\n  final String text;\n  const Label({super.key, required this.text});\n  @override\n  Widget build(BuildContext context) => Text(text);\n}\n\n// StatefulWidget\nclass Counter extends StatefulWidget {\n  const Counter({super.key});\n  @override\n  State<Counter> createState() => _CounterState();\n}\nclass _CounterState extends State<Counter> {\n  int _count = 0;\n  @override\n  Widget build(BuildContext context) => TextButton(\n    onPressed: () => setState(() => _count++),\n    child: Text("Count: \$_count"),\n  );\n}', level: QuestionLevel.beginner, category: 'Widgets'),
@@ -47,9 +48,22 @@ class FlutterQAController extends GetxController {
   ];
 
   List<InterviewQuestion> get filteredQuestions {
-    if (selectedLevel.value == null) return allQuestions;
-    return allQuestions.where((q) => q.level == selectedLevel.value).toList();
+    final all = selectedLevel.value == null
+        ? allQuestions
+        : allQuestions.where((q) => q.level == selectedLevel.value).toList();
+    if (visibleCount.value >= all.length) return all;
+    return all.sublist(0, visibleCount.value);
   }
+
+  int get totalFilteredCount {
+    if (selectedLevel.value == null) return allQuestions.length;
+    return allQuestions.where((q) => q.level == selectedLevel.value).length;
+  }
+
+  bool get hasMore => visibleCount.value < totalFilteredCount;
+
+  void loadMore() => visibleCount.value =
+      (visibleCount.value + 10).clamp(0, totalFilteredCount);
 
   void toggleExpand(int index) {
     if (expandedIndex.value == index) {
@@ -62,6 +76,7 @@ class FlutterQAController extends GetxController {
   void filterByLevel(QuestionLevel? level) {
     selectedLevel.value = level;
     expandedIndex.value = -1;
+    visibleCount.value = 10;
   }
 
   @override

@@ -1,6 +1,7 @@
 import 'package:dart_programing/app/app_services.dart';
 import 'package:dart_programing/app/common_widgets/big_text.dart';
 import 'package:dart_programing/app/common_widgets/bookmark_icon_btn.dart';
+import 'package:dart_programing/app/common_widgets/scroll_to_top_fab.dart';
 import 'package:dart_programing/app/common_widgets/code_widget.dart';
 import 'package:dart_programing/app/common_widgets/common_height.dart';
 import 'package:dart_programing/app/common_widgets/page_header.dart';
@@ -107,7 +108,7 @@ class DartQAPage extends GetView<DartQAController> {
                         const CommonHeight(height: 8),
                         // Question count
                         Obx(() => SmallText(
-                          text: '${controller.filteredQuestions.length} questions',
+                          text: 'Showing ${controller.filteredQuestions.length} of ${controller.totalFilteredCount} questions',
                           style: AppStyle.globalSmallTextStyle.copyWith(
                             color: Colors.grey[600],
                             fontSize: 13,
@@ -129,6 +130,27 @@ class DartQAPage extends GetView<DartQAController> {
                             }),
                           );
                         }),
+                        // Show More button
+                        Obx(() => controller.hasMore
+                            ? Padding(
+                                padding: const EdgeInsets.only(top: 8),
+                                child: OutlinedButton.icon(
+                                  onPressed: controller.loadMore,
+                                  icon: const Icon(Icons.expand_more),
+                                  label: Text(
+                                    'Show ${((controller.totalFilteredCount - controller.visibleCount.value).clamp(0, 10))} More',
+                                  ),
+                                  style: OutlinedButton.styleFrom(
+                                    foregroundColor: AppColors.primary700,
+                                    side: BorderSide(color: AppColors.primary700),
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 24, vertical: 12),
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(8)),
+                                  ),
+                                ),
+                              )
+                            : const SizedBox.shrink()),
                         const CommonHeight(height: 40),
                       ],
                     ),
@@ -138,17 +160,10 @@ class DartQAPage extends GetView<DartQAController> {
             ],
           ),
           GetBuilder<DartQAController>(
-            builder: (_) => controller.showBackToTopButton
-                ? Positioned(
-                    bottom: 20,
-                    right: 20,
-                    child: FloatingActionButton(
-                      backgroundColor: AppColors.primary700,
-                      onPressed: controller.scrollToTop,
-                      child: const Icon(Icons.arrow_upward, color: Colors.white),
-                    ),
-                  )
-                : const SizedBox.shrink(),
+            builder: (_) => ScrollToTopFab(
+              show: controller.showBackToTopButton,
+              onPressed: controller.scrollToTop,
+            ),
           ),
         ],
       ),
